@@ -38,6 +38,23 @@ My research interest includes 3D/4D generative models.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**NeurIPS 2023**] [VideoComposer: Compositional Video Synthesis with Motion Controllability](https://arxiv.org/abs/2306.02018) \\
+Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yingya Zhang, Yujun Shen, Deli Zhao, Jingren Zhou. \\
+[![GitHub Stars](https://img.shields.io/github/stars/damo-vilab/videocomposer?style=social)](https://github.com/damo-vilab/videocomposer)
+[![GitHub Forks](https://img.shields.io/github/forks/damo-vilab/videocomposer?style=social)](https://github.com/damo-vilab/videocomposer)
+[[Project page]](https://videocomposer.github.io/) 
+[[机器之心]](https://mp.weixin.qq.com/s/4LVGj0KQDPJDGn5SVZfW1w) 
+[[CVer]](https://mp.weixin.qq.com/s/rpmXd-nkE9oSG4bZsKKfpw)
+
+- VideoComposer pioneers controllable video synthesis, seamlessly integrating textual, spatial, and crucially, temporal conditions, through a unified interface for information injection.
+- VideoComposer can craft videos using various input control signals, from intricate hand-drawn sketches to defined motions.
+
+</div>
+</div>
+
 - **[AAAI 2025]** [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412), **S. Zhang**, C. Zhao.
 - **[CVPR 2024]** [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf), **S. Zhang**, Y. Zhang, H. Bao, W. Xu, C. Zou, et al.
 - **[TCSVT 2023]** [Cross-Video Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://arxiv.org/abs/2107.06831), **S. Zhang**, C. Zhao.
