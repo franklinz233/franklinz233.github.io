@@ -63,23 +63,34 @@ Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yin
 
 # 🖥️ Experience  
 
-- **March 2024 - Sept. 2024**  
+- **March 2024 - Sept. 2024**
+- 
   **Research Intern** - Anti-Entropy Research Group, miHoYo
-  Advisor: Chen Lin 
+  
+  Advisor: Chen Lin
+  
   Research included: 3D Scene Generation, Video Diffusion
   
-- **Sept. 2023 - Feb. 2024**  
+- **Sept. 2023 - Feb. 2024**
+- 
   **Research Intern** - Taobao and Tmall Group, Alibaba
+  
   Research included: Sparse View Object Reconstruction
   
-- **April 2023 - Dec. 2023**  
-  **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University 
+- **April 2023 - Dec. 2023**
+- 
+  **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University
+  
   Advisor: Prof. Changqing Zou and Prof. Weiwei Xu
+  
   Research included: Text-Guided 3D Generation  
   
-- **Sept. 2021 - April 2022**  
-  **Research Intern** - OpenDriveLab of Shanghai AI Laboratory  
+- **Sept. 2021 - April 2022**
+- 
+  **Research Intern** - OpenDriveLab of Shanghai AI Laboratory
+    
   Advisor: Prof. Hongyang Li and Xiangwei Geng
+  
   Research included: Self-supervised Depth Estimation 
   
 
