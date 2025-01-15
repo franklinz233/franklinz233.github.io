@@ -50,7 +50,7 @@ My research interest includes 3D/4D generative models.
 - *2021.09 - 2022.04*, Research Intern, Shanghai AI Lab
 
 # 🎖 Honors and Awards
-- *2021.12* National Scholarship  (Top 1% among all undergraduates)
-- *2020.12* First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)
-- *2020.12* National Scholarship  (Top 1% among all undergraduates)
-- *2019.12* National Scholarship  (Top 1% among all undergraduates)
+- *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
+- *2020.12* &nbsp;&nbsp; First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)
+- *2020.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
+- *2019.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
