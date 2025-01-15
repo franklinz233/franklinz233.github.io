@@ -66,6 +66,34 @@ Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yin
 - *2023.09 - 2024.02*, Research Intern, Alibaba
 - *2021.09 - 2022.04*, Research Intern, Shanghai AI Lab
 
+# 🖥️ Experience  
+
+- **July 2024 - Present**  
+  **Research Intern** - SU Lab, University of California San Diego  
+  Advisor: Prof. Hao Su  
+  Research included: 3D Scene Generation, 3D Diffusion  
+  
+- **March 2024 - Present**  
+  **Research Intern** - Computational Cognition, Vision, and Learning Lab (CCVL), Johns Hopkins University  
+  Advisor: Prof. Alan L. Yuille  
+  Research included: Gaussian Splatting from Sparse Point Clouds  
+  
+- **July 2022 - Present**  
+  **Research Assistant** - Intelligent Sensing, Perception and Computing Lab (ISPC), Tongji University  
+  Advisor: Prof. Guang Chen  
+  Research included: 3D Point Clouds, 4D Reconstruction, Neural Fields  
+  
+- **Dec. 2021 - June 2022**  
+  **Research Intern** - OpenDriveLab of Shanghai AI Laboratory  
+  Advisor: Prof. Hongyang Li  
+  Research included: 3D Laneline Detection in Autonomous Driving  
+  
+- **Mar. 2021 - Nov. 2021**  
+  **Research Intern** - Comprehensive Perception Research Group (CPRG), Tongji University  
+  Advisor: Prof. Wei Tian  
+  Research included: Fish-eye Camera Calibration, Bird’s Eye View (BEV)
+
+
 # 🎖 Honors and Awards
 - *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
 - *2020.12* &nbsp;&nbsp; First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)
