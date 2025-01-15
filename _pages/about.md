@@ -61,38 +61,27 @@ Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yin
 - **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao.
 
 
-# 💻 Internships
-- *2024.03 - 2024.09*, Research Intern, miHoYo
-- *2023.09 - 2024.02*, Research Intern, Alibaba
-- *2021.09 - 2022.04*, Research Intern, Shanghai AI Lab
-
 # 🖥️ Experience  
 
-- **July 2024 - Present**  
-  **Research Intern** - SU Lab, University of California San Diego  
-  Advisor: Prof. Hao Su  
-  Research included: 3D Scene Generation, 3D Diffusion  
+- **March 2024 - Sept. 2024**  
+  **Research Intern** - Anti-Entropy Research Group, miHoYo
+  Advisor: Chen Lin 
+  Research included: 3D Scene Generation, Video Diffusion
   
-- **March 2024 - Present**  
-  **Research Intern** - Computational Cognition, Vision, and Learning Lab (CCVL), Johns Hopkins University  
-  Advisor: Prof. Alan L. Yuille  
-  Research included: Gaussian Splatting from Sparse Point Clouds  
+- **Sept. 2023 - Feb. 2024**  
+  **Research Intern** - Taobao and Tmall Group, Alibaba
+  Research included: Sparse View Object Reconstruction
   
-- **July 2022 - Present**  
-  **Research Assistant** - Intelligent Sensing, Perception and Computing Lab (ISPC), Tongji University  
-  Advisor: Prof. Guang Chen  
-  Research included: 3D Point Clouds, 4D Reconstruction, Neural Fields  
+- **April 2023 - Dec. 2023**  
+  **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University 
+  Advisor: Prof. Changqing Zou and Prof. Weiwei Xu
+  Research included: Text-Guided 3D Generation  
   
-- **Dec. 2021 - June 2022**  
+- **Sept. 2021 - April 2022**  
   **Research Intern** - OpenDriveLab of Shanghai AI Laboratory  
-  Advisor: Prof. Hongyang Li  
-  Research included: 3D Laneline Detection in Autonomous Driving  
+  Advisor: Prof. Hongyang Li and Xiangwei Geng
+  Research included: Self-supervised Depth Estimation 
   
-- **Mar. 2021 - Nov. 2021**  
-  **Research Intern** - Comprehensive Perception Research Group (CPRG), Tongji University  
-  Advisor: Prof. Wei Tian  
-  Research included: Fish-eye Camera Calibration, Bird’s Eye View (BEV)
-
 
 # 🎖 Honors and Awards
 - *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
