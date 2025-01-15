@@ -55,10 +55,10 @@ Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yin
 </div>
 </div>
 
-- **[AAAI 2025]** [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412), **S. Zhang**, C. Zhao.
-- **[CVPR 2024]** [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf), **S. Zhang**, Y. Zhang, H. Bao, W. Xu, C. Zou, et al.
-- **[TCSVT 2023]** [Cross-Video Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://arxiv.org/abs/2107.06831), **S. Zhang**, C. Zhao.
-- **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **S. Zhang**, C. Zhao.
+- **[AAAI 2025]** [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412), **Songchun Zhang**, Chunhui Zhao.
+- **[CVPR 2024]** [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf), **Songchun Zhang**, Yibo Zhang, Quan Zheng, Rui Ma, Wei Hua, Hujun Bao, Weiwei Xu, Changqing Zou
+- **[TCSVT 2023]** [Cross-Video Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://arxiv.org/abs/2107.06831), **Songchun Zhang**, Chunhui Zhao.
+- **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao.
 
 
 # 💻 Internships
