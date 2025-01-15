@@ -74,13 +74,13 @@ Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yin
   
 - **April 2023 - Dec. 2023**  
   **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University  
-  Advisor: Prof. Changqing Zou and Prof. Weiwei Xu  
+  Advisor: [Prof. Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao) and [Prof. Weiwei Xu](https://scholar.google.com/citations?user=Hfrih1EAAAAJ)  
   Research included: Text-Guided 3D Generation  
   
 - **Sept. 2021 - April 2022**  
   **Research Intern** - OpenDriveLab of Shanghai AI Laboratory  
-  Advisor: Prof. Hongyang Li and Xiangwei Geng  
-  Research included: Self-supervised Depth Estimation 
+  Advisor: [Prof. Hongyang Li](https://scholar.google.com/citations?user=Hfrih1EAAAAJ) and Xiangwei Geng  
+  Research included: Self-supervised Depth Estimation  
   
 
 # 🎖 Honors and Awards
