@@ -33,7 +33,7 @@ My research interest includes 3D/4D generative models.
 
 [**CVPR 2024**] [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)  \\
 **Songchun Zhang**, Yibo Zhang, Quan Zheng, Rui Ma, Wei Hua, Hujun Bao, Weiwei Xu, Changqing Zou. \\
-[[Project page]](https://franklinz233.github.io/)  
+[[Project page]](https://franklinz233.github.io/)
 [[paper]](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)
 
 - This paper presents a novel text-driven 3D scene generation method that improves visual quality and 3D consistency.
