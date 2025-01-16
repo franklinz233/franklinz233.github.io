@@ -23,8 +23,8 @@ Currently, I am a master student in Control Science and Engineering department a
 My research interest includes 3D/4D generative models. 
 
 # 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
+- *2024.02*: &nbsp;🎉🎉 One paper accepted by CVPR 2024.
 
 # 📝 Publications 
 
