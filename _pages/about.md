@@ -28,7 +28,6 @@ My research interest includes 3D/4D generative models.
 
 # 📝 Publications 
 
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -68,6 +67,17 @@ My research interest includes 3D/4D generative models.
   Advisor: [Prof. Hongyang Li](https://scholar.google.com/citations?user=Hfrih1EAAAAJ) and Xiangwei Geng  
   Research included: Self-supervised Depth Estimation  
   
+# 🎓 Academic Service
+- Reviewing
+  - Conferences:
+    - CVPR
+    - ICRA
+    - NeurIPS
+    - AAAI
+  - Journals:
+    - IEEE Transactions on Circuits and Systems for Video Technology
+    - IEEE Transactions on Multimedia
+    - Knowledge-Based Systems
 
 # 🎖 Honors and Awards
 - *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
