@@ -27,29 +27,16 @@ My research interest includes 3D/4D generative models.
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+[**CVPR 2024**] [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)  \\
+**Songchun Zhang**, Yibo Zhang, Quan Zheng, Rui Ma, Wei Hua, Hujun Bao, Weiwei Xu, Changqing Zou. \\
+[[Project page]](https://franklinz233.github.io/)  
+[[paper]](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2023</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[**NeurIPS 2023**] [VideoComposer: Compositional Video Synthesis with Motion Controllability](https://arxiv.org/abs/2306.02018) \\
-Xiang Wang\*, **Hangjie Yuan**\*, Shiwei Zhang\*, Dayou Chen\*, Jiuniu Wang, Yingya Zhang, Yujun Shen, Deli Zhao, Jingren Zhou. \\
-[![GitHub Stars](https://img.shields.io/github/stars/damo-vilab/videocomposer?style=social)](https://github.com/damo-vilab/videocomposer)
-[![GitHub Forks](https://img.shields.io/github/forks/damo-vilab/videocomposer?style=social)](https://github.com/damo-vilab/videocomposer)
-[[Project page]](https://videocomposer.github.io/) 
-[[机器之心]](https://mp.weixin.qq.com/s/4LVGj0KQDPJDGn5SVZfW1w) 
-[[CVer]](https://mp.weixin.qq.com/s/rpmXd-nkE9oSG4bZsKKfpw)
-
-- VideoComposer pioneers controllable video synthesis, seamlessly integrating textual, spatial, and crucially, temporal conditions, through a unified interface for information injection.
-- VideoComposer can craft videos using various input control signals, from intricate hand-drawn sketches to defined motions.
+- This paper presents a novel text-driven 3D scene generation method that improves visual quality and 3D consistency.
 
 </div>
 </div>
