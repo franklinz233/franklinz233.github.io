@@ -80,6 +80,7 @@ My research interest includes 3D/4D generative models.
     - Knowledge-Based Systems
 
 # 🎖 Honors and Awards
+- *2024.12* &nbsp;&nbsp; Outstanding Graduate of Zhejiang University
 - *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
 - *2020.12* &nbsp;&nbsp; First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)
 - *2020.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
