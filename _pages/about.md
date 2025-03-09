@@ -27,7 +27,6 @@ My research interest includes 3D/4D generative models.
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
 
 # 📝 Publications 
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
