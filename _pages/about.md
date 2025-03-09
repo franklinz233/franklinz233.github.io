@@ -1,4 +1,4 @@
----
+![image](https://github.com/user-attachments/assets/775ab282-9b77-4e97-8797-769472e0b48f)---
 permalink: /
 title: ""
 excerpt: ""
@@ -28,6 +28,30 @@ My research interest includes 3D/4D generative models.
 
 # 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv 2025</div><img src='images/spatialcrafter.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Arxiv 2025**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
+**Songchun Zhang**, Huiyao Xu, Sitong Guo, Zhongwei Xie, Pengwei Liu, Hujun Bao, Weiwei Xu, Changqing Zou. \\
+[[Project page]](https://franklinz233.github.io/)
+[[paper]](https://arxiv.org/abs/2412.08412)
+
+- This paper presents a 3D scene reconstruction method from sparse inputs.
+
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai_25.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
+**Songchun Zhang**, Chunhui Zhao. \\
+[[Project page]](https://franklinz233.github.io/)
+[[paper]](https://arxiv.org/abs/2412.08412)
+
+- This paper presents a 3D object reconstruction method from sparse and unposed inputs.
+
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -39,6 +63,9 @@ My research interest includes 3D/4D generative models.
 - This paper presents a novel text-driven 3D scene generation method that improves visual quality and 3D consistency.
 
 </div>
+
+
+
 </div>
 
 - **[AAAI 2025]** [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412), **Songchun Zhang**, Chunhui Zhao.
