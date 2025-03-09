@@ -74,7 +74,7 @@ My research interest includes 3D/4D generative models.
 - **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao.
 
 
-# 🖥️ Experience  
+# 🖥️ Experience
 
 - **March 2024 - Sept. 2024**  
   **Research Intern** - Anti-Entropy Research Group, miHoYo  
