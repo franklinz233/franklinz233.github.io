@@ -27,7 +27,7 @@ My research interest includes 3D/4D generative models.
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
 
 # 📝 Publications
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/spatialcrafter.gif' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/spatialcrafter.gif' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**arXiv**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
@@ -40,7 +40,7 @@ My research interest includes 3D/4D generative models.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai_25.png' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai_25.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
@@ -54,7 +54,7 @@ My research interest includes 3D/4D generative models.
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="80%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CVPR 2024**] [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)  \\
