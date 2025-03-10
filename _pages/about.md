@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 I am an incoming Ph.D. student at The Hong Kong University of Science and Technology (HKUST), under the supervision of [Prof. Anyi Rao](https://anyirao.com/) and [Prof. Huamin Qu](http://www.huamin.org/). Currently, I am pursuing a master's degree in Control Science and Engineering at Zhejiang University.
-
+Previously, I obtained my Bachelor’s degree in the College of Electrical and Information Engineering from Hunan University.
 My research interest includes 3D/4D generative models. 
 
 # 🔥 News
