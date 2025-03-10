@@ -27,7 +27,7 @@ My research interest includes 3D/4D generative models.
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
 
 # 📝 Publications
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/spatialcrafter.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/spatialcrafter.gif' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**arXiv**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
