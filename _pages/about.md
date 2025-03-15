@@ -109,15 +109,9 @@ My research interest includes 3D/4D generative models.
   
 # 🎓 Academic Service
 - Reviewing
-  - Conferences:
-    - CVPR
-    - ICRA
-    - NeurIPS
-    - AAAI
-  - Journals:
-    - IEEE Transactions on Circuits and Systems for Video Technology
-    - IEEE Transactions on Multimedia
-    - Knowledge-Based Systems
+  - Conferences: CVPR, ICRA, NeurIPS, AAAI
+  - Journals: TCSVT, TMM, KBS
+
 
 # 🎖 Honors and Awards
 - *2024.12* &nbsp;&nbsp; Outstanding Graduate of Zhejiang University
