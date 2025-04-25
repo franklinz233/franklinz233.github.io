@@ -17,9 +17,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am an incoming Ph.D. student at The Hong Kong University of Science and Technology (HKUST), under the supervision of [Prof. Anyi Rao](https://anyirao.com/) and [Prof. Huamin Qu](http://www.huamin.org/). Currently, I am pursuing a master's degree in Control Science and Engineering at Zhejiang University under the supervision of [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao) and in collaboration with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
+# About me
+I am an incoming Ph.D. student at MMLAB@HKUST, under the supervision of [Prof. Anyi Rao](https://anyirao.com/) and [Prof. Huamin Qu](http://www.huamin.org/). Currently, I am pursuing a master's degree in Control Science and Engineering at [Zhejiang University](https://www.zju.edu.cn/english/) under the supervision of [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao) and in collaboration with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
 Previously, I obtained my Bachelor’s degree in the College of Electrical and Information Engineering from Hunan University.
-My research interest includes 3D/4D generative models. 
+My research experience focuses on controllable multimodal 3D/4D content generation. 
 
 # 🔥 News
 - *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
@@ -46,13 +47,12 @@ My research interest includes 3D/4D generative models.
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
 **Songchun Zhang**, Chunhui Zhao. \\
 [[Project page]](https://franklinz233.github.io/)
-[[paper]](https://arxiv.org/abs/2412.08412)
+[[paper]](https://ojs.aaai.org/index.php/AAAI/article/view/33097)
 
 - This paper presents a 3D object reconstruction method from sparse and unposed inputs.
 
 </div>
 </div>
-
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
