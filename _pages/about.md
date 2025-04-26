@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-# About me
+# About Me
 I am an incoming Ph.D. student at [MMLAB@HKUST](https://mmlab-hkust.github.io/), under the supervision of [Prof. Anyi Rao](https://anyirao.com/) and [Prof. Huamin Qu](http://www.huamin.org/). Currently, I am pursuing a master's degree in Control Science and Engineering at [Zhejiang University](https://www.zju.edu.cn/english/) under the supervision of [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao) and in collaboration with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
 Previously, I obtained my Bachelor’s degree in the College of Electrical and Information Engineering from Hunan University.
 My research experience focuses on controllable multimodal 3D/4D content generation. 
