@@ -109,7 +109,7 @@ My research experience focuses on controllable multimodal 3D/4D content generati
   
 # 🎓 Academic Service
 - Reviewing
-  - Conferences: CVPR, ICRA, NeurIPS, AAAI
+  - Conferences: CVPR, ICRA, NeurIPS, AAAI, Siggraph Asia
   - Journals: TCSVT, TMM, KBS
 
 
