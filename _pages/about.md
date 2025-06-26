@@ -23,6 +23,7 @@ Previously, I obtained my Bachelor’s degree in the College of Electrical and I
 My research experience focuses on controllable multimodal 3D/4D content generation. 
 
 # 🔥 News
+- *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
 - *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
 - *2024.02*: &nbsp;🎉🎉 One paper accepted by CVPR 2024.
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
@@ -31,7 +32,7 @@ My research experience focuses on controllable multimodal 3D/4D content generati
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/spatialcrafter.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**arXiv**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
+[**ICCV 2025**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
 **Songchun Zhang**, Huiyao Xu, Sitong Guo, Zhongwei Xie, Pengwei Liu, Hujun Bao, Weiwei Xu, Changqing Zou. \\
 [[Project page]](https://franklinz233.github.io/)
 [[paper]](https://arxiv.org/abs/2412.08412)
