@@ -42,16 +42,33 @@
 <body>
     <!-- Title Page -->
     <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
-    <div class="container blog" id="first-content" style="background-color: #E0E4E6;">
+    <!-- <div class="container blog" id="first-content" style="background-color: #E0E4E6;"> -->
+    <div class="container blog" id="first-content" style="background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);">
+    <!-- <div class="blog-title no-cover"> -->
         <!-- If you don't have a project cover: Change "blog-title" into "blog-title no-cover"  -->
         <div class="blog-title no-cover">
             <div class="blog-intro">
                 <div>
                     <h1>SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations</h1>
                     
+                    <div class="conference-badge">
+                        <h4 style="color: white; margin: 0; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 1.4rem; text-align: center;">
+                            ICCV 2025
+                        </h4>
+                    </div>
+
+                    <!-- <p class="author">
+                        John Doe <sup>1</sup>, John Doe <sup>2</sup>, John Doe, John Doe, and John Doe
+                    </p> -->
+
                     <p class="author">
-                        Anonymous Authors
+                        Songchun Zhang <sup>1</sup>, Huiyao Xu <sup>1</sup>, Sitong Guo <sup>1</sup>, Zhongwei Xie <sup>3</sup>, Hujun Bao <sup>1</sup>, Weiwei Xu <sup>1</sup>, Changqing Zou <sup>1,2</sup>
                     </p>
+
+                    <p class="author" style="padding-top: 0px;">
+                        <sup>1</sup> Zhejiang University, <sup>2</sup> Zhejiang Lab, <sup>3</sup> Wuhan University
+                    </p>
+                    
                     <!-- Using FontAwesome Pro -->
                     <!-- <div class="info">
                         <div>
@@ -63,14 +80,14 @@
                     </div> -->
 
                     <!-- Using FontAwesome Free -->
-                    <!-- <div class="info">
+                    <div class="info">
                         <div>
-                            <a href="https://arxiv.org" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)"> Paper <i class="fa-solid fa-book-open"></i></a> &nbsp;&nbsp; 
+                            <a href="https://arxiv.org/abs/2505.11992" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)"> Paper <i class="fa-solid fa-book-open"></i></a> &nbsp;&nbsp; 
                             <a href="https://github.com" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Code <i class="fa-solid fa-code"></i></a>  &nbsp;&nbsp; 
                             <a href="https://www.microsoft.com/en-gb/microsoft-365/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.2);">Slides <i class="fa-regular fa-file-powerpoint"></i></a> &nbsp;&nbsp; 
                             <a href="https://huggingface.co/spaces/" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Demo <i class="fa-solid fa-laptop-code"></i></a> 
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,112 +95,104 @@
 
 
     <div class="container blog main first" id="blog-main">
-        <h1 >
-            Introduction
+        <h1 style="text-align: center">
+            Abstract
         </h1>
-        <p class='text'>
-            Novel view synthesis (NVS) boosts immersive experiences in computer vision and graphics. Existing techniques, though progressed, rely on dense multi-view observations, restricting their application. 
-            This work takes on the challenge of reconstructing photorealistic 3D scenes from sparse or single-view inputs.
-            We introduce SpatialCrafter, a novel framework that leverages the rich knowledge in video diffusion models to generate plausible additional observations, thus enhancing the reconstruction quality in both interpolation and extrapolation settings. 
-            Our approach applies ray embeddings for precise camera parameterization and an epipolar attention mechanism for better 3D consistency in generated video frames.
-            To address the scale ambiguity between different scene datasets, we adopt a unified scale estimator to calibrate the datasets to ensure robust performance when jointly trained on multiple datasets.
-            Furthermore, we developed a robust reconstruction framework that combines monocular depth priors and dense stereo priors for geometric initialization, and further improved the robustness of reconstruction from generated video frames via uncertainty-aware optimization.
-            Extensive experiments show our method enhances sparse view reconstruction and restores the realistic appearance of 3D scenes. 
+        <p class='text' style="text-align: justify;">
+            Novel view synthesis (NVS) boosts immersive experiences in computer vision and graphics. Existing techniques, though progressed, rely on dense multi-view observations, restricting their application. This work takes on the challenge of reconstructing photorealistic 3D scenes from sparse or single-view inputs. We introduce SpatialCrafter, a framework that leverages the rich knowledge in video diffusion models to generate plausible additional observations, thereby alleviating reconstruction ambiguity. Through a trainable camera encoder and an epipolar attention mechanism for explicit geometric constraints, we achieve precise camera control and 3D consistency, further reinforced by a unified scale estimation strategy to handle scale discrepancies across datasets. Furthermore, by integrating monocular depth priors with semantic features in the video latent space, our framework directly regresses 3D Gaussian primitives and efficiently processes long-sequence features using a hybrid network structure.  Extensive experiments show our method enhances sparse view reconstruction and restores the realistic appearance of 3D scenes. 
         </p>
     </div>
 
 
     <div class="container blog main">
-        <h1 >
+        <h1 style="text-align: center">
             Our Pipeline
         </h1>
         <h1>
 
         </h1>
-        <img src="assets\figures\pipeline.png">
-        <p class='text'>
+        <img src="assets\figures\pipeline_2.png">
+        <p class="caption" style="text-align: justify;">
+            <b>Overview of our pipeline.</b> Our generative reconstruction pipeline consists of two parts: camera-controlled video generation, and then reconstruction. 
+    First, we set the exploration path based on the input views. In the video generation module, ray embedding is used to parameterize the camera information, and a cross-attention mechanism with epipolar constraints is introduced to improve the 3D consistency of the generated video.
+    The robust 3D scene reconstruction pipeline integrates monocular depth priors with semantic features extracted from the video latent space, and directly regress 3D Gaussian primitives through a feed-forward manner.
+        </p>
+        <!-- <p class='text'>
             Our generative reconstruction pipeline consists of three parts: trajectory planning, camera-controlled video generation, and robust reconstruction. 
             First, we set the exploration path based on the input views. In the video generation module, ray embedding is used to parameterize the camera, and a cross-attention mechanism with epipolar constraints is introduced to improve the 3D consistency of the generated video.
             The robust 3D scene reconstruction pipeline integrates an uncertainty-aware optimization process, which uses monocular and stereo priors to obtain the aligned canonical point cloud for geometric initialization, thereby improving the quality of the final 3D reconstruction.   
-        </p>
+        </p> -->
     </div>
-   
-    <div class="container blog main gray">
-        <div class="slide-menu">
-            <ul class="dots" id="slide-menu">
-                <li class="dot active"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
-                <li class="dot"></li>
+
+    <!-- <style>
+        .card-img {
+            border: 2px solid #c1bfbf;
+            border-radius: 8px;
+            padding: 2px;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out; 
+            transform-origin: center center; 
+        }
+    
+        .card-img:active {
+            transform: scale(1.2); 
+        }
+    </style>
+     -->
+
+    <style>
+        .hidden {
+        display: none;
+    }
+    </style>
+
+    <div class="container blog main">
+        <h1 style="text-align: center;">
+            Controllable Video Generation
+        </h1>
+
+        <div class="slide-menu" style="margin-bottom: 60px;">
+            <ul class="dots" id="slide-menu" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
+                <li class="dot active" data-slide="0"><img class="card-img" src="assets/figures/res/1.png" alt="Slide 1" style="width: 50px; height: 50px;"></li>
+                <li class="dot" data-slide="1"><img class="card-img" src="assets/figures/res/2.png" alt="Slide 2" style="width: 50px; height: 50px;"></li>
+                <li class="dot" data-slide="2"><img class="card-img" src="assets/figures/res/3.png" alt="Slide 3" style="width: 50px; height: 50px;"></li>
+                <li class="dot" data-slide="3"><img class="card-img" src="assets/figures/res/4.png" alt="Slide 4" style="width: 50px; height: 50px;"></li>
+                <li class="dot" data-slide="4"><img class="card-img" src="assets/figures/res/5.png" alt="Slide 5" style="width: 50px; height: 50px;"></li>
+                <li class="dot" data-slide="5"><img class="card-img" src="assets/figures/res/6.png" alt="Slide 6" style="width: 50px; height: 50px;"></li>
+            
             </ul>
         </div>
        
-        <div class="slide-content", style="display: block;">
-            <video loop playsinline muted autoplay src="assets/videos/flower.mp4" style="width: 100%"> </video>
+        <div class="slide-content" data-slide="0" style="display: block;">
+            <video loop playsinline muted autoplay src="assets/figures/res/1.mp4" style="width: 65%"> </video>
         </div>
 
-        <div class="slide-content", style="display: none;">
-            <video loop playsinline muted autoplay src="assets/videos/demo_12_view.mp4" style="width: 100%"> </video>
+        <div class="slide-content" data-slide="1" style="display: none;">
+            <video loop playsinline muted autoplay src="assets/figures/res/2.mp4" style="width: 65%"> </video>
         </div>
 
-        <div class="slide-content", style="display: none;">
-            <video loop playsinline muted autoplay src="assets/videos/demo_13_view.mp4" style="width: 100%"> </video>
+        <div class="slide-content" data-slide="2" style="display: none;">
+            <video loop playsinline muted autoplay src="assets/figures/res/3.mp4" style="width: 65%"> </video>
         </div>
 
-        <div class="slide-content", style="display: none;">
-            <video loop playsinline muted autoplay src="assets/videos/diffusion.mp4" style="width: 100%"> </video>
+        <div class="slide-content" data-slide="3" style="display: none;">
+            <video loop playsinline muted autoplay src="assets/figures/res/4.mp4" style="width: 65%"> </video>
+        </div>
+
+        <div class="slide-content" data-slide="4" style="display: none;">
+            <video loop playsinline muted autoplay src="assets/figures/res/5.mp4" style="width: 65%"> </video>
+        </div>
+
+        <div class="slide-content" data-slide="5" style="display: none;">
+            <video loop playsinline muted autoplay src="assets/figures/res/6.mp4" style="width: 65%"> </video>
         </div>
 
 
-        <p class="caption">
-            The videos show interpolations between hand-picked latent points in several datasets. Observe again how the textural detail appears fixed in the StyleGAN-2 result, but transforms smoothly with the rest of the scene in the alias-free StyleGAN-3.
-        </p>
+
     </div>
 
-    <div class="container blog main">
-        <h2>
-            Auto Slideshow Display
-        </h2>
-        <p class="text">
-            Alternatively, the Auto Slideshow Display feature enables readers to enjoy a large array of visual elements through an automated, slideshow-like presentation. Users can also navigate through the slideshow manually with "Left" and "Right" buttons. Below is an example using videos generated in <a href="https://mardini-vidgen.github.io/">MarDini</a>.
-        </p>
-        <!-- 
-        1. You may add another row of visual elements by simply adding a video element in each "slider-item" div. Correspondingly, you need to change the following in the scss file (under Slideshow Control): height: 440px into 440px * num_rows. 
-        2. You may also change the fixed image size by changing the following:
-            a. scss: .slider-item width: 400px -> changed width; 
-            b. scss: height: 440px -> changed width + padding_bottom;
-            c. javascript: item.style.left = `${(i-1) * 440}px`) -> changed width + padding_left
-        -->
-    </div>
-    <div class="container blog max gray">
-        <div class="slideshow">
-            <div class="navigation">
-                <!-- Using FontAwesome Pro -->
-                <!-- <a class="button icon" id="prev_btn"><i class="fa-solid fa-left" ></i></a>
-                <a class="button icon" id="next_btn"><i class="fa-solid fa-right"></i></a> -->
-                <!-- Using FontAwesome Free -->
-                <a class="button icon" id="prev_btn"><i class="fa-solid fa-arrow-left"></i></a>
-                <a class="button icon" id="next_btn"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="slider">
-                <div class="slider-item">
-                    <video loop playsinline muted autoplay src="assets/videos/demo_12_view_converted.mp4"></video>
-                </div>
-                <div class="slider-item">
-                    <video loop playsinline muted autoplay src="assets/videos/demo_13_view.mp4"></video>
-                </div>
-                <div class="slider-item">
-                    <video loop playsinline muted autoplay src="assets/videos/2.mp4"></video>
-                </div>
-                <div class="slider-item">
-                    <video loop playsinline muted autoplay src="assets/videos/flower.mp4"></video>
-                </div>
-                <div class="slider-item">
-                    <video loop playsinline muted autoplay src="assets/videos/diffusion.mp4"></video>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    
 
 
 

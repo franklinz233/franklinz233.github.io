@@ -958,6 +958,35 @@ button.project.white, .button.project.white {
     font-size: 1.2em;
   }
 }
+
+.conference-badge {
+    display: flex;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    padding: 0.4rem 1.2rem; 
+    border-radius: 20px;
+    margin: 0.5rem auto;
+    width: 120px;
+    height: 40px;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15); /* 减小阴影 */
+    animation: pulse 2s ease-in-out infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+/* .conference-badge::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    animation: shimmer 3s linear infinite;
+} */
+
 /* ======================== Slide Menu ===================== */
 .slide-menu {
   display: table;
@@ -976,15 +1005,15 @@ button.project.white, .button.project.white {
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
-  background-color: #c6c6c6;
+  background-color: transparent;
   cursor: pointer;
   width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  height: 10px; 
+  border-radius: 0;
   margin: 15px;
   transition: all 0.2s ease-in-out;
 }
-.slide-menu .dots .dot:after {
+/* .slide-menu .dots .dot:after {
   content: "";
   position: absolute;
   left: -15px;
@@ -992,13 +1021,53 @@ button.project.white, .button.project.white {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+} */
+
+.slide-menu .dots .dot:after {
+  content: "";
+  position: absolute;
+  /* 计算方式: (60px - 50px) / 2 = 5px */
+  left: -5px; 
+  top: -5px;
+  width: 60px;  /* 比图片稍大 */
+  height: 60px; /* 比图片稍大 */
+  border-radius: 50%; /* 如果希望悬停区域是圆的 */
 }
-.slide-menu .dots .dot:hover {
+
+/* .slide-menu .dots .dot:hover {
   transform: scale(1.4);
-}
+} */
 .slide-menu .dots .dot.active {
-  background-color: #E2a3a3;
-  transform: scale(1.4);
+  background-color: transparent;
+  /* transform: scale(1.4); */
+}
+
+.card-img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #c1bfbf;
+    border-radius: 8px;
+    padding: 2px;
+    display: block; /* 让图片填充整个 li 容器 */
+    transition: transform 0.3s ease-in-out; 
+    transform-origin: center center; 
+}
+
+/*
+ * 4. 修改 :hover 和 .active 状态，让它们作用于图片本身
+ */
+.slide-menu .dots .dot:hover .card-img {
+  transform: scale(1.1); /* 悬停时稍微放大 */
+}
+
+.slide-menu .dots .dot.active .card-img {
+  border-color: #E2a3a3; /* 用边框颜色变化来表示激活状态 */
+  transform: scale(1.1);
+}
+
+/* 之前 :active 的效果可以保留给点击时 */
+.card-img:active {
+    transform: scale(1.2); 
 }
 
 /* ======================== Table ===================== */
