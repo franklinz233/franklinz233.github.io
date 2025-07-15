@@ -32,10 +32,10 @@ My research experience focuses on controllable multimodal 3D/4D content generati
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2025</div><img src='images/spatialcrafter.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**ICCV 2025**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2412.08412)  \\
+[**ICCV 2025**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2505.11992)  \\
 **Songchun Zhang**, Huiyao Xu, Sitong Guo, Zhongwei Xie, Pengwei Liu, Hujun Bao, Weiwei Xu, Changqing Zou. \\
 [[Project page]](https://franklinz233.github.io/projects/spatialcrafter/)
-[[paper]](https://arxiv.org/abs/2412.08412)
+[[paper]](https://arxiv.org/abs/2505.11992)
 
 - This paper presents a 3D scene reconstruction method from sparse inputs.
 
