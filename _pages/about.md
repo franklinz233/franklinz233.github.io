@@ -100,7 +100,7 @@ My research experience focuses on controllable multimodal 3D/4D content generati
   
 - **April 2023 - Dec. 2023**  
   **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University  
-  Advisor: [Prof. Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao) and [Prof. Weiwei Xu](https://scholar.google.com/citations?user=Hfrih1EAAAAJ)  
+  Advisor: [Prof. Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao) and [Prof. Weiwei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm)  
   Research included: Text-Guided 3D Generation  
   
 - **Sept. 2021 - April 2022**  
