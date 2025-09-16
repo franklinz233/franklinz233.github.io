@@ -19,7 +19,11 @@ redirect_from:
 
 # About Me
 I am a first-year Ph.D. student at [MMLAB@HKUST](https://mmlab-hkust.github.io/), under the supervision of [Prof. Anyi Rao](https://anyirao.com/) and [Prof. Huamin Qu](http://www.huamin.org/). I obtained my master's degree at [Zhejiang University](https://www.zju.edu.cn/english/), where I collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
-Previously, I received my Bachelor’s degree from Hunan University. My research focuses on controllable multimodal 3D/4D content generation.
+Previously, I received my Bachelor’s degree from Hunan University. 
+
+My research focuses on 3D/4D content generation and world model:
+- Generalizable 3D Foundation Models: Generative 3D reconstruction from sparse, multi-view, or in-the-wild data.
+- Interactive World Models: Real-time inference and control with Long-term memory.
 
 # 🔥 News
 - *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
