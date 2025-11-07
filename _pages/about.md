@@ -50,8 +50,8 @@ My research focuses on 3D/4D content generation and world model:
 
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
 **Songchun Zhang**, Chunhui Zhao. \\
-[[Project page]](https://franklinz233.github.io/)
 [[paper]](https://ojs.aaai.org/index.php/AAAI/article/view/33097)
+[[Code]]([https://franklinz233.github.io/](https://github.com/franklinz233/Sparserecon))
 
 - This paper presents a 3D object reconstruction method from sparse and unposed inputs.
 
@@ -76,25 +76,23 @@ My research focuses on 3D/4D content generation and world model:
 
 [**TCSVT 2023**] [Cross-Video Contextual Knowledge Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://ieeexplore.ieee.org/document/10354337)  \\
 **Songchun Zhang**, Chunhui Zhao. \\
-[[paper]](https://ieeexplore.ieee.org/document/10354337)
-[[code]](https://github.com/franklinz233/Action_localization)
+[[Paper]](https://ieeexplore.ieee.org/document/10354337)
+[[Code]](https://github.com/franklinz233/Action_localization)
 
 - This paper presents a weakly-supervised action localization framework leveraging cross-video information.
 
 </div>
 </div>
 
-- **[AAAI 2025]** [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412), **Songchun Zhang**, Chunhui Zhao.
-- **[CVPR 2024]** [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf), **Songchun Zhang**, Yibo Zhang, Quan Zheng, Rui Ma, Wei Hua, Hujun Bao, Weiwei Xu, Changqing Zou
-- **[TCSVT 2023]** [Cross-Video Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://arxiv.org/pdf/2308.12609), **Songchun Zhang**, Chunhui Zhao.
-- **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao.
+- **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao. 
 
 
 # 🖥️ Experience
 
 - **March 2024 - Sept. 2024**  
-  **Research Intern** - Anti-Entropy Research Group, miHoYo  
-  Research included: 3D Scene Generation, Video Diffusion
+  **Research Intern** - Anti-Entropy Research Group, miHoYo
+  Advisor: [Cheng lin](https://clinplayer.github.io/)
+  Research included: 3D Scene Generation, Video World Model
   
 - **Sept. 2023 - Feb. 2024**  
   **Research Intern** - Taobao and Tmall Group, Alibaba  
