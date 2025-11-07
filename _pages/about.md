@@ -51,7 +51,7 @@ My research focuses on 3D/4D content generation and world model:
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
 **Songchun Zhang**, Chunhui Zhao. \\
 [[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/33097)
-[[Code]](https://github.com/franklinz233/Sparserecon))
+[[Code]](https://github.com/franklinz233/Sparserecon)
 
 - This paper presents a 3D object reconstruction method from sparse and unposed inputs.
 
