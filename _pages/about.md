@@ -90,8 +90,8 @@ My research focuses on 3D/4D content generation and world model:
 # 🖥️ Experience
 
 - **March 2024 - Sept. 2024**  
-  **Research Intern** - Anti-Entropy Research Group, miHoYo
-  Advisor: [Cheng lin](https://clinplayer.github.io/)
+  **Research Intern** - Anti-Entropy Research Group, miHoYo  
+  Advisor: [Cheng Lin](https://clinplayer.github.io/)  
   Research included: 3D Scene Generation, Video World Model
   
 - **Sept. 2023 - Feb. 2024**  
