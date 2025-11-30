@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500;600&display=swap');  
+
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+
+body {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    min-height: 100vh;  
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);  
+    font-family: 'Orbitron', sans-serif;  
+    overflow: hidden;  
+}  
+
+#canvas-container {  
+    position: relative;  
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8),  
+                0 0 100px rgba(100, 150, 255, 0.3);  
+    border-radius: 10px;  
+    overflow: visible;  
+}  
+
+/* 🆕 LaTeX Tech Panel Style */  
+#tech-panel {  
+    position: absolute;  
+    top: 30px;  
+    right: 30px;  
+    width: 520px;  
+    max-height: 720px;  
+    background: rgba(10, 15, 25, 0.95);  
+    border-radius: 12px;  
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);  
+    backdrop-filter: blur(10px);  
+    opacity: 0;  
+    pointer-events: none;  
+    transition: opacity 0.3s ease;  
+    overflow: hidden;  
+    z-index: 1000;  
+    border: 1px solid rgba(100, 150, 200, 0.3);  
+}  
+
+#tech-panel.visible {  
+    opacity: 1;  
+    pointer-events: auto;  
+}  
+
+.panel-header {  
+    background: linear-gradient(135deg, #3c5a7d 0%, #2a3f5f 100%);  
+    padding: 16px 20px;  
+    border-radius: 12px 12px 0 0;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    cursor: move;  
+}  
+
+.panel-title {  
+    color: #ffffff;  
+    font-size: 16px;  
+    font-weight: bold;  
+    letter-spacing: 0.5px;  
+}  
+
+.panel-close {  
+    color: #c8d8e8;  
+    font-size: 12px;  
+    opacity: 0.8;  
+}  
+
+.panel-content {  
+    padding: 20px;  
+    max-height: 650px;  
+    overflow-y: auto;  
+}  
+
+.panel-content::-webkit-scrollbar {  
+    width: 8px;  
+}  
+
+.panel-content::-webkit-scrollbar-track {  
+    background: rgba(30, 40, 60, 0.3);  
+    border-radius: 4px;  
+}  
+
+.panel-content::-webkit-scrollbar-thumb {  
+    background: rgba(100, 150, 200, 0.5);  
+    border-radius: 4px;  
+}  
+
+.panel-content::-webkit-scrollbar-thumb:hover {  
+    background: rgba(100, 150, 200, 0.7);  
+}  
+
+.scene-title {  
+    color: #64c8ff;  
+    font-size: 14px;  
+    font-weight: bold;  
+    margin-bottom: 15px;  
+    padding-bottom: 10px;  
+    border-bottom: 1px solid rgba(100, 150, 200, 0.3);  
+}  
+
+.section-title {  
+    color: #ffc864;  
+    font-size: 12px;  
+    font-weight: bold;  
+    margin: 20px 0 12px 0;  
+    display: flex;  
+    align-items: center;  
+    gap: 8px;  
+}  
+
+.formula-item {  
+    background: rgba(5, 10, 20, 0.6);  
+    padding: 14px 16px;  
+    margin: 10px 0;  
+    border-radius: 8px;  
+    border-left: 3px solid rgba(100, 200, 255, 0.5);  
+}  
+
+.formula-label {  
+    color: #ffdc64;  
+    font-size: 11px;  
+    font-weight: bold;  
+    margin-bottom: 10px;  
+    font-family: 'Orbitron', sans-serif;  
+}  
+
+.formula-content {  
+    color: #e0f0ff;  
+    font-size: 15px;  
+    line-height: 2;  
+    overflow-x: auto;  
+    padding: 8px 0;  
+}  
+
+.formula-content .katex {  
+    font-size: 1.15em;  
+    color: #e0f0ff;  
+}  
+
+.formula-content .katex-display {  
+    margin: 0.5em 0;  
+}  
+
+.code-block {  
+    background: rgba(5, 10, 20, 0.8);  
+    padding: 16px;  
+    border-radius: 8px;  
+    margin-top: 12px;  
+    overflow-x: auto;  
+    border: 1px solid rgba(100, 150, 200, 0.2);  
+}  
+
+.code-block pre {  
+    margin: 0;  
+    color: #c8ffdc;  
+    font-family: 'Fira Code', monospace;  
+    font-size: 10px;  
+    line-height: 1.6;  
+}  
+
+.code-keyword {  
+    color: #ffb464;  
+}  
+
+.code-comment {  
+    color: #78a878;  
+    font-style: italic;  
+}  
+
+.code-method {  
+    color: #96c8ff;  
+}
