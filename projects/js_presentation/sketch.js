@@ -1400,7 +1400,7 @@ function drawSceneButtons() {
 
 function addShapeAtMouse(type) {
     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
-        let newShape = new Shape(mouseX, mouseY, type, random(100, 150));
+        let newShape = new Shape(mouseX, mouseY, type, random(80, 120));
         newShape.scale = 0;
         shapes.push(newShape);
     }
