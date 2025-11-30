@@ -1297,7 +1297,7 @@ function displayUI() {
     textSize(16);
     textStyle(BOLD);
     textAlign(LEFT);
-    text('✨ Particle Shatter System - Demo Mode', 30, 48);
+    text('✨ Particle Shatter System - AMCC 5110 Project', 30, 48);
     
     fill(255, 220, 100);
     textSize(14);
