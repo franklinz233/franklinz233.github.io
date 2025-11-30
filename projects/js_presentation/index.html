@@ -1,1 +1,1617 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Particle Shatter System - LaTeX Perfect Edition</title>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>  
+    
+    <!-- KaTeX Math Rendering Library -->  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">  
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>  
+    
+    <style>  
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500;600&display=swap');  
+        
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+        }  
+        
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            min-height: 100vh;  
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);  
+            font-family: 'Orbitron', sans-serif;  
+            overflow: hidden;  
+        }  
+        
+        #canvas-container {  
+            position: relative;  
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8),  
+                        0 0 100px rgba(100, 150, 255, 0.3);  
+            border-radius: 10px;  
+            overflow: visible;  
+        }  
+        
+        /* 🆕 LaTeX Tech Panel Style */  
+        #tech-panel {  
+            position: absolute;  
+            top: 30px;  
+            right: 30px;  
+            width: 520px;  
+            max-height: 720px;  
+            background: rgba(10, 15, 25, 0.95);  
+            border-radius: 12px;  
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);  
+            backdrop-filter: blur(10px);  
+            opacity: 0;  
+            pointer-events: none;  
+            transition: opacity 0.3s ease;  
+            overflow: hidden;  
+            z-index: 1000;  
+            border: 1px solid rgba(100, 150, 200, 0.3);  
+        }  
+        
+        #tech-panel.visible {  
+            opacity: 1;  
+            pointer-events: auto;  
+        }  
+        
+        .panel-header {  
+            background: linear-gradient(135deg, #3c5a7d 0%, #2a3f5f 100%);  
+            padding: 16px 20px;  
+            border-radius: 12px 12px 0 0;  
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+        }  
+        
+        .panel-title {  
+            color: #ffffff;  
+            font-size: 16px;  
+            font-weight: bold;  
+            letter-spacing: 0.5px;  
+        }  
+        
+        .panel-close {  
+            color: #c8d8e8;  
+            font-size: 12px;  
+            opacity: 0.8;  
+        }  
+        
+        .panel-content {  
+            padding: 20px;  
+            max-height: 650px;  
+            overflow-y: auto;  
+        }  
+        
+        .panel-content::-webkit-scrollbar {  
+            width: 8px;  
+        }  
+        
+        .panel-content::-webkit-scrollbar-track {  
+            background: rgba(30, 40, 60, 0.3);  
+            border-radius: 4px;  
+        }  
+        
+        .panel-content::-webkit-scrollbar-thumb {  
+            background: rgba(100, 150, 200, 0.5);  
+            border-radius: 4px;  
+        }  
+        
+        .panel-content::-webkit-scrollbar-thumb:hover {  
+            background: rgba(100, 150, 200, 0.7);  
+        }  
+        
+        .scene-title {  
+            color: #64c8ff;  
+            font-size: 14px;  
+            font-weight: bold;  
+            margin-bottom: 15px;  
+            padding-bottom: 10px;  
+            border-bottom: 1px solid rgba(100, 150, 200, 0.3);  
+        }  
+        
+        .section-title {  
+            color: #ffc864;  
+            font-size: 12px;  
+            font-weight: bold;  
+            margin: 20px 0 12px 0;  
+            display: flex;  
+            align-items: center;  
+            gap: 8px;  
+        }  
+        
+        .formula-item {  
+            background: rgba(5, 10, 20, 0.6);  
+            padding: 14px 16px;  
+            margin: 10px 0;  
+            border-radius: 8px;  
+            border-left: 3px solid rgba(100, 200, 255, 0.5);  
+        }  
+        
+        .formula-label {  
+            color: #ffdc64;  
+            font-size: 11px;  
+            font-weight: bold;  
+            margin-bottom: 10px;  
+            font-family: 'Orbitron', sans-serif;  
+        }  
+        
+        .formula-content {  
+            color: #e0f0ff;  
+            font-size: 15px;  
+            line-height: 2;  
+            overflow-x: auto;  
+            padding: 8px 0;  
+        }  
+        
+        .formula-content .katex {  
+            font-size: 1.15em;  
+            color: #e0f0ff;  
+        }  
+        
+        .formula-content .katex-display {  
+            margin: 0.5em 0;  
+        }  
+        
+        .code-block {  
+            background: rgba(5, 10, 20, 0.8);  
+            padding: 16px;  
+            border-radius: 8px;  
+            margin-top: 12px;  
+            overflow-x: auto;  
+            border: 1px solid rgba(100, 150, 200, 0.2);  
+        }  
+        
+        .code-block pre {  
+            margin: 0;  
+            color: #c8ffdc;  
+            font-family: 'Fira Code', monospace;  
+            font-size: 10px;  
+            line-height: 1.6;  
+        }  
+        
+        .code-keyword {  
+            color: #ffb464;  
+        }  
+        
+        .code-comment {  
+            color: #78a878;  
+            font-style: italic;  
+        }  
+        
+        .code-method {  
+            color: #96c8ff;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div id="canvas-container">  
+        <!-- Canvas will be inserted here -->  
+        
+        <!-- 🆕 LaTeX Tech Panel -->  
+        <div id="tech-panel">  
+            <div class="panel-header">  
+                <div class="panel-title">📚 Technical Details (LaTeX Render)</div>  
+                <div class="panel-close">Press 'I' to close</div>  
+            </div>  
+            <div class="panel-content" id="panel-content">  
+                <!-- Content dynamically generated -->  
+            </div>  
+        </div>  
+    </div>  
+    
+    <script>  
+        // ============================================================  
+        // 🌐 Global Variable System  
+        // ============================================================  
+        
+        let shapes = [];  
+        let particles = [];  
+        
+        let gravity;  
+        let targetGravity;  
+        let colorPalettes = [];  
+        let currentPalette = 0;  
+        let gravityDirection = 'NONE';  
+        
+        let draggedShape = null;  
+        let draggedShapePos = null;  
+        let isDragging = false;  
+        let dragDelay = 0;  
+        const DRAG_DELAY_FRAMES = 5;  
+        const MAX_DRAG_FORCE = 150;  
+        const FORCE_MULTIPLIER = 0.15;  
+        
+        let timeScale = 1.0;  
+        let targetTimeScale = 1.0;  
+        const BULLET_TIME_SCALE = 0.2;  
+        const NORMAL_TIME_SCALE = 1.0;  
+        
+        const FRICTION = 0.97;  
+        const ELASTICITY = 0.3;  
+        const SHAPE_ELASTICITY = 0.15;  
+        const WALL_ELASTICITY = 0.6;  
+        const WALL_FRICTION = 0.95;  
+        const VELOCITY_CUTOFF = 0.15;  
+        const ANGULAR_CUTOFF = 0.01;  
+        const SHAPE_FRICTION = 0.94;  
+        const PARTICLE_LIFETIME = 200;  
+        const MAX_PARTICLES = 2000;  
+        const GRAVITY_STRENGTH = 0.3;  
+        
+        const SHATTER_VELOCITY_THRESHOLD = 8;  
 
+        const COLOR_PALETTES = [  
+            [[255, 0, 255], [138, 43, 226], [255, 20, 147], [186, 85, 211]],  
+            [[0, 191, 255], [30, 144, 255], [65, 105, 225], [100, 149, 237]]  
+        ];  
+
+        // ============================================================  
+        // 📚 Tech Details Panel System (LaTeX)  
+        // ============================================================  
+        
+        let showTechDetails = false;  
+        
+        /**  
+         * Scene Tech Details Data (LaTeX syntax)  
+         */  
+        const SCENE_TECH_DETAILS = {  
+            0: {  
+                title: "Free Mode - No Technical Details",  
+                formulas: [],  
+                code: ""  
+            },  
+            1: {  
+                title: "Scene Q: Particle Shatter Algorithm",  
+                formulas: [  
+                    {  
+                        label: "Explosion Direction Vector",  
+                        latex: String.raw`\vec{d} = \frac{\vec{p}_{\text{particle}} - \vec{p}_{\text{center}}}{\|\vec{p}_{\text{particle}} - \vec{p}_{\text{center}}\|}`  
+                    },  
+                    {  
+                        label: "Particle Initial Velocity",  
+                        latex: String.raw`\vec{v}_p = \vec{d} \times \text{random}(4, 10) + \vec{v}_{\text{shape}}`  
+                    },  
+                    {  
+                        label: "Uniform Distribution Angle",  
+                        latex: String.raw`\theta_i = \frac{2\pi}{n} \cdot i, \quad i = 0, 1, \ldots, n-1`  
+                    },  
+                    {  
+                        label: "Particle Position",  
+                        latex: String.raw`\vec{p}_i = \vec{p}_{\text{center}} + r \cdot \begin{pmatrix} \cos\theta_i \\ \sin\theta_i \end{pmatrix}`  
+                    }  
+                ],  
+                code: `shatter() {  
+  <span class="code-keyword">let</span> count = 20;  
+  <span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = 0; i < count; i++) {  
+    <span class="code-comment">// Calculate uniform distribution angle</span>  
+    <span class="code-keyword">let</span> angle = (TWO_PI / count) * i;  
+    
+    <span class="code-comment">// Random position within radius</span>  
+    <span class="code-keyword">let</span> pos = <span class="code-method">createVector</span>(  
+      <span class="code-method">cos</span>(angle) * <span class="code-method">random</span>(size/2),  
+      <span class="code-method">sin</span>(angle) * <span class="code-method">random</span>(size/2)  
+    );  
+    
+    <span class="code-comment">// Calculate explosion direction</span>  
+    <span class="code-keyword">let</span> dir = pos.<span class="code-method">normalize</span>();  
+    dir.<span class="code-method">rotate</span>(<span class="code-method">random</span>(-0.3, 0.3));  
+    
+    <span class="code-comment">// Apply velocity</span>  
+    <span class="code-keyword">let</span> vel = dir.<span class="code-method">mult</span>(<span class="code-method">random</span>(4, 10));  
+    
+    particles.<span class="code-method">push</span>(  
+      <span class="code-keyword">new</span> Particle(pos, vel, color)  
+    );  
+  }  
+}`  
+            },  
+            2: {  
+                title: "Scene W: Slingshot Mechanics System",  
+                formulas: [  
+                    {  
+                        label: "Drag Force Vector",  
+                        latex: String.raw`\vec{F} = -(\vec{p}_{\text{mouse}} - \vec{p}_{\text{shape}})`  
+                    },  
+                    {  
+                        label: "Force Limit",  
+                        latex: String.raw`F_{\text{mag}} = \min(\|\vec{F}\| \times 0.15, \, F_{\max})`  
+                    },  
+                    {  
+                        label: "Normalized Application",  
+                        latex: String.raw`\vec{F}_{\text{final}} = \frac{\vec{F}}{\|\vec{F}\|} \times F_{\text{mag}}`  
+                    },  
+                    {  
+                        label: "Bullet Time Interpolation",  
+                        latex: String.raw`t_{\text{scale}}^{(n+1)} = (1-\alpha) \cdot t_{\text{scale}}^{(n)} + \alpha \cdot 0.2, \quad \alpha = 0.15`  
+                    }  
+                ],  
+                code: `applySlingshotForce() {  
+  <span class="code-comment">// 1. Calculate drag vector</span>  
+  <span class="code-keyword">let</span> drag = <span class="code-method">createVector</span>(  
+    mouseX - shapePos.x,  
+    mouseY - shapePos.y  
+  );  
+  
+  <span class="code-comment">// 2. Reverse for launch force</span>  
+  <span class="code-keyword">let</span> force = drag.<span class="code-method">mult</span>(-1);  
+  
+  <span class="code-comment">// 3. Limit max force</span>  
+  <span class="code-keyword">let</span> magnitude = <span class="code-method">min</span>(  
+    force.<span class="code-method">mag</span>() * FORCE_MULTIPLIER,  
+    MAX_DRAG_FORCE  
+  );  
+  
+  <span class="code-comment">// 4. Apply force to shape</span>  
+  force.<span class="code-method">normalize</span>().<span class="code-method">mult</span>(magnitude);  
+  shape.vel.<span class="code-method">add</span>(force);  
+  
+  <span class="code-comment">// 5. Trigger visual effects</span>  
+  shape.flashIntensity = <span class="code-method">map</span>(  
+    magnitude, 0, 100, 0.5, 1.0  
+  );  
+}`  
+            },  
+            3: {  
+                title: "Scene E: Gravity Physics Engine",  
+                formulas: [  
+                    {  
+                        label: "Gravitational Acceleration",  
+                        latex: String.raw`\vec{g} = \begin{pmatrix} 0 \\ \pm 0.3 \end{pmatrix} \, \text{m/frame}^2`  
+                    },  
+                    {  
+                        label: "Euler Integration (Velocity)",  
+                        latex: String.raw`\vec{v}(t+\Delta t) = \vec{v}(t) + \vec{a}(t) \cdot \Delta t`  
+                    },  
+                    {  
+                        label: "Euler Integration (Position)",  
+                        latex: String.raw`\vec{p}(t+\Delta t) = \vec{p}(t) + \vec{v}(t) \cdot s \cdot \Delta t`  
+                    },  
+                    {  
+                        label: "Air Resistance",  
+                        latex: String.raw`\vec{v}_{\text{new}} = k \cdot \vec{v}_{\text{old}}, \quad k = 0.94`  
+                    },  
+                    {  
+                        label: "Boundary Bounce",  
+                        latex: String.raw`v_y \leftarrow -e \cdot v_y, \quad e = 0.6`  
+                    }  
+                ],  
+                code: `applyPhysics(timeScale) {  
+  <span class="code-comment">// 1. Accumulate gravity acceleration</span>  
+  <span class="code-keyword">this</span>.acc.<span class="code-method">add</span>(gravity);  
+  
+  <span class="code-comment">// 2. Update velocity (Euler integration)</span>  
+  <span class="code-keyword">this</span>.vel.<span class="code-method">add</span>(<span class="code-keyword">this</span>.acc);  
+  <span class="code-keyword">this</span>.vel.<span class="code-method">mult</span>(FRICTION);  
+  <span class="code-keyword">this</span>.acc.<span class="code-method">mult</span>(0);  
+  
+  <span class="code-comment">// 3. Update position</span>  
+  <span class="code-keyword">let</span> scaledVel =   
+    <span class="code-keyword">this</span>.vel.<span class="code-method">copy</span>().<span class="code-method">mult</span>(timeScale);  
+  <span class="code-keyword">this</span>.pos.<span class="code-method">add</span>(scaledVel);  
+  
+  <span class="code-comment">// 4. Update angular velocity</span>  
+  <span class="code-keyword">this</span>.rotation +=   
+    <span class="code-keyword">this</span>.angularVel * timeScale;  
+  <span class="code-keyword">this</span>.angularVel *= 0.96;  
+}`  
+            },  
+            4: {  
+                title: "Scene R: Collision Detection Algorithm",  
+                formulas: [  
+                    {  
+                        label: "Circle Collision Detection",  
+                        latex: String.raw`d = \|\vec{p}_A - \vec{p}_B\|, \quad \text{collision} \iff d < r_A + r_B`  
+                    },  
+                    {  
+                        label: "Collision Normal Vector",  
+                        latex: String.raw`\hat{n} = \frac{\vec{p}_B - \vec{p}_A}{\|\vec{p}_B - \vec{p}_A\|}`  
+                    },  
+                    {  
+                        label: "Relative Velocity",  
+                        latex: String.raw`\vec{v}_{\text{rel}} = \vec{v}_B - \vec{v}_A`  
+                    },  
+                    {  
+                        label: "Impulse Scalar",  
+                        latex: String.raw`j = -\frac{(1 + e) \cdot (\vec{v}_{\text{rel}} \cdot \hat{n})}{2}, \quad e = 0.15`  
+                    },  
+                    {  
+                        label: "Velocity Update",  
+                        latex: String.raw`\begin{cases} \vec{v}_A \leftarrow \vec{v}_A - j\hat{n} \\ \vec{v}_B \leftarrow \vec{v}_B + j\hat{n} \end{cases}`  
+                    }  
+                ],  
+                code: `resolveShapeCollision(a, b) {  
+  <span class="code-keyword">let</span> d = <span class="code-method">dist</span>(a.pos, b.pos);  
+  <span class="code-keyword">let</span> minDist = (a.size + b.size)/2;  
+  
+  <span class="code-keyword">if</span> (d < minDist) {  
+    <span class="code-comment">// Calculate collision normal</span>  
+    <span class="code-keyword">let</span> normal =   
+      p5.Vector.<span class="code-method">sub</span>(b.pos, a.pos)  
+        .<span class="code-method">normalize</span>();  
+    
+    <span class="code-keyword">let</span> relVel =   
+      p5.Vector.<span class="code-method">sub</span>(b.vel, a.vel);  
+    <span class="code-keyword">let</span> speed = relVel.<span class="code-method">mag</span>();  
+    
+    <span class="code-comment">// High speed collision -> Shatter check</span>  
+    <span class="code-keyword">if</span> (speed > SHATTER_THRESHOLD) {  
+      b.<span class="code-method">shatterFromImpact</span>(a.vel);  
+      <span class="code-keyword">return</span>;  
+    }  
+    
+    <span class="code-comment">// Elastic collision response</span>  
+    <span class="code-keyword">let</span> j = -(1 + ELASTICITY) *   
+            relVel.<span class="code-method">dot</span>(normal) * 0.5;  
+    a.vel.<span class="code-method">sub</span>(normal.<span class="code-method">copy</span>().<span class="code-method">mult</span>(j));  
+    b.vel.<span class="code-method">add</span>(normal.<span class="code-method">copy</span>().<span class="code-method">mult</span>(j));  
+  }  
+}`  
+            },  
+            5: {  
+                title: "Scene T: Particle System Rendering",  
+                formulas: [  
+                    {  
+                        label: "Lifespan Opacity",  
+                        latex: String.raw`\alpha(L) = \begin{cases} 255 \cdot \frac{L}{L_{\max}}, & L > 0 \\ 0, & L \leq 0 \end{cases}`  
+                    },  
+                    {  
+                        label: "Glow Intensity",  
+                        latex: String.raw`I_{\text{glow}} = 3 + 17 \cdot \frac{\|\vec{v}\|}{10}`  
+                    },  
+                    {  
+                        label: "Trail Opacity",  
+                        latex: String.raw`\alpha_i = 100 \cdot \frac{i}{n}, \quad i \in [0, n]`  
+                    },  
+                    {  
+                        label: "Trail Size",  
+                        latex: String.raw`s_i = 0.4s + 0.5s \cdot \frac{i}{n}`  
+                    }  
+                ],  
+                code: `display() {  
+  <span class="code-method">push</span>();  
+  <span class="code-method">translate</span>(<span class="code-keyword">this</span>.pos.x, <span class="code-keyword">this</span>.pos.y);  
+  
+  <span class="code-comment">// 1. Dynamic glow intensity</span>  
+  <span class="code-keyword">let</span> speed = <span class="code-keyword">this</span>.vel.<span class="code-method">mag</span>();  
+  <span class="code-keyword">let</span> glow = <span class="code-method">map</span>(speed, 0, 10, 3, 20);  
+  
+  drawingContext.shadowBlur = glow;  
+  
+  <span class="code-comment">// 2. Lifespan opacity</span>  
+  <span class="code-keyword">let</span> alpha = <span class="code-method">map</span>(  
+    <span class="code-keyword">this</span>.lifespan,   
+    0, PARTICLE_LIFETIME,   
+    0, 255  
+  );  
+  
+  <span class="code-method">fill</span>(<span class="code-keyword">this</span>.color, alpha);  
+  <span class="code-method">circle</span>(0, 0, <span class="code-keyword">this</span>.size);  
+  
+  <span class="code-method">pop</span>();  
+}`  
+            }  
+        };  
+
+        // ============================================================  
+        // 🎬 Demo Scene System  
+        // ============================================================  
+        
+        let currentScene = 0;  
+        let sceneNames = [  
+            "🎮 Free Mode",  
+            "🎯 Scene Q: Intro",  
+            "🚀 Scene W: Slingshot",  
+            "🌍 Scene E: Gravity",  
+            "💥 Scene R: Collision",  
+            "🎆 Scene T: Fireworks"  
+        ];  
+        
+        let sceneDescriptions = [  
+            "Creative Free Mode",  
+            "Showcase basic shapes",  
+            "Slingshot launch + Space float",  
+            "Compare 3 gravity modes",  
+            "High-speed collision chain reaction",  
+            "Particle explosion art effects"  
+        ];  
+
+        function loadDemoScene(sceneNumber) {  
+            currentScene = sceneNumber;  
+            
+            shapes = [];  
+            particles = [];  
+            
+            draggedShape = null;  
+            draggedShapePos = null;  
+            isDragging = false;  
+            
+            // Update tech panel content  
+            if (showTechDetails) {  
+                updateTechPanel();  
+            }  
+            
+            switch(sceneNumber) {  
+                case 1:  
+                    setupSceneQ_Opening();  
+                    break;  
+                case 2:  
+                    setupSceneW_Slingshot();  
+                    break;  
+                case 3:  
+                    setupSceneE_Gravity();  
+                    break;  
+                case 4:  
+                    setupSceneR_Collision();  
+                    break;  
+                case 5:  
+                    setupSceneT_Fireworks();  
+                    break;  
+                default:  
+                    currentScene = 0;  
+            }  
+        }  
+
+        // ============================================================  
+        // 📦 Scene Setup Functions  
+        // ============================================================  
+        
+        function setupSceneQ_Opening() {  
+            setGravityDirection('NONE');  
+            shapes.push(new Shape(250, 300, 'circle', 80));  
+            shapes.push(new Shape(500, 400, 'rectangle', 85));  
+            shapes.push(new Shape(750, 300, 'star', 80));  
+        }  
+
+        function setupSceneW_Slingshot() {  
+            setGravityDirection('NONE');  
+            
+            shapes.push(new Shape(150, 150, 'circle', 65));  
+            shapes.push(new Shape(150, 280, 'rectangle', 70));  
+            shapes.push(new Shape(150, 410, 'star', 65));  
+            shapes.push(new Shape(150, 540, 'circle', 68));  
+            
+            let target1 = new Shape(750, 200, 'circle', 60);  
+            target1.vel = createVector(2, 1.5);  
+            shapes.push(target1);  
+            
+            let target2 = new Shape(850, 400, 'star', 58);  
+            target2.vel = createVector(-1.5, 2);  
+            shapes.push(target2);  
+            
+            let target3 = new Shape(750, 600, 'rectangle', 62);  
+            target3.vel = createVector(1.8, -1.2);  
+            shapes.push(target3);  
+        }  
+
+        function setupSceneE_Gravity() {  
+            setGravityDirection('NONE');  
+            
+            shapes.push(new Shape(200, 100, 'circle', 65));  
+            shapes.push(new Shape(400, 80, 'star', 62));  
+            shapes.push(new Shape(600, 120, 'rectangle', 68));  
+            shapes.push(new Shape(800, 90, 'circle', 60));  
+            
+            shapes.push(new Shape(300, 400, 'star', 70));  
+            shapes.push(new Shape(700, 380, 'rectangle', 72));  
+            
+            shapes.push(new Shape(250, 700, 'circle', 64));  
+            shapes.push(new Shape(750, 720, 'star', 66));  
+        }  
+
+        function setupSceneR_Collision() {  
+            setGravityDirection('NONE');  
+            
+            let baseX = 700;  
+            let baseY = 480;  
+            let spacing = 85;  
+            
+            shapes.push(new Shape(baseX - spacing * 1.5, baseY, 'circle', 62));  
+            shapes.push(new Shape(baseX - spacing * 0.5, baseY, 'rectangle', 62));  
+            shapes.push(new Shape(baseX + spacing * 0.5, baseY, 'star', 62));  
+            shapes.push(new Shape(baseX + spacing * 1.5, baseY, 'circle', 62));  
+            
+            shapes.push(new Shape(baseX - spacing, baseY - 80, 'star', 60));  
+            shapes.push(new Shape(baseX, baseY - 80, 'circle', 60));  
+            shapes.push(new Shape(baseX + spacing, baseY - 80, 'rectangle', 60));  
+            
+            shapes.push(new Shape(baseX - spacing * 0.5, baseY - 160, 'circle', 58));  
+            shapes.push(new Shape(baseX + spacing * 0.5, baseY - 160, 'star', 58));  
+            
+            shapes.push(new Shape(baseX, baseY - 240, 'rectangle', 65));  
+            
+            shapes.push(new Shape(250, 80, 'star', 68));  
+            shapes.push(new Shape(450, 100, 'circle', 72));  
+        }  
+
+        function setupSceneT_Fireworks() {  
+            setGravityDirection('NONE');  
+            
+            let centerX = width / 2;  
+            let centerY = height / 2;  
+            
+            let radius = 160;  
+            for (let i = 0; i < 12; i++) {  
+                let angle = (TWO_PI / 12) * i;  
+                let x = centerX + cos(angle) * radius;  
+                let y = centerY + sin(angle) * radius;  
+                let types = ['circle', 'rectangle', 'star'];  
+                let type = types[i % 3];  
+                shapes.push(new Shape(x, y, type, random(60, 75)));  
+            }  
+            
+            radius = 90;  
+            for (let i = 0; i < 8; i++) {  
+                let angle = (TWO_PI / 8) * i + QUARTER_PI;  
+                let x = centerX + cos(angle) * radius;  
+                let y = centerY + sin(angle) * radius;  
+                let types = ['star', 'circle', 'rectangle'];  
+                let type = types[i % 3];  
+                shapes.push(new Shape(x, y, type, random(55, 68)));  
+            }  
+            
+            shapes.push(new Shape(centerX, centerY, 'star', 95));  
+        }  
+
+        // ============================================================  
+        // 🆕 Tech Panel Update Function (Fixed)  
+        // ============================================================  
+        
+        function updateTechPanel() {  
+            const panel = document.getElementById('panel-content');  
+            const details = SCENE_TECH_DETAILS[currentScene];  
+            
+            let html = `<div class="scene-title">${details.title}</div>`;  
+            
+            // Formula section  
+            if (details.formulas && details.formulas.length > 0) {  
+                html += '<div class="section-title">🔬 Core Formulas</div>';  
+                
+                for (let formula of details.formulas) {  
+                    html += `  
+                        <div class="formula-item">  
+                            <div class="formula-label">${formula.label}</div>  
+                            <div class="formula-content" id="formula-${Math.random().toString(36).substr(2, 9)}"></div>  
+                        </div>  
+                    `;  
+                }  
+            }  
+            
+            // Code section  
+            if (details.code) {  
+                html += '<div class="section-title">💻 Core Code</div>';  
+                html += `<div class="code-block"><pre>${details.code}</pre></div>`;  
+            }  
+            
+            panel.innerHTML = html;  
+            
+            // 🔧 Key Fix: Use KaTeX to render each formula directly  
+            if (details.formulas && details.formulas.length > 0) {  
+                const formulaContainers = panel.querySelectorAll('.formula-content');  
+                details.formulas.forEach((formula, index) => {  
+                    if (formulaContainers[index]) {  
+                        try {  
+                            katex.render(formula.latex, formulaContainers[index], {  
+                                throwOnError: false,  
+                                displayMode: true,  
+                                output: 'html'  
+                            });  
+                        } catch (error) {  
+                            console.error('KaTeX Render Error:', error);  
+                            formulaContainers[index].textContent = formula.latex;  
+                        }  
+                    }  
+                });  
+            }  
+        }  
+        
+        function toggleTechPanel() {  
+            showTechDetails = !showTechDetails;  
+            const panel = document.getElementById('tech-panel');  
+            
+            if (showTechDetails) {  
+                updateTechPanel();  
+                panel.classList.add('visible');  
+            } else {  
+                panel.classList.remove('visible');  
+            }  
+        }  
+
+        // ============================================================  
+        // 🎬 Initialization System  
+        // ============================================================  
+        
+        function setup() {  
+            let canvas = createCanvas(1000, 800);  
+            canvas.parent('canvas-container');  
+            
+            gravity = createVector(0, 0);  
+            targetGravity = createVector(0, 0);  
+            frameRate(60);  
+            
+            initializeColorPalettes();  
+            loadDemoScene(1);  
+        }  
+
+        function initializeColorPalettes() {  
+            for (let palette of COLOR_PALETTES) {  
+                let p5Palette = [];  
+                for (let c of palette) {  
+                    p5Palette.push(color(c[0], c[1], c[2]));  
+                }  
+                colorPalettes.push(p5Palette);  
+            }  
+        }  
+
+        function setGravityDirection(direction) {  
+            gravityDirection = direction;  
+            
+            if (direction === 'UP') {  
+                targetGravity = createVector(0, -GRAVITY_STRENGTH);  
+            }   
+            else if (direction === 'DOWN') {  
+                targetGravity = createVector(0, GRAVITY_STRENGTH);  
+            }  
+            else if (direction === 'NONE') {  
+                targetGravity = createVector(0, 0);  
+            }  
+        }  
+
+        function updateGravity() {  
+            gravity.x = lerp(gravity.x, targetGravity.x, 0.1);  
+            gravity.y = lerp(gravity.y, targetGravity.y, 0.1);  
+        }  
+
+        function updateTimeScale() {  
+            timeScale = lerp(timeScale, targetTimeScale, 0.15);  
+        }  
+
+        function activateBulletTime() {  
+            targetTimeScale = BULLET_TIME_SCALE;  
+        }  
+
+        function deactivateBulletTime() {  
+            targetTimeScale = NORMAL_TIME_SCALE;  
+        }  
+
+        // ============================================================  
+        // 🔄 Main Loop  
+        // ============================================================  
+        
+        function draw() {  
+            updateTimeScale();  
+            
+            background(20, 24, 36);  
+            
+            updateGravity();  
+            updateShapes();  
+            updateParticles();  
+            checkShapeCollisions();  
+            
+            renderShapes();  
+            renderParticles();  
+            
+            drawSlingshotTrajectory();  
+            displayUI();  
+        }  
+
+        // ============================================================  
+        // 💥 Collision Detection & Shatter System  
+        // ============================================================  
+        
+        function checkShapeCollisions() {  
+            for (let i = 0; i < shapes.length; i++) {  
+                for (let j = i + 1; j < shapes.length; j++) {  
+                    resolveShapeCollision(shapes[i], shapes[j]);  
+                }  
+            }  
+        }  
+        
+        function resolveShapeCollision(shapeA, shapeB) {  
+            let distance = p5.Vector.dist(shapeA.pos, shapeB.pos);  
+            let minDistance = (shapeA.size + shapeB.size) / 2;  
+            
+            if (distance < minDistance) {  
+                let normal = p5.Vector.sub(shapeB.pos, shapeA.pos).normalize();  
+                let relativeVel = p5.Vector.sub(shapeB.vel, shapeA.vel);  
+                let relativeSpeed = relativeVel.mag();  
+                
+                if (relativeSpeed > SHATTER_VELOCITY_THRESHOLD) {  
+                    let speedA = shapeA.vel.mag();  
+                    let speedB = shapeB.vel.mag();  
+                    
+                    if (speedA > speedB + 2) {  
+                        shapeB.shatterFromImpact(shapeA.vel);  
+                        createImpactEffect(shapeB.pos, shapeA.vel);  
+                        return;  
+                    }   
+                    else if (speedB > speedA + 2) {  
+                        shapeA.shatterFromImpact(shapeB.vel);  
+                        createImpactEffect(shapeA.pos, shapeB.vel);  
+                        return;  
+                    }  
+                }  
+                
+                let overlap = minDistance - distance;  
+                let separation = normal.copy().mult(overlap * 0.5);  
+                shapeA.pos.sub(separation);  
+                shapeB.pos.add(separation);  
+                
+                let velocityAlongNormal = relativeVel.dot(normal);  
+                if (velocityAlongNormal < 0) return;  
+                
+                let impulseScalar = -(1 + SHAPE_ELASTICITY) * velocityAlongNormal * 0.5;  
+                let impulse = normal.copy().mult(impulseScalar);  
+                
+                shapeA.vel.sub(impulse);  
+                shapeB.vel.add(impulse);  
+
+                shapeA.vel.mult(0.98);  
+                shapeB.vel.mult(0.98);  
+            }  
+        }  
+
+        function createImpactEffect(pos, impactVelocity) {  
+            let palette = colorPalettes[currentPalette];  
+            
+            for (let i = 0; i < 15; i++) {  
+                if (particles.length < MAX_PARTICLES) {  
+                    let angle = random(TWO_PI);  
+                    let speed = random(3, 8);  
+                    let impactParticle = new Particle(  
+                        pos.x,  
+                        pos.y,  
+                        createVector(cos(angle) * speed, sin(angle) * speed),  
+                        random(palette),  
+                        random(3, 6)  
+                    );  
+                    impactParticle.lifespan = 40;  
+                    particles.push(impactParticle);  
+                }  
+            }  
+        }  
+
+        function updateShapes() {  
+            for (let i = shapes.length - 1; i >= 0; i--) {  
+                shapes[i].update();  
+                shapes[i].applyPhysics(timeScale);  
+                shapes[i].checkBoundaries();  
+                
+                if (shapes[i].isShattered) {  
+                    shapes.splice(i, 1);  
+                }  
+            }  
+        }  
+
+        function updateParticles() {  
+            for (let i = particles.length - 1; i >= 0; i--) {  
+                particles[i].update(timeScale);  
+                particles[i].applyPhysics(timeScale);  
+                particles[i].checkBoundaries();  
+                
+                if (particles[i].isDead()) {  
+                    particles.splice(i, 1);  
+                }  
+            }  
+        }  
+
+        function renderShapes() {  
+            for (let shape of shapes) {  
+                shape.display();  
+            }  
+        }  
+
+        function renderParticles() {  
+            for (let particle of particles) {  
+                particle.display();  
+            }  
+        }  
+
+        // ============================================================  
+        // 🎯 Slingshot System  
+        // ============================================================  
+
+        function drawSlingshotTrajectory() {  
+            if (!isDragging || !draggedShape || !draggedShapePos) return;  
+            
+            push();  
+            
+            let dragVector = createVector(  
+                mouseX - draggedShapePos.x,   
+                mouseY - draggedShapePos.y  
+            );  
+            
+            let launchVector = dragVector.copy().mult(-1);  
+            let distance = dragVector.mag();  
+            let forceMagnitude = min(distance * FORCE_MULTIPLIER, MAX_DRAG_FORCE);  
+            
+            let forceRatio = forceMagnitude / MAX_DRAG_FORCE;  
+            let arrowColor = lerpColor(  
+                color(100, 200, 255),  
+                color(255, 100, 100),  
+                forceRatio  
+            );  
+            
+            stroke(arrowColor);  
+            strokeWeight(2);  
+            drawingContext.setLineDash([5, 5]);  
+            line(draggedShapePos.x, draggedShapePos.y, mouseX, mouseY);  
+            drawingContext.setLineDash([]);  
+            
+            launchVector.normalize();  
+            let arrowLength = min(distance * 0.8, 150);  
+            let arrowEndX = draggedShapePos.x + launchVector.x * arrowLength;  
+            let arrowEndY = draggedShapePos.y + launchVector.y * arrowLength;  
+            
+            stroke(arrowColor);  
+            strokeWeight(4);  
+            line(draggedShapePos.x, draggedShapePos.y, arrowEndX, arrowEndY);  
+            
+            drawArrowHead(  
+                draggedShapePos.x,   
+                draggedShapePos.y,   
+                arrowEndX,   
+                arrowEndY,   
+                arrowColor  
+            );  
+            
+            drawingContext.shadowBlur = 25;  
+            drawingContext.shadowColor = arrowColor;  
+            fill(arrowColor);  
+            noStroke();  
+            circle(draggedShapePos.x, draggedShapePos.y, 12);  
+            
+            drawingContext.shadowBlur = 15;  
+            fill(255, 255, 255, 150);  
+            circle(mouseX, mouseY, 8);  
+            
+            drawingContext.shadowBlur = 0;  
+            fill(255);  
+            textAlign(CENTER);  
+            textSize(16);  
+            textStyle(BOLD);  
+            text(`Launch Force: ${floor(forceMagnitude)}`,   
+                 draggedShapePos.x,   
+                 draggedShapePos.y - draggedShape.size / 2 - 20);  
+            
+            pop();  
+        }  
+
+        function drawArrowHead(x1, y1, x2, y2, arrowColor) {  
+            push();  
+            
+            let angle = atan2(y2 - y1, x2 - x1);  
+            let arrowSize = 20;  
+            
+            translate(x2, y2);  
+            rotate(angle);  
+            
+            fill(arrowColor);  
+            noStroke();  
+            triangle(  
+                0, 0,  
+                -arrowSize, -arrowSize / 2,  
+                -arrowSize, arrowSize / 2  
+            );  
+            
+            pop();  
+        }  
+
+        // ============================================================  
+        // 🖱️ Mouse Interaction System  
+        // ============================================================  
+        
+        function mousePressed() {  
+            for (let i = shapes.length - 1; i >= 0; i--) {  
+                if (shapes[i].isMouseOver()) {  
+                    draggedShape = shapes[i];  
+                    draggedShapePos = createVector(shapes[i].pos.x, shapes[i].pos.y);  
+                    dragDelay = 0;  
+                    return;  
+                }  
+            }  
+        }  
+
+        function mouseDragged() {  
+            if (draggedShape && draggedShapePos) {  
+                dragDelay++;  
+                
+                if (dragDelay > DRAG_DELAY_FRAMES) {  
+                    if (!isDragging) {  
+                        isDragging = true;  
+                        activateBulletTime();  
+                    }  
+                }  
+            }  
+        }  
+
+        function mouseReleased() {  
+            if (draggedShape) {  
+                deactivateBulletTime();  
+                
+                if (isDragging) {  
+                    applySlingshotForce();  
+                } else {  
+                    draggedShape.shatter();  
+                }  
+                
+                draggedShape = null;  
+                draggedShapePos = null;  
+                isDragging = false;  
+                dragDelay = 0;  
+            }  
+        }  
+
+        function applySlingshotForce() {  
+            if (!draggedShape || !draggedShapePos) return;  
+            
+            let dragVector = createVector(  
+                mouseX - draggedShapePos.x,  
+                mouseY - draggedShapePos.y  
+            );  
+            
+            let launchForce = dragVector.copy().mult(-1);  
+            let forceMagnitude = min(launchForce.mag() * FORCE_MULTIPLIER, MAX_DRAG_FORCE);  
+            
+            launchForce.normalize();  
+            launchForce.mult(forceMagnitude);  
+            
+            draggedShape.vel.add(launchForce);  
+            draggedShape.angularVel = launchForce.x * 0.01;  
+            
+            draggedShape.flashIntensity = map(forceMagnitude, 0, MAX_DRAG_FORCE, 0.5, 1.0);  
+            draggedShape.trailEnabled = true;  
+            
+            createLaunchParticles(draggedShape.pos, launchForce, forceMagnitude);  
+        }  
+
+        function createLaunchParticles(pos, force, magnitude) {  
+            let particleCount = floor(map(magnitude, 0, MAX_DRAG_FORCE, 8, 20));  
+            
+            for (let i = 0; i < particleCount; i++) {  
+                if (particles.length >= MAX_PARTICLES) break;  
+                
+                let spreadAngle = force.heading() + PI;  
+                let angle = spreadAngle + random(-QUARTER_PI, QUARTER_PI);  
+                let speed = random(3, 8);  
+                let vel = createVector(cos(angle) * speed, sin(angle) * speed);  
+                
+                let particle = new Particle(  
+                    pos.x + random(-5, 5),  
+                    pos.y + random(-5, 5),  
+                    vel,  
+                    color(255, 255, 255, 200),  
+                    random(3, 7)  
+                );  
+                particle.lifespan = 25;  
+                particles.push(particle);  
+            }  
+        }  
+
+        // ============================================================  
+        // 🔷 Shape Class - Full Implementation  
+        // ============================================================  
+        
+        class Shape {  
+            constructor(x, y, type, size) {  
+                this.id = random(1000000);  
+                this.pos = createVector(x, y);  
+                this.vel = createVector(0, 0);  
+                this.acc = createVector(0, 0);  
+                this.type = type;  
+                this.size = size;  
+                this.rotation = 0;  
+                this.angularVel = 0;  
+                this.isShattered = false;  
+                this.hovered = false;  
+                this.scale = 1;  
+                this.pulsePhase = random(TWO_PI);  
+                
+                this.flashIntensity = 0;  
+                this.flashDecay = 0.92;  
+                
+                this.trail = [];  
+                this.maxTrailLength = 12;  
+                this.trailEnabled = false;  
+                
+                let palette = colorPalettes[currentPalette];  
+                this.color = random(palette);  
+            }  
+            
+            applyPhysics(timeScale = 1.0) {  
+                this.acc.add(gravity);  
+                
+                this.vel.add(this.acc);  
+                this.vel.mult(SHAPE_FRICTION);  
+                this.acc.mult(0);  
+                
+                if (abs(this.vel.x) < VELOCITY_CUTOFF) this.vel.x = 0;  
+                if (abs(this.vel.y) < VELOCITY_CUTOFF) this.vel.y = 0;  
+                
+                let scaledVel = this.vel.copy().mult(timeScale);  
+                this.pos.add(scaledVel);  
+                
+                this.rotation += this.angularVel * timeScale;  
+                this.angularVel *= 0.96;  
+                
+                if (abs(this.angularVel) < ANGULAR_CUTOFF) this.angularVel = 0;  
+            }  
+            
+            checkBoundaries() {  
+                let r = this.size / 2;  
+                let bounced = false;  
+                
+                if (this.pos.y + r > height) {  
+                    this.pos.y = height - r;  
+                    this.vel.y *= -WALL_ELASTICITY;  
+                    this.vel.x *= WALL_FRICTION;  
+                    this.angularVel = this.vel.x * 0.005;  
+                    bounced = true;  
+                } else if (this.pos.y - r < 0) {  
+                    this.pos.y = r;  
+                    this.vel.y *= -WALL_ELASTICITY;  
+                    this.vel.x *= WALL_FRICTION;  
+                    this.angularVel = this.vel.x * 0.005;  
+                    bounced = true;  
+                }  
+                
+                if (this.pos.x - r < 0) {  
+                    this.pos.x = r;  
+                    this.vel.x *= -WALL_ELASTICITY;  
+                    bounced = true;  
+                } else if (this.pos.x + r > width) {  
+                    this.pos.x = width - r;  
+                    this.vel.x *= -WALL_ELASTICITY;  
+                    bounced = true;  
+                }  
+                
+                if (bounced && this.vel.mag() < 0.8) {  
+                    this.vel.mult(0);  
+                    this.angularVel = 0;  
+                }  
+            }  
+            
+            update() {  
+                this.hovered = this.isMouseOver();  
+                this.pulsePhase += 0.05;  
+                
+                if (this === draggedShape || this.hovered) {  
+                    this.scale = lerp(this.scale, 1.15, 0.2);  
+                } else {  
+                    this.scale = lerp(this.scale, 1.0, 0.18);  
+                }  
+                
+                if (this.flashIntensity > 0) {  
+                    this.flashIntensity *= this.flashDecay;  
+                    if (this.flashIntensity < 0.01) this.flashIntensity = 0;  
+                }  
+                
+                if (this.trailEnabled) {  
+                    let speed = this.vel.mag();  
+                    
+                    if (speed > 4) {  
+                        this.trail.push({ x: this.pos.x, y: this.pos.y });  
+                        if (this.trail.length > this.maxTrailLength) {  
+                            this.trail.shift();  
+                        }  
+                    }   
+                    else if (this.trail.length > 0) {  
+                        this.trail.shift();  
+                    }  
+                    
+                    if (speed < 2 && this.trail.length === 0) {  
+                        this.trailEnabled = false;  
+                    }  
+                }  
+            }  
+            
+            isMouseOver() {  
+                let d = dist(mouseX, mouseY, this.pos.x, this.pos.y);  
+                return d < this.size / 2;  
+            }  
+            
+            shatter() {  
+                this.isShattered = true;  
+                let particleCount = this.type === 'circle' ? 20 :   
+                                   this.type === 'rectangle' ? 24 : 28;  
+                
+                for (let i = 0; i < particleCount; i++) {  
+                    if (particles.length < MAX_PARTICLES) {  
+                        let particle = this.createShatterParticle(i, particleCount);  
+                        particle.vel.add(this.vel);  
+                        particles.push(particle);  
+                    }  
+                }  
+            }  
+            
+            shatterFromImpact(impactVelocity) {  
+                this.isShattered = true;  
+                let particleCount = this.type === 'circle' ? 20 :   
+                                   this.type === 'rectangle' ? 24 : 28;  
+                
+                let impactDir = impactVelocity.copy().normalize();  
+                
+                for (let i = 0; i < particleCount; i++) {  
+                    if (particles.length < MAX_PARTICLES) {  
+                        let particle = this.createShatterParticle(i, particleCount);  
+                        
+                        let impactForce = impactDir.copy().mult(random(2, 5));  
+                        particle.vel.add(this.vel);  
+                        particle.vel.add(impactForce);  
+                        
+                        particles.push(particle);  
+                    }  
+                }  
+            }  
+            
+            createShatterParticle(index, total) {  
+                let angle, distance, particlePos;  
+                
+                if (this.type === 'circle') {  
+                    angle = (TWO_PI / total) * index;  
+                    distance = random(0, this.size / 2);  
+                    particlePos = createVector(  
+                        this.pos.x + cos(angle) * distance,  
+                        this.pos.y + sin(angle) * distance  
+                    );  
+                }   
+                else if (this.type === 'rectangle') {  
+                    let cols = 6, rows = 4;  
+                    let col = index % cols;  
+                    let row = floor(index / cols);  
+                    particlePos = createVector(  
+                        this.pos.x - this.size / 2 + (col + 0.5) * (this.size / cols),  
+                        this.pos.y - this.size / 2 + (row + 0.5) * (this.size / rows)  
+                    );  
+                }  
+                else {  
+                    angle = random(TWO_PI);  
+                    distance = random(0, this.size / 2);  
+                    particlePos = createVector(  
+                        this.pos.x + cos(angle) * distance,  
+                        this.pos.y + sin(angle) * distance  
+                    );  
+                }  
+                
+                let explosionDir = p5.Vector.sub(particlePos, this.pos);  
+                explosionDir.normalize();  
+                explosionDir.rotate(random(-0.3, 0.3));  
+                let explosionForce = random(4, 10);  
+                let velocity = explosionDir.mult(explosionForce);  
+                
+                return new Particle(  
+                    particlePos.x,  
+                    particlePos.y,  
+                    velocity,  
+                    this.color,  
+                    random(3, 7)  
+                );  
+            }  
+            
+            display() {  
+                if (this.trailEnabled && this.trail.length > 1) {  
+                    push();  
+                    noFill();  
+                    for (let i = 0; i < this.trail.length; i++) {  
+                        let alpha = map(i, 0, this.trail.length, 0, 100);  
+                        let trailSize = map(i, 0, this.trail.length, this.size * 0.4, this.size * 0.9);  
+                        
+                        stroke(this.color, alpha);  
+                        strokeWeight(2);  
+                        drawingContext.shadowBlur = 10;  
+                        drawingContext.shadowColor = this.color;  
+                        circle(this.trail[i].x, this.trail[i].y, trailSize);  
+                    }  
+                    pop();  
+                }  
+                
+                push();  
+                translate(this.pos.x, this.pos.y);  
+                scale(this.scale);  
+                rotate(this.rotation);  
+                
+                let speed = this.vel.mag();  
+                let baseGlow = map(speed, 0, 10, 10, 25);  
+                let glowSize = baseGlow + this.flashIntensity * 50;  
+                
+                drawingContext.shadowBlur = glowSize;  
+                drawingContext.shadowColor = this.color;  
+                
+                strokeWeight(this === draggedShape ? 4 : 2);  
+                stroke(this === draggedShape ? color(255, 255, 0) : color(255, 150));  
+                
+                fill(this.color);  
+                
+                if (this.type === 'circle') {  
+                    circle(0, 0, this.size);  
+                }   
+                else if (this.type === 'rectangle') {  
+                    rectMode(CENTER);  
+                    rect(0, 0, this.size, this.size);  
+                }  
+                else if (this.type === 'star') {  
+                    this.drawStar();  
+                }  
+                
+                pop();  
+            }  
+            
+            drawStar() {  
+                beginShape();  
+                for (let i = 0; i < 10; i++) {  
+                    let angle = (TWO_PI / 10) * i - HALF_PI;  
+                    let radius = (i % 2 === 0) ? this.size : this.size * 0.4;  
+                    vertex(cos(angle) * radius, sin(angle) * radius);  
+                }  
+                endShape(CLOSE);  
+            }  
+        }  
+
+        // ============================================================  
+        // ✨ Particle Class  
+        // ============================================================  
+        
+        class Particle {  
+            constructor(x, y, velocity, particleColor, size) {  
+                this.pos = createVector(x, y);  
+                this.vel = velocity.copy();  
+                this.acc = createVector(0, 0);  
+                this.color = particleColor;  
+                this.size = size;  
+                this.lifespan = PARTICLE_LIFETIME;  
+                this.rotation = random(TWO_PI);  
+                this.rotationSpeed = random(-0.2, 0.2);  
+            }  
+            
+            applyPhysics(timeScale = 1.0) {  
+                this.acc.add(gravity);  
+                this.vel.add(this.acc);  
+                this.vel.mult(FRICTION);  
+                this.acc.mult(0);  
+            }  
+            
+            update(timeScale = 1.0) {  
+                let scaledVel = this.vel.copy().mult(timeScale);  
+                this.pos.add(scaledVel);  
+                this.rotation += this.rotationSpeed * timeScale;  
+                this.lifespan--;  
+                this.rotationSpeed *= 0.99;  
+            }  
+            
+            checkBoundaries() {  
+                if (this.pos.y > height - this.size / 2) {  
+                    this.pos.y = height - this.size / 2;  
+                    this.vel.y *= -ELASTICITY;  
+                    this.vel.x *= FRICTION;  
+                    if (abs(this.vel.y) < 0.5) this.vel.y = 0;  
+                }  
+                
+                if (this.pos.y < this.size / 2) {  
+                    this.pos.y = this.size / 2;  
+                    this.vel.y *= -ELASTICITY;  
+                    this.vel.x *= FRICTION;  
+                    if (abs(this.vel.y) < 0.5) this.vel.y = 0;  
+                }  
+                
+                if (this.pos.x < this.size / 2) {  
+                    this.pos.x = this.size / 2;  
+                    this.vel.x *= -ELASTICITY;  
+                }  
+                
+                if (this.pos.x > width - this.size / 2) {  
+                    this.pos.x = width - this.size / 2;  
+                    this.vel.x *= -ELASTICITY;  
+                }  
+            }  
+            
+            isDead() {  
+                return this.lifespan <= 0;  
+            }  
+            
+            display() {  
+                push();  
+                translate(this.pos.x, this.pos.y);  
+                rotate(this.rotation);  
+                
+                let speed = this.vel.mag();  
+                let glowIntensity = map(speed, 0, 10,  3, 20);
+                
+                let alpha = map(this.lifespan, 0, PARTICLE_LIFETIME, 0, 255);
+                drawingContext.shadowBlur = glowIntensity;
+                drawingContext.shadowColor = this.color;
+
+                fill(
+                    red(this.color), 
+                    green(this.color), 
+                    blue(this.color), 
+                    alpha
+                );
+                noStroke();
+                circle(0, 0, this.size);
+                
+                pop();
+            }
+        }
+
+        // ============================================================
+        // 🎨 UI Display
+        // ============================================================
+        
+        function displayUI() {
+            push();
+            
+            fill(15, 20, 30, 220);
+            noStroke();
+            rect(20, 20, 340, 270, 10);
+            
+            fill(100, 200, 255);
+            textSize(16);
+            textStyle(BOLD);
+            textAlign(LEFT);
+            text('✨ Particle Shatter System - Demo Mode', 30, 48);
+            
+            fill(255, 220, 100);
+            textSize(14);
+            text(sceneNames[currentScene], 30, 75);
+            
+            fill(180, 200, 220);
+            textSize(11);
+            textStyle(NORMAL);
+            text(sceneDescriptions[currentScene], 30, 95);
+            
+            fill(255);
+            textSize(11);
+            text(`Shapes: ${shapes.length} | Particles: ${particles.length}`, 30, 120);
+            
+            let gravityText, gravityColor;
+            if (gravityDirection === 'NONE') {
+                gravityText = '🚀 Zero Gravity (Space Mode)';
+                gravityColor = color(100, 255, 100);
+            } else if (gravityDirection === 'UP') {
+                gravityText = '↑ Anti-Gravity';
+                gravityColor = color(255, 150, 150);
+            } else {
+                gravityText = '↓ Normal Gravity';
+                gravityColor = color(150, 200, 255);
+            }
+            
+            fill(gravityColor);
+            text(`Gravity: ${gravityText}`, 30, 145);
+            
+            stroke(80, 100, 120);
+            strokeWeight(1);
+            line(30, 158, 350, 158);
+            
+            noStroke();
+            fill(180, 200, 220);
+            textSize(10);
+            text('🎮 Basic Controls:', 30, 178);
+            text('  Click=Shatter | Drag=Launch ✨', 30, 194);
+            text('  1/2/3=Add Shape | C=Clear | P=Palette', 30, 210);
+            text('  ↑↓=Gravity Ctrl | Space=Zero G', 30, 226);
+            
+            fill(255, 255, 100);
+            textStyle(BOLD);
+            textSize(11);
+            text('🎬 Q W E R T = Switch Scenes', 30, 246);
+            
+            fill(100, 255, 200);
+            textSize(10);
+            text('📚 Press I = Toggle Tech Details', 30, 266);
+            
+            pop();
+            
+            drawSceneButtons();
+        }
+
+        function drawSceneButtons() {
+            push();
+            
+            let startX = width - 280;
+            let startY = height - 100;
+            
+            fill(15, 20, 30, 200);
+            noStroke();
+            rect(startX - 10, startY - 10, 270, 90, 8);
+            
+            textAlign(LEFT);
+            textSize(10);
+            
+            let scenes = [
+                {key: 'Q', name: 'Intro', color: currentScene === 1 ? color(255, 220, 100) : color(150, 170, 190)},
+                {key: 'W', name: 'Slingshot', color: currentScene === 2 ? color(255, 220, 100) : color(150, 170, 190)},
+                {key: 'E', name: 'Gravity', color: currentScene === 3 ? color(255, 220, 100) : color(150, 170, 190)},
+                {key: 'R', name: 'Collision', color: currentScene === 4 ? color(255, 220, 100) : color(150, 170, 190)},
+                {key: 'T', name: 'Fireworks', color: currentScene === 5 ? color(255, 220, 100) : color(150, 170, 190)}
+            ];
+            
+            for (let i = 0; i < scenes.length; i++) {
+                let x = startX + (i % 3) * 85;
+                let y = startY + floor(i / 3) * 35;
+                
+                fill(scenes[i].color);
+                textStyle(BOLD);
+                text(`[${scenes[i].key}]`, x, y);
+                
+                textStyle(NORMAL);
+                text(scenes[i].name, x + 30, y);
+            }
+            
+            pop();
+        }
+
+        function addShapeAtMouse(type) {
+            if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
+                let newShape = new Shape(mouseX, mouseY, type, random(60, 90));
+                newShape.scale = 0;
+                shapes.push(newShape);
+            }
+        }
+
+        // ============================================================
+        // ⌨️ Keyboard Interaction
+        // ============================================================
+        
+        function keyPressed() {
+            // Basic controls
+            if (key === '1') {
+                addShapeAtMouse('circle');
+            }
+            else if (key === '2') {
+                addShapeAtMouse('rectangle');
+            }
+            else if (key === '3') {
+                addShapeAtMouse('star');
+            }
+            else if (key === 'c' || key === 'C') {
+                shapes = [];
+                particles = [];
+                currentScene = 0;
+            }
+            else if (key === 'p' || key === 'P') {
+                currentPalette = (currentPalette + 1) % colorPalettes.length;
+            }
+            
+            // Gravity control
+            else if (keyCode === UP_ARROW) {
+                setGravityDirection('UP');
+            }
+            else if (keyCode === DOWN_ARROW) {
+                setGravityDirection('DOWN');
+            }
+            else if (key === ' ') {
+                setGravityDirection('NONE');
+            }
+            
+            // Scene switching
+            else if (key === 'q' || key === 'Q') {
+                loadDemoScene(1);
+            }
+            else if (key === 'w' || key === 'W') {
+                loadDemoScene(2);
+            }
+            else if (key === 'e' || key === 'E') {
+                loadDemoScene(3);
+            }
+            else if (key === 'r' || key === 'R') {
+                loadDemoScene(4);
+            }
+            else if (key === 't' || key === 'T') {
+                loadDemoScene(5);
+            }
+            
+            // 🆕 Tech panel toggle
+            else if (key === 'i' || key === 'I') {
+                toggleTechPanel();
+            }
+        }
+
+    </script>
+</body>
+</html>
