@@ -1,7 +1,3 @@
-// ============================================================  
-// 🌐 Global Variable System  
-// ============================================================  
-
 let shapes = [];  
 let particles = [];  
 
@@ -43,13 +39,10 @@ const COLOR_PALETTES = [
     [[0, 191, 255], [30, 144, 255], [65, 105, 225], [100, 149, 237]]  
 ];  
 
-// ============================================================  
-// 📚 Tech Details Panel System (LaTeX)  
-// ============================================================  
 
 let showTechDetails = false;
 
-// 🆕 Panel Dragging Variables
+// Panel Dragging Variables
 let isPanelDragging = false;
 let panelDragOffset = { x: 0, y: 0 };
 
@@ -488,6 +481,28 @@ function setupSceneT_Fireworks() {
         let type = types[i % 3];  
         shapes.push(new Shape(x, y, type, random(55, 68)));  
     }  
+    
+    // Ring 3
+    radius = 230;
+    for (let i = 0; i < 16; i++) {
+        let angle = (TWO_PI / 16) * i;
+        let x = centerX + cos(angle) * radius;
+        let y = centerY + sin(angle) * radius;
+        let types = ['rectangle', 'star', 'circle'];
+        let type = types[i % 3];
+        shapes.push(new Shape(x, y, type, random(65, 80)));
+    }
+
+    // Ring 4
+    radius = 300;
+    for (let i = 0; i < 24; i++) {
+        let angle = (TWO_PI / 24) * i + QUARTER_PI/2;
+        let x = centerX + cos(angle) * radius;
+        let y = centerY + sin(angle) * radius;
+        let types = ['circle', 'rectangle', 'star'];
+        let type = types[i % 3];
+        shapes.push(new Shape(x, y, type, random(70, 85)));
+    }
     
     shapes.push(new Shape(centerX, centerY, 'star', 95));  
 }  
@@ -1297,7 +1312,7 @@ function displayUI() {
     textSize(16);
     textStyle(BOLD);
     textAlign(LEFT);
-    text('✨ Particle Shatter System - AMCC 5110 Project', 30, 48);
+    text('✨ Particle Shatter System - Demo Mode', 30, 48);
     
     fill(255, 220, 100);
     textSize(14);
@@ -1467,5 +1482,14 @@ function keyPressed() {
     // 🆕 Tech panel toggle
     else if (key === 'i' || key === 'I') {
         toggleTechPanel();
+    }
+    
+    // 🆕 F key to shatter all shapes in Scene T
+    else if (key === 'f' || key === 'F') {
+        if (currentScene === 5) {
+            for (let i = shapes.length - 1; i >= 0; i--) {
+                shapes[i].shatter();
+            }
+        }
     }
 }
