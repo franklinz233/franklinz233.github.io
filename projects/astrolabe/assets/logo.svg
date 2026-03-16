@@ -1,0 +1,35 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="astroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7A28CB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00D2FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="90" fill="url(#astroGradient)" opacity="0.1"/>
+
+  <!-- Astrolabe rings -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#astroGradient)" stroke-width="3"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="url(#astroGradient)" stroke-width="2"/>
+  <circle cx="100" cy="100" r="30" fill="none" stroke="url(#astroGradient)" stroke-width="2"/>
+
+  <!-- Center star -->
+  <circle cx="100" cy="100" r="8" fill="url(#astroGradient)"/>
+
+  <!-- Compass points -->
+  <line x1="100" y1="30" x2="100" y2="50" stroke="url(#astroGradient)" stroke-width="2"/>
+  <line x1="100" y1="150" x2="100" y2="170" stroke="url(#astroGradient)" stroke-width="2"/>
+  <line x1="30" y1="100" x2="50" y2="100" stroke="url(#astroGradient)" stroke-width="2"/>
+  <line x1="150" y1="100" x2="170" y2="100" stroke="url(#astroGradient)" stroke-width="2"/>
+
+  <!-- Diagonal lines -->
+  <line x1="45" y1="45" x2="60" y2="60" stroke="url(#astroGradient)" stroke-width="1.5"/>
+  <line x1="155" y1="45" x2="140" y2="60" stroke="url(#astroGradient)" stroke-width="1.5"/>
+  <line x1="45" y1="155" x2="60" y2="140" stroke="url(#astroGradient)" stroke-width="1.5"/>
+  <line x1="155" y1="155" x2="140" y2="140" stroke="url(#astroGradient)" stroke-width="1.5"/>
+
+  <!-- Letter A in center -->
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="40" font-weight="bold"
+        text-anchor="middle" fill="url(#astroGradient)">A</text>
+</svg>

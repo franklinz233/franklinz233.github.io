@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.svg" type="image/svg+xml">
+    <title>Astrolabe: Steering Forward-Process RL for Distilled AR Video Models</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="mobile-warning">
+        For the best experience, it's better to use a desktop computer to view this website.
+        <br>
+        <button onclick="dismissWarning()">Continue</button>
+    </div>
+
+    <div class="sidebar">
+        <h2 class="sidebar-title"><img src="./assets/logo.svg" alt="Astrolabe logo" class="sidebar-logo"> Astrolabe</h2>
+
+        <ul>
+            <li><a href="#abstract" class="nav-link"><i class="fas fa-file-alt"></i>Abstract</a></li>
+            <li><a href="#method" class="nav-link"><i class="fas fa-cogs"></i>Method</a></li>
+            <li><a href="#short-video" class="nav-link"><i class="fas fa-video"></i>Short Video Results</a></li>
+            <li><a href="#multi-prompt" class="nav-link"><i class="fas fa-list"></i>Multi-Prompt Results</a></li>
+            <li><a href="#multi-prompt-scene-cut" class="nav-link"><i class="fas fa-film"></i>Multi-Prompt Scene Cut</a></li>
+            <li><a href="#comparisons" class="nav-link"><i class="fas fa-trophy"></i>Comparisons</a></li>
+            <li><a href="#ablation" class="nav-link"><i class="fas fa-flask"></i>Ablation Studies</a></li>
+        </ul>
+
+    </div>
+    <div class="content">
+        <div id="paper-info" class="paper-info">
+            <h1><img src="./assets/logo.svg" alt="Astrolabe logo" class="title-logo"> <span class="gradient-title">Astrolabe</span>: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models</h1>
+            <div class="authors">
+                <div class="author-row">
+                    <span class="author">Songchun Zhang</span><sup>1</sup><span class="author-sep">,</span>
+                    <span class="author">Zeyue Xue</span><sup>2</sup><span class="author-sep">,</span>
+                    <span class="author">Siming Fu</span><sup>2</sup><span class="author-sep">,</span>
+                    <span class="author">Jie Huang</span><sup>2</sup><span class="author-sep">,</span>
+                    <span class="author">Xianghao Kong</span><sup>1</sup><span class="author-sep">,</span>
+                    <span class="author">Yue Ma</span><sup>1</sup><span class="author-sep">,</span>
+                    <span class="author">Haoyang Huang</span><sup>2</sup><span class="author-sep">,</span>
+                    <span class="author">Nan Duan</span><sup>2§</sup><span class="author-sep">,</span>
+                    <span class="author">Anyi Rao</span><sup>1§</sup>
+                </div>
+                <div class="affiliation-row">
+                    <sup>1</sup>HKUST &nbsp;&nbsp;&nbsp; <sup>2</sup>JD Explore Academy
+                </div>
+            </div>
+            <div class="links">
+                <p><a href="#" target="_blank">Paper</a></p>
+                <p><a href="#" target="_blank">Code</a></p>
+                <p><a href="#" target="_blank">Demo</a></p>
+            </div>
+
+            <!-- TL;DR Section -->
+            <section id="tldr" class="tldr-section">
+                <h2>TL;DR</h2>
+                <p style="text-align: justify;">
+                    We introduce <strong>Astrolabe</strong>, an efficient online Reinforcement Learning (RL) framework designed to align distilled autoregressive (AR) streaming video models with human visual preferences. Existing RL methods struggle with the memory demands of streaming architectures, so Astrolabe introduces three key innovations to solve this:
+                </p>
+                <ul class="tldr-list">
+                    <li><strong>Trajectory-Free Forward-Process RL:</strong> Contrasts positive and negative generations directly at inference endpoints to establish a policy improvement direction, entirely avoiding the computational and memory overhead of reverse-process unrolling.</li>
+                    <li><strong>Memory-Efficient Streaming Training:</strong> Scales to long-video generation by generating sequences progressively via a rolling KV-cache. This allows RL updates to be applied exclusively to local clip windows while still conditioning on prior context for long-range coherence.</li>
+                    <li><strong>Reward Hacking Mitigation:</strong> Employs a multi-reward objective measuring visual quality, motion dynamics, and text alignment. This is stabilized by a dynamic, uncertainty-aware selective KL penalty that restricts penalties only to samples lacking auxiliary consensus.</li>
+                </ul>
+                <p style="text-align: justify;">
+                    Ultimately, Astrolabe consistently enhances visual aesthetics and temporal consistency across multiple baseline models (e.g., Causal Forcing, LongLive) for both short and long video generation, without sacrificing real-time inference speed.
+                </p>
+            </section>
+
+            <section id="abstract" class="abstract-section">
+                <h2>Abstract</h2>
+                <p style="text-align: justify;">
+                    Distilled autoregressive video models offer efficient streaming generation but often lack alignment with human visual preferences.
+                    Existing reinforcement learning (RL) frameworks are ill-suited for efficient streaming architectures, as they either require integrating rewards through computationally expensive re-distillation or rely on solver-coupled reverse processes that suffer from severe memory bottlenecks.
+                    In this paper, we introduce <strong>Astrolabe</strong>, a post-training RL framework designed for already-distilled models.
+                    By adapting forward-process RL, Astrolabe contrasts implicit positive and negative policies using only clean generated samples.
+                    This trajectory-free formulation avoids reverse-process unrolling, enabling memory-efficient and solver-agnostic training.
+                    To scale alignment to long videos without excessive memory usage, we propose a streaming training scheme.
+                    This approach generates extended sequences via a rolling KV-cache and applies RL updates exclusively to local clip windows with detached gradients.
+                    To prevent models from reward hacking at the expense of overall aesthetics, we employ a multi-reward formulation incorporating visual quality,
+                    motion quality, and text alignment. This is stabilized by selective regularization on high-uncertainty samples and dynamic reference updates.
+                    Experiments on multiple distilled models demonstrate consistent improvements, validating Astrolabe as a general-purpose alignment framework
+                    for streaming video generation.
+                </p>
+            </section>
+
+            <section id="method" class="method-section">
+                <h2>Method Overview</h2>
+                <img src="./assets/pipeline.png" alt="Astrolabe Pipeline" class="method-image">
+                <p class="method-caption">
+                    <strong>Astrolabe Framework:</strong> Our method combines memory-efficient streaming rollout with forward-process RL optimization.
+                    (Left) Rolling KV cache with frame sinks enables bounded memory usage during long video generation.
+                    (Middle) Clip-level group-wise sampling generates multiple candidates in parallel for efficient exploration.
+                    (Right) Forward-process RL contrasts positive and negative policies using only clean samples, avoiding trajectory storage.
+                </p>
+
+            </section>
+
+        <section id="short-video" class="gallery-section">
+            <h2>Single-Prompt Short Video Generation</h2>
+            <p style="text-align: center; color: #666;">Astrolabe improves visual quality and temporal consistency on short video generation tasks.</p>
+            <div class="speed-controls" role="group" aria-label="Playback speed">
+                <span class="speed-label">Play speed:</span>
+                <button class="speed-btn active" data-speed="1">x1</button>
+                <button class="speed-btn" data-speed="2">x2</button>
+            </div>
+            <div class="gallery-3 interactive-grid"></div>
+        </section>
+
+        <section id="multi-prompt" class="gallery-section">
+            <h2>Multi-Prompt Long Video Generation</h2>
+            <p style="text-align: center; color: #666;">Astrolabe maintains coherence across multiple prompts in long-form video generation.</p>
+            <div class="speed-controls" role="group" aria-label="Playback speed">
+                <span class="speed-label">Play speed:</span>
+                <button class="speed-btn active" data-speed="1">x1</button>
+                <button class="speed-btn" data-speed="2">x2</button>
+            </div>
+            <div class="gallery-3 interactive-grid"></div>
+        </section>
+
+        <section id="multi-prompt-scene-cut" class="gallery-section">
+            <h2>Multi-Prompt Scene Cut</h2>
+            <p style="text-align: center; color: #666;">Demonstrating smooth scene transitions with multiple prompts.</p>
+            <div class="speed-controls" role="group" aria-label="Playback speed">
+                <span class="speed-label">Play speed:</span>
+                <button class="speed-btn active" data-speed="1">x1</button>
+                <button class="speed-btn" data-speed="2">x2</button>
+            </div>
+            <div class="gallery-3 interactive-grid"></div>
+        </section>
+
+        <section id="comparisons" class="gallery-section">
+            <h2>Comparisons with Baselines</h2>
+            <p style="text-align: center; color: #666;">Qualitative comparisons showing improvements over baseline distilled models and competing methods.</p>
+            <div class="speed-controls" role="group" aria-label="Playback speed">
+                <span class="speed-label">Play speed:</span>
+                <button class="speed-btn active" data-speed="1">x1</button>
+                <button class="speed-btn" data-speed="2">x2</button>
+            </div>
+            <!-- Method labels displayed above each video -->
+            <div class="comparison-labels">
+                <div class="label-wrapper">
+                    <span class="label">CausalVid</span>
+                </div>
+                <div class="label-wrapper">
+                    <span class="label">RewardForcing</span>
+                </div>
+                <div class="label-wrapper">
+                    <span class="label">Self-Forcing</span>
+                </div>
+                <div class="label-wrapper ours">
+                    <span class="label">Self-Forcing + Ours</span>
+                </div>
+            </div>
+            <div class="gallery-3 interactive-grid" id="comparison-videos"></div>
+        </section>
+
+        
+
+        <section id="contact-us" class="contact-us">
+            <h2>Citation</h2>
+            <p>
+                If you find this work useful, please consider citing:
+            </p>
+            <div class="citation-container">
+                <div class="citation-box">
+                    <pre>@inproceedings{zhang2026astrolabe,
+  title={Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models},
+  author={Zhang, Songchun and Xue, Zeyue and Fu, Siming and Huang, Jie and Kong, Xianghao and Ma, Yue and Huang, Haoyang and Duan, Nan and Rao, Anyi},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}</pre>
+                </div>
+            </div>
+            <h2>Acknowledgments</h2>
+            <p>
+                We thank the authors of Wan-Move, LongLive, Jenga, UltraPixel, ControlNeXt, and ToonCrafter for providing project page templates!
+            </p>
+        </section>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
