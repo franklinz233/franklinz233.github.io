@@ -184,6 +184,65 @@ function buildDynamicGrid(sectionId, data) {
 console.log('%cAstrolabe Project Page', 'color: #7A28CB; font-size: 24px; font-weight: bold;');
 console.log('%cSteering Forward-Process RL for Distilled AR Video Models', 'color: #00D2FF; font-size: 14px;');
 
+// Prompt lookup by zero-padded 5-digit ID (0-based: ID = line number - 1)
+const CF_PROMPTS = {
+    '00006': "This close-up shot of a Victoria crowned pigeon showcases its striking blue plumage and red chest. Its crest is made of delicate, lacy feathers, while its eye is a striking red color. The bird's head is tilted slightly to the side, giving the impression of it looking regal and majestic. The background is blurred, drawing attention to the bird's striking appearance.",
+    '00007': "Photorealistic closeup video of two pirate ships battling each other as they sail inside a cup of coffee.",
+    '00014': "A petri dish with a bamboo forest growing within it that has tiny red pandas running around.",
+    '00018': "Reflections in the window of a train traveling through the Tokyo suburbs.",
+    '00027': "A stop motion animation of a flower growing out of the windowsill of a suburban house.",
+    '00035': "Basketball through hoop then explodes.",
+    '00039': "The Glenfinnan Viaduct is a historic railway bridge in Scotland, UK, that crosses over the west highland line between the towns of Mallaig and Fort William. It is a stunning sight as a steam train leaves the bridge, traveling over the arch-covered viaduct. The landscape is dotted with lush greenery and rocky mountains, creating a picturesque backdrop for the train journey. The sky is blue and the sun is shining, making for a beautiful day to explore this majestic spot.",
+    '00050': "A white cat driving in a car through a busy downtown street with tall buildings and pedestrians in the background",
+    '00103': "A slow cinematic push in on an ostrich standing in a 1980s kitchen.",
+    '00284': "A first person view of a rock dropping from a cliff",
+    '00410': "A dynamic motion shot of a paper airplane morphing into a swan. The pointed nose becomes a graceful neck and head, wings unfolding and expanding. The camera moves around as the flat surfaces gain volume, creases softening into feathers. The tail section splits into webbed feet. The transformation finishes as the swan's plumage turns pristine white, its beak forming from the paper's final fold.",
+    '00420': "Llamas and Emus are playing chess",
+    '00842': "A pull-out from a child's hands holding a small seashell, moving back to show the beach and the waves around them.",
+    '00843': "A pull-out from a dancer's feet moving gracefully, expanding to show the entire stage and audience.",
+    '00898': "a toy robot wearing blue jeans and a white t shirt taking a pleasant stroll in Johannesburg South Africa during a beautiful sunset",
+    '00918': "a toy robot wearing a green dress and a sun hat taking a pleasant stroll in Johannesburg South Africa during a winter storm",
+    '00001': "Several giant wooly mammoths approach treading through a snowy meadow, their long wooly fur lightly blows in the wind as they walk, snow covered trees and dramatic snow capped mountains in the distance, mid afternoon light with wispy clouds and a sun high in the distance creates a warm glow, the low camera view is stunning capturing the large furry mammal with beautiful photography, depth of field.",
+    '00002': "A movie trailer featuring the adventures of the 30 year old space man wearing a red wool knitted motorcycle helmet, blue sky, salt desert, cinematic style, shot on 35mm film, vivid colors.",
+    '00003': "Drone view of waves crashing against the rugged cliffs along Big Sur's garay point beach. The crashing blue waters create white-tipped waves, while the golden light of the setting sun illuminates the rocky shore. A small island with a lighthouse sits in the distance, and green shrubbery covers the cliff's edge. The steep drop from the road down to the beach is a dramatic feat, with the cliff's edges jutting out over the sea.",
+    '00005': "A gorgeously rendered papercraft world of a coral reef, rife with colorful fish and sea creatures.",
+    '00015': "The camera rotates around a large stack of vintage televisions all showing different programs — 1950s sci-fi movies, horror movies, news, static, a 1970s sitcom, etc, set inside a large New York museum gallery.",
+    '00075': "Handheld tracking shot, following a red balloon floating above the ground in abandon street."
+};
+
+const KREA_PROMPTS = {
+    '00003': "Drone view of waves crashing against the rugged cliffs along Big Sur's garay point beach. The crashing blue waters create white-tipped waves, while the golden light of the setting sun illuminates the rocky shore. A small island with a lighthouse sits in the distance, and green shrubbery covers the cliff's edge. The steep drop from the road down to the beach is a dramatic feat, with the cliff's edges jutting out over the sea.",
+    '00035': "Basketball through hoop then explodes.",
+    '00028': "The story of a robot's life in a cyberpunk setting.",
+    '00047': "A Samoyed and a Golden Retriever dog are playfully romping through a futuristic neon city at night. The neon lights emitted from the nearby buildings glistens off of their fur.",
+    '00050': "A white cat driving in a car through a busy downtown street with tall buildings and pedestrians in the background",
+    '00061': "Little boy riding his bike in the garden through the changing seasons of fall, winter, spring and summer.",
+    '00067': "A rally car taking a fast turn on a track",
+    '00086': "A pencil drawing an architectural plan.",
+    '00194': "A human being walking on water and interacting with the wildlife animals below them.",
+    '00297': "A female warrior rushes towards the camera, and suddenly she turns into a holographic monster.",
+    '00342': "A car is on fire and exploding.",
+    '00371': "A red bird transforms into a flag",
+    '00372': "A curtain transforms into a dancing girl",
+    '00433': "A skeleton wearing a flower hat and sunglasses dances in the wild at sunset.",
+    '00491': "Flying cars zoom through a futuristic cityscape, maneuvering around towering skyscrapers while lights flicker on the buildings, creating a constantly shifting pattern.",
+    '00538': "A vibrant carnival buzzes with activity as people enjoy rides, play games, and admire colorful lights, the energy and excitement filling the air.",
+    '00575': "A butterfly in a tiny race car, speeding around a track made of flowers.",
+    '00594': "A person painting a sunset in the sky with a giant paintbrush.",
+    '00596': "A person playing a grand piano underwater in a crystal-clear lake.",
+    '00598': "A person knitting a scarf using beams of light instead of yarn.",
+    '00602': "A person cooking a meal over a campfire on the moon.",
+    '00617': "A person playing an electric guitar made of lightning, with thunderous sound waves.",
+    '00630': "A person holding an umbrella that turns rain into colorful confetti.",
+    '00636': "A person playing a drum set made of thunderclouds, with each beat creating a lightning flash.",
+    '00650': "Two people on roller skates colliding in a rink, both spinning out of control.",
+    '00679': "A surfer accelerating on a wave, carving through the water.",
+    '00761': "A first-person view of a surfer paddling out and catching a wave, the water rushing around them as they ride.",
+    '00843': "A pull-out from a dancer's feet moving gracefully, expanding to show the entire stage and audience.",
+    '00897': "a toy robot wearing blue jeans and a white t shirt taking a pleasant stroll in Mumbai India during a winter storm",
+    '00902': "a toy robot wearing blue jeans and a white t shirt taking a pleasant stroll in Antarctica during a colorful festival"
+};
+
 // Casual Forcing video data
 const CASUAL_FORCING_SHORT_VIDEOS = [
     'compare_2way_00006.mp4',
@@ -219,79 +278,110 @@ const CASUAL_FORCING_SCENE_CUT_VIDEOS = [
     'compare_2way_00005.mp4'
 ];
 
+function makeVideoItem(src, promptText) {
+    const videoItem = document.createElement('div');
+    videoItem.className = 'fullwidth-video-item';
+
+    const video = document.createElement('video');
+    video.className = 'fullwidth-video';
+    video.loop = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.controls = true;
+    video.preload = 'none';
+    video.dataset.src = src;
+    videoItem.appendChild(video);
+
+    if (promptText) {
+        const overlay = document.createElement('div');
+        overlay.className = 'prompt-overlay';
+        overlay.innerHTML = `<i class="fas fa-quote-left"></i> ${promptText}`;
+        videoItem.appendChild(overlay);
+    }
+
+    if (window._videoObserver) {
+        window._videoObserver.observe(video);
+    }
+    return videoItem;
+}
+
 // Load casual_forcing videos into short-video section
 document.addEventListener('DOMContentLoaded', function() {
     const shortVideoGrid = document.querySelector('#short-video .interactive-grid');
     if (shortVideoGrid) {
-        CASUAL_FORCING_SHORT_VIDEOS.forEach((filename, index) => {
-            const videoItem = document.createElement('div');
-            videoItem.className = 'fullwidth-video-item';
-
-            const video = document.createElement('video');
-            video.className = 'fullwidth-video';
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            video.controls = true;
-            video.preload = 'none';
-            video.dataset.src = `./assets/videos/casual_forcing/${filename}`;
-
-            videoItem.appendChild(video);
-            shortVideoGrid.appendChild(videoItem);
-
-            if (window._videoObserver) {
-                window._videoObserver.observe(video);
-            }
+        CASUAL_FORCING_SHORT_VIDEOS.forEach(filename => {
+            const id = filename.replace('compare_2way_', '').replace('.mp4', '');
+            shortVideoGrid.appendChild(makeVideoItem(
+                `./assets/videos/casual_forcing/${filename}`,
+                CF_PROMPTS[id]
+            ));
         });
     }
 
     // Load casual_forcing videos into multi-prompt section
     const multiPromptGrid = document.querySelector('#multi-prompt .interactive-grid');
     if (multiPromptGrid) {
-        CASUAL_FORCING_LONG_VIDEOS.forEach((filename, index) => {
-            const videoItem = document.createElement('div');
-            videoItem.className = 'fullwidth-video-item';
-
-            const video = document.createElement('video');
-            video.className = 'fullwidth-video';
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            video.controls = true;
-            video.preload = 'none';
-            video.dataset.src = `./assets/videos/casual_forcing/${filename}`;
-
-            videoItem.appendChild(video);
-            multiPromptGrid.appendChild(videoItem);
-
-            if (window._videoObserver) {
-                window._videoObserver.observe(video);
-            }
+        CASUAL_FORCING_LONG_VIDEOS.forEach(filename => {
+            multiPromptGrid.appendChild(makeVideoItem(
+                `./assets/videos/casual_forcing/${filename}`,
+                null
+            ));
         });
     }
 
     // Load casual_forcing videos into multi-prompt-scene-cut section
     const sceneCutGrid = document.querySelector('#multi-prompt-scene-cut .interactive-grid');
     if (sceneCutGrid) {
-        CASUAL_FORCING_SCENE_CUT_VIDEOS.forEach((filename, index) => {
-            const videoItem = document.createElement('div');
-            videoItem.className = 'fullwidth-video-item';
+        CASUAL_FORCING_SCENE_CUT_VIDEOS.forEach(filename => {
+            sceneCutGrid.appendChild(makeVideoItem(
+                `./assets/videos/casual_forcing/${filename}`,
+                null
+            ));
+        });
+    }
+});
 
-            const video = document.createElement('video');
-            video.className = 'fullwidth-video';
-            video.loop = true;
-            video.muted = true;
-            video.playsInline = true;
-            video.controls = true;
-            video.preload = 'none';
-            video.dataset.src = `./assets/videos/casual_forcing/${filename}`;
+// Krea 14B video data
+const KREA_SHORT_VIDEOS = [
+    'compare_2way_00594.mp4',
+    'compare_2way_00630.mp4',
+    'compare_2way_00636.mp4',
+    'compare_2way_00028.mp4',
+    'compare_2way_00035.mp4',
+    'compare_2way_00050.mp4',
+    'compare_2way_00061.mp4',
+    'compare_2way_00067.mp4',
+    'compare_2way_00086.mp4',
+    'compare_2way_00194.mp4',
+    'compare_2way_00297.mp4',
+    'compare_2way_00342.mp4',
+    'compare_2way_00371.mp4',
+    'compare_2way_00372.mp4',
+    'compare_2way_00433.mp4',
+    'compare_2way_00491.mp4',
+    'compare_2way_00538.mp4',
+    'compare_2way_00575.mp4',
+    'compare_2way_00596.mp4',
+    'compare_2way_00598.mp4',
+    'compare_2way_00602.mp4',
+    'compare_2way_00617.mp4',
+    'compare_2way_00650.mp4',
+    'compare_2way_00679.mp4',
+    'compare_2way_00761.mp4',
+    'compare_2way_00843.mp4',
+    'compare_2way_00897.mp4',
+    'compare_2way_00902.mp4'
+];
 
-            videoItem.appendChild(video);
-            sceneCutGrid.appendChild(videoItem);
-
-            if (window._videoObserver) {
-                window._videoObserver.observe(video);
-            }
+document.addEventListener('DOMContentLoaded', function() {
+    const kreaGrid = document.querySelector('#krea-video .interactive-grid');
+    if (kreaGrid) {
+        KREA_SHORT_VIDEOS.forEach(filename => {
+            const id = filename.replace('compare_2way_', '').replace('.mp4', '');
+            kreaGrid.appendChild(makeVideoItem(
+                `./assets/videos/krea_videos/${filename}`,
+                KREA_PROMPTS[id]
+            ));
         });
     }
 });

@@ -22,11 +22,11 @@
         <ul>
             <li><a href="#abstract" class="nav-link"><i class="fas fa-file-alt"></i>Abstract</a></li>
             <li><a href="#method" class="nav-link"><i class="fas fa-cogs"></i>Method</a></li>
-            <li><a href="#short-video" class="nav-link"><i class="fas fa-video"></i>Short Video Results</a></li>
+            <li><a href="#krea-video" class="nav-link"><i class="fas fa-video"></i>RL Results (14B)</a></li>
+            <li><a href="#short-video" class="nav-link"><i class="fas fa-video"></i>RL Results (1.3B)</a></li>
             <li><a href="#comparisons" class="nav-link"><i class="fas fa-trophy"></i>Comparisons</a></li>
             <li><a href="#multi-prompt" class="nav-link"><i class="fas fa-list"></i>Multi-Prompt Results</a></li>
             <li><a href="#multi-prompt-scene-cut" class="nav-link"><i class="fas fa-film"></i>Multi-Prompt Scene Cut</a></li>
-            <li><a href="#ablation" class="nav-link"><i class="fas fa-flask"></i>Ablation Studies</a></li>
         </ul>
 
     </div>
@@ -36,7 +36,7 @@
             <div class="authors">
                 <div class="author-row">
                     <span class="author">Songchun Zhang</span><sup>1</sup><span class="author-sep">,</span>
-                    <span class="author">Zeyue Xue</span><sup>2</sup><span class="author-sep">,</span>
+                    <span class="author">Zeyue Xue</span><sup>2,3</sup><span class="author-sep">,</span>
                     <span class="author">Siming Fu</span><sup>2</sup><span class="author-sep">,</span>
                     <span class="author">Jie Huang</span><sup>2</sup><span class="author-sep">,</span>
                     <span class="author">Xianghao Kong</span><sup>1</sup><span class="author-sep">,</span>
@@ -46,12 +46,12 @@
                     <span class="author">Anyi Rao</span><sup>1§</sup>
                 </div>
                 <div class="affiliation-row">
-                    <sup>1</sup>HKUST &nbsp;&nbsp;&nbsp; <sup>2</sup>JD Explore Academy
+                    <sup>1</sup>HKUST &nbsp;&nbsp;&nbsp; <sup>2</sup>JD Explore Academy &nbsp;&nbsp;&nbsp; <sup>3</sup>HKU
                 </div>
             </div>
             <div class="links">
                 <p><a href="#" target="_blank">Paper</a></p>
-                <p><a href="#" target="_blank">Code</a></p>
+                <p><a href="#" target="_blank">Code (Release in one week)</a></p>
                 <p><a href="#" target="_blank">Demo</a></p>
             </div>
 
@@ -100,9 +100,20 @@
 
             </section>
 
+        <section id="krea-video" class="gallery-section">
+            <h2>RL Results on Krea 14B</h2>
+            <p style="text-align: center; color: #666;">Astrolabe RL fine-tuning improves visual quality and temporal consistency on the Krea 14B base model.</p>
+            <div class="speed-controls" role="group" aria-label="Playback speed">
+                <span class="speed-label">Play speed:</span>
+                <button class="speed-btn active" data-speed="1">x1</button>
+                <button class="speed-btn" data-speed="2">x2</button>
+            </div>
+            <div class="gallery-3 interactive-grid"></div>
+        </section>
+
         <section id="short-video" class="gallery-section">
-            <h2>Single-Prompt Short Video Generation</h2>
-            <p style="text-align: center; color: #666;">Astrolabe improves visual quality and temporal consistency on short video generation tasks.</p>
+            <h2>RL Results on Causal Forcing 1.3B</h2>
+            <p style="text-align: center; color: #666;">Astrolabe RL fine-tuning improves visual quality and temporal consistency on the Causal Forcing 1.3B base model.</p>
             <div class="speed-controls" role="group" aria-label="Playback speed">
                 <span class="speed-label">Play speed:</span>
                 <button class="speed-btn active" data-speed="1">x1</button>
@@ -171,7 +182,6 @@
                     <pre>@inproceedings{zhang2026astrolabe,
   title={Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models},
   author={Zhang, Songchun and Xue, Zeyue and Fu, Siming and Huang, Jie and Kong, Xianghao and Ma, Yue and Huang, Haoyang and Duan, Nan and Rao, Anyi},
-  booktitle={European Conference on Computer Vision (ECCV)},
   year={2026}
 }</pre>
                 </div>
