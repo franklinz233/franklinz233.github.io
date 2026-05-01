@@ -57,7 +57,8 @@
         width: 100%;
         order: 2;
         img {
-            width: 400px;
+            width: 100%;
+            max-width: 320px;
             aspect-ratio: 16/9;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             object-fit: cover;
@@ -102,13 +103,13 @@
 
 }
 
-$scroll_offset : 2em;
-h1:before, .anchor:before { 
-    content: ''; 
-    display: block; 
-    position: relative; 
-    width: 0; 
-    height: $scroll_offset; 
+$scroll_offset : 5em;
+h1:before, .anchor:before {
+    content: '';
+    display: block;
+    position: relative;
+    width: 0;
+    height: $scroll_offset;
     margin-top: -$scroll_offset;
 }
 
