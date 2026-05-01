@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Songchun Zhang"
-description              : "An AI Researcher."
+description              : "Ph.D. Student @ MMLAB, HKUST"
 repository               : "franklinz233/franklinz233.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Songchun Zhang"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "HKUST"
-  location         : "HKSAR, China"
+  bio              : "Ph.D. Student @ MMLAB, HKUST. Multimodal Interactive World Models."
+  location         : "Hong Kong SAR, China"
   employer         :
   pubmed           : 
   googlescholar    :  # "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
