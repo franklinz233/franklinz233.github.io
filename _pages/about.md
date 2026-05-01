@@ -25,11 +25,15 @@ My research focuses on 3D/4D content generation and world model:
 - Generalizable 3D Foundation Models: Generative 3D reconstruction from sparse, multi-view, or in-the-wild data.
 - Interactive World Models: Real-time inference and control with Long-term memory.
 
+<span class='anchor' id='-news'></span>
+
 # 🔥 News
 - *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
 - *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
 - *2024.02*: &nbsp;🎉🎉 One paper accepted by CVPR 2024.
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
+
+<span class='anchor' id='-publications'></span>
 
 # 📝 Publications
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2026</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
@@ -102,6 +106,8 @@ My research focuses on 3D/4D content generation and world model:
 - **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao. 
 
 
+<span class='anchor' id='-experience'></span>
+
 # 🖥️ Experience
 
 - **March 2024 - Sept. 2024**  
@@ -123,11 +129,15 @@ My research focuses on 3D/4D content generation and world model:
   Advisor: [Prof. Hongyang Li](https://scholar.google.com/citations?user=Hfrih1EAAAAJ) and Xiangwei Geng  
   Research included: Self-supervised Depth Estimation  
   
+<span class='anchor' id='-academic-service'></span>
+
 # 🎓 Academic Service
 - Reviewing
   - Conferences: CVPR, ICRA, NeurIPS, AAAI, Siggraph Asia
   - Journals: TCSVT, TMM, KBS
 
+
+<span class='anchor' id='-honors-and-awards'></span>
 
 # 🎖 Honors and Awards
 - *2024.12* &nbsp;&nbsp; Outstanding Graduate of Zhejiang University
