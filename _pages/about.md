@@ -18,8 +18,8 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About Me
-I am Songchun Zhang (张菘淳), a first-year Ph.D. student at [MMLAB@HKUST](https://mmlab-hkust.github.io/), supervised by [Prof. Anyi Rao](https://anyirao.com/) and Prof [Huamin Qu](http://www.huamin.org/). I obtained my master's degree at [Zhejiang University](https://www.zju.edu.cn/english/), where I collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
-Previously, I received my Bachelor’s degree from Hunan University. 
+I am Songchun Zhang (张菘淳), a first-year Ph.D. student at [MMLAB@HKUST](https://mmlab-hkust.github.io/), supervised by [Prof. Anyi Rao](https://anyirao.com/) and Prof [Huamin Qu](http://www.huamin.org/). I obtained my master’s degree at [Zhejiang University](https://www.zju.edu.cn/english/), supervised by [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao), where I also collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou) at the State Key Lab of CAD&CG.
+Previously, I received my Bachelor’s degree from Hunan University.
 
 My research focuses on **multimodal real-time interactive world models** for embodied intelligence and game prototyping:
 - **Embodied Intelligence**: Building world models that enable agents to perceive, reason, and interact with physical and virtual environments in real-time.
