@@ -36,10 +36,10 @@ My research focuses on 3D/4D content generation and world model:
 <span class='anchor' id='-publications'></span>
 
 # 📝 Publications
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2026</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**Preprint 2026**] [Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models](https://arxiv.org/abs/2603.17051)  \\
+[**Arxiv**] [Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models](https://arxiv.org/abs/2603.17051)  \\
 **Songchun Zhang**, Zeyue Xue, Siming Fu, Jie Huang, Xianghao Kong, Yue Ma, Haoyang Huang, Nan Duan, Anyi Rao. \\
 [[Project page]](https://franklinz233.github.io/projects/astrolabe/)
 [[Paper]](https://arxiv.org/abs/2603.17051)
