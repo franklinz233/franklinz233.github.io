@@ -79,7 +79,6 @@
     &:hover {
         .paper-box-image img {
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-            transform: translateY(-2px);
         }
     }
 
@@ -87,14 +86,14 @@
         .paper-box-image{
             justify-content: left;
             min-width: 200px;
-            max-width: 40%;
+            max-width: 35%;
             order: 1;
         }
 
         .paper-box-text{
             justify-content: left;
-            padding-left: 2em;
-            max-width: 60%;
+            padding-left: 1.5em;
+            max-width: 65%;
             order: 2;
         }
 
