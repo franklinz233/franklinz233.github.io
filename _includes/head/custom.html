@@ -20,4 +20,70 @@
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
 
+<style>
+/* Enhanced visual improvements */
+.page__content h1 {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 1.5em;
+    padding-bottom: 0.6em;
+    border-bottom: 2px solid #e8e8e8;
+}
+
+.page__content h2 {
+    color: #34495e;
+    font-weight: 600;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Link hover effects */
+.page__content a:not(.btn) {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.page__content a:not(.btn):hover {
+    color: #764ba2;
+    border-bottom-color: #764ba2;
+}
+
+/* News section emoji styling */
+.page__content li {
+    line-height: 1.8;
+}
+
+/* Author profile improvements */
+.author__avatar img {
+    border: 3px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.author__avatar img:hover {
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+/* Subtle animations for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.paper-box {
+    animation: fadeInUp 0.6s ease-out;
+}
+</style>
+
 <!-- end custom head snippets -->
