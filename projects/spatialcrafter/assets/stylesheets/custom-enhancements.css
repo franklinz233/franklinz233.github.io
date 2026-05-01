@@ -64,7 +64,7 @@ html {
 }
 
 /* Better section headings */
-.blog.main h1 {
+#blog-main h1 {
     color: #2c3e50;
     font-weight: 700;
     margin-top: 2.5rem;
@@ -74,17 +74,7 @@ html {
     position: relative;
 }
 
-.blog.main h1::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
-}
-
-.blog.main h2 {
+#blog-main h2 {
     color: #34495e;
     font-weight: 600;
     margin-top: 2rem;
