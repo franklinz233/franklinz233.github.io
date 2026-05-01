@@ -32,6 +32,20 @@ My research focuses on 3D/4D content generation and world model:
 - *2023.12*: &nbsp;🎉🎉 One paper accepted by TCSVT.
 
 # 📝 Publications
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint 2026</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Preprint 2026**] [Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models](https://arxiv.org/abs/2603.17051)  \\
+**Songchun Zhang**, Zeyue Xue, Siming Fu, Jie Huang, Xianghao Kong, Yue Ma, Haoyang Huang, Nan Duan, Anyi Rao. \\
+[[Project page]](https://franklinz233.github.io/projects/astrolabe/)
+[[Paper]](https://arxiv.org/abs/2603.17051)
+[[Code]](https://github.com/franklinz233/Astrolabe)
+
+- This paper presents an efficient online RL framework for aligning distilled autoregressive video models with human visual preferences.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2025</div><img src='images/spatialcrafter.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
