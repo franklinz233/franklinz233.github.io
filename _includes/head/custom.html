@@ -117,7 +117,7 @@ html {
     margin-right: 0.3em;
 }
 
-/* News section - timeline style without bullets */
+/* News section - timeline style matching Experience */
 #-news + h1 + ul,
 #-news + * + ul {
     list-style: none;
@@ -129,51 +129,47 @@ html {
 #-news + * + ul::before {
     content: '';
     position: absolute;
-    left: 5.5em;
-    top: 0.5em;
-    bottom: 0.5em;
+    left: 0;
+    top: 0;
+    bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, #ff6b6b 0%, #feca57 100%);
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
 }
 
 #-news + h1 + ul > li,
 #-news + * + ul > li {
-    padding: 0.6em 0 0.6em 7em;
     position: relative;
-    transition: all 0.3s ease;
+    padding-left: 2.5em;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#-news + h1 + ul > li:last-child,
+#-news + * + ul > li:last-child {
+    border-bottom: none;
 }
 
 #-news + h1 + ul > li::before,
 #-news + * + ul > li::before {
     content: '';
     position: absolute;
-    left: 5em;
-    top: 1em;
-    width: 10px;
-    height: 10px;
+    left: -6px;
+    top: 0.4em;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background: #ff6b6b;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 2px #ff6b6b;
+    background: #667eea;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #667eea;
     z-index: 1;
 }
 
 #-news + h1 + ul > li em,
 #-news + * + ul > li em {
-    position: absolute;
-    left: 0;
-    top: 0.6em;
     font-style: normal;
     font-weight: 600;
-    color: #666;
-    width: 4.5em;
-    text-align: right;
-}
-
-#-news + h1 + ul > li:hover,
-#-news + * + ul > li:hover {
-    background: #fafafa;
-    padding-left: 7.5em;
+    color: #667eea;
 }
 
 /* Experience section - timeline */
