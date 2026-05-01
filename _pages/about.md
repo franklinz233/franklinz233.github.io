@@ -120,38 +120,48 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 
 # 🖥️ Experience
 
-- **March 2024 - Sept. 2024**  
-  **Research Intern** - Anti-Entropy Research Group, miHoYo  
-  Advisor: [Cheng Lin](https://clinplayer.github.io/)  
-  Research included: 3D Scene Generation, Video World Model
-  
-- **Sept. 2023 - Feb. 2024**  
-  **Research Intern** - Taobao and Tmall Group, Alibaba  
-  Research included: Sparse View Object Reconstruction
-  
-- **April 2023 - Dec. 2023**  
-  **Research Assistant** - State Key Lab of CAD&CG, Zhejiang University  
-  Advisor: [Prof. Changqing Zou](https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao) and [Prof. Weiwei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm)  
-  Research included: Text-Guided 3D Generation  
-  
-- **Sept. 2021 - April 2022**  
-  **Research Intern** - OpenDriveLab of Shanghai AI Laboratory  
-  Advisor: [Prof. Hongyang Li](https://scholar.google.com/citations?user=Hfrih1EAAAAJ) and Xiangwei Geng  
-  Research included: Self-supervised Depth Estimation  
-  
+<ul class="section-experience">
+<li><strong>March 2024 - Sept. 2024</strong><br>
+<strong>Research Intern</strong> - Anti-Entropy Research Group, miHoYo<br>
+Advisor: <a href="https://clinplayer.github.io/">Cheng Lin</a><br>
+Research included: 3D Scene Generation, Video World Model</li>
+
+<li><strong>Sept. 2023 - Feb. 2024</strong><br>
+<strong>Research Intern</strong> - Taobao and Tmall Group, Alibaba<br>
+Research included: Sparse View Object Reconstruction</li>
+
+<li><strong>April 2023 - Dec. 2023</strong><br>
+<strong>Research Assistant</strong> - State Key Lab of CAD&amp;CG, Zhejiang University<br>
+Advisor: <a href="https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao">Prof. Changqing Zou</a> and <a href="http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm">Prof. Weiwei Xu</a><br>
+Research included: Text-Guided 3D Generation</li>
+
+<li><strong>Sept. 2021 - April 2022</strong><br>
+<strong>Research Intern</strong> - OpenDriveLab of Shanghai AI Laboratory<br>
+Advisor: <a href="https://scholar.google.com/citations?user=Hfrih1EAAAAJ">Prof. Hongyang Li</a> and Xiangwei Geng<br>
+Research included: Self-supervised Depth Estimation</li>
+</ul>
+
 <span class='anchor' id='-academic-service'></span>
 
 # 🎓 Academic Service
-- Reviewing
-  - Conferences: CVPR, ICRA, NeurIPS, AAAI, Siggraph Asia
-  - Journals: TCSVT, TMM, KBS
 
+<ul class="section-service">
+<li>Reviewing
+  <ul>
+    <li>Conferences: CVPR, ICRA, NeurIPS, AAAI, Siggraph Asia</li>
+    <li>Journals: TCSVT, TMM, KBS</li>
+  </ul>
+</li>
+</ul>
 
 <span class='anchor' id='-honors-and-awards'></span>
 
 # 🎖 Honors and Awards
-- *2024.12* &nbsp;&nbsp; Outstanding Graduate of Zhejiang University
-- *2021.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
-- *2020.12* &nbsp;&nbsp; First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)
-- *2020.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
-- *2019.12* &nbsp;&nbsp; National Scholarship  (Top 1% among all undergraduates)
+
+<ul class="section-honors">
+<li><em>2024.12</em> &nbsp;&nbsp; Outstanding Graduate of Zhejiang University</li>
+<li><em>2021.12</em> &nbsp;&nbsp; National Scholarship (Top 1% among all undergraduates)</li>
+<li><em>2020.12</em> &nbsp;&nbsp; First Prize in China Undergraduate Mathematical Contest in Model (Top 0.1% among all undergraduates)</li>
+<li><em>2020.12</em> &nbsp;&nbsp; National Scholarship (Top 1% among all undergraduates)</li>
+<li><em>2019.12</em> &nbsp;&nbsp; National Scholarship (Top 1% among all undergraduates)</li>
+</ul>

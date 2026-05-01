@@ -176,16 +176,14 @@ html {
     padding-left: 7.5em;
 }
 
-/* Experience section - timeline style, only the ul directly after the anchor */
-#-experience + h1 + ul,
-#-experience + * + ul {
+/* Experience section - timeline */
+ul.section-experience {
     list-style: none;
     padding-left: 0;
     position: relative;
 }
 
-#-experience + h1 + ul::before,
-#-experience + * + ul::before {
+ul.section-experience::before {
     content: '';
     position: absolute;
     left: 0;
@@ -195,8 +193,7 @@ html {
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
 }
 
-#-experience + h1 + ul > li,
-#-experience + * + ul > li {
+ul.section-experience > li {
     position: relative;
     padding-left: 2.5em;
     margin-bottom: 2em;
@@ -204,8 +201,7 @@ html {
     border-bottom: 1px solid #e8e8e8;
 }
 
-#-experience + h1 + ul > li::before,
-#-experience + * + ul > li::before {
+ul.section-experience > li::before {
     content: '';
     position: absolute;
     left: -6px;
@@ -218,108 +214,63 @@ html {
     box-shadow: 0 0 0 2px #667eea;
 }
 
-#-experience + h1 + ul > li:last-child,
-#-experience + * + ul > li:last-child {
+ul.section-experience > li:last-child {
     border-bottom: none;
 }
 
-/* Academic Service - clean card style */
-#-academic-service + h1 + ul,
-#-academic-service + * + ul {
+/* Academic Service */
+ul.section-service {
     list-style: none;
     padding-left: 0;
-    position: static;
 }
 
-#-academic-service + h1 + ul::before,
-#-academic-service + * + ul::before {
-    display: none;
-}
-
-#-academic-service + h1 + ul > li,
-#-academic-service + * + ul > li {
+ul.section-service > li {
     background: #f8f9fa;
     padding: 1.2em 1.5em;
     margin-bottom: 0.8em;
     border-radius: 8px;
     border-left: 3px solid #667eea;
-    padding-left: 1.5em;
-    border-bottom: none;
 }
 
-#-academic-service + h1 + ul > li::before,
-#-academic-service + * + ul > li::before {
-    display: none;
-}
-
-#-academic-service + h1 + ul > li > ul,
-#-academic-service + * + ul > li > ul {
+ul.section-service > li > ul {
     margin-top: 0.5em;
     list-style: none;
     padding-left: 0;
 }
 
-#-academic-service + h1 + ul > li > ul > li,
-#-academic-service + * + ul > li > ul > li {
+ul.section-service > li > ul > li {
     padding: 0.3em 0;
     color: #555;
-    padding-left: 0;
-    border-bottom: none;
 }
 
-#-academic-service + h1 + ul > li > ul > li::before,
-#-academic-service + * + ul > li > ul > li::before {
+ul.section-service > li > ul > li::before {
     content: '▸';
     color: #667eea;
     font-weight: bold;
     margin-right: 0.5em;
-    display: inline;
-    position: static;
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    border: none;
 }
 
-/* Honors and Awards - subtle style */
-#-honors-and-awards + h1 + ul,
-#-honors-and-awards + * + ul {
+/* Honors and Awards */
+ul.section-honors {
     list-style: none;
     padding-left: 0;
-    position: static;
 }
 
-#-honors-and-awards + h1 + ul::before,
-#-honors-and-awards + * + ul::before {
-    display: none;
-}
-
-#-honors-and-awards + h1 + ul > li,
-#-honors-and-awards + * + ul > li {
+ul.section-honors > li {
     background: #fafafa;
     padding: 1em 1.5em;
     margin-bottom: 0.8em;
     border-radius: 6px;
     border-left: 3px solid #d4af37;
-    border-bottom: none;
     transition: all 0.3s ease;
 }
 
-#-honors-and-awards + h1 + ul > li::before,
-#-honors-and-awards + * + ul > li::before {
-    display: none;
-}
-
-#-honors-and-awards + h1 + ul > li:hover,
-#-honors-and-awards + * + ul > li:hover {
+ul.section-honors > li:hover {
     background: #f5f5f5;
     border-left-width: 4px;
 }
 
-#-honors-and-awards + h1 + ul > li em,
-#-honors-and-awards + * + ul > li em {
+ul.section-honors > li em {
     color: #c9a227;
     font-weight: 600;
     font-style: normal;
