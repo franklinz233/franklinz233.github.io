@@ -50,10 +50,10 @@ My research focuses on 3D/4D content generation and world model:
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026</div><img src='images/bico.jpg' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Highlight</div><img src='images/bico.jpg' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**CVPR 2026**] [Composing Concepts from Images and Videos via Concept-prompt Binding](https://refkxh.github.io/BiCo_Webpage/)  \\
+[**CVPR 2026 Highlight**] [Composing Concepts from Images and Videos via Concept-prompt Binding](https://refkxh.github.io/BiCo_Webpage/)  \\
 Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao. \\
 [[Project page]](https://refkxh.github.io/BiCo_Webpage/)
 [[Paper]](https://refkxh.github.io/BiCo_Webpage/static/pdfs/paper.pdf)
