@@ -21,9 +21,9 @@ redirect_from:
 I am Songchun Zhang (张菘淳), a first-year Ph.D. student at [MMLAB@HKUST](https://mmlab-hkust.github.io/), supervised by [Prof. Anyi Rao](https://anyirao.com/) and Prof [Huamin Qu](http://www.huamin.org/). I obtained my master's degree at [Zhejiang University](https://www.zju.edu.cn/english/), where I collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou).
 Previously, I received my Bachelor’s degree from Hunan University. 
 
-My research focuses on 3D/4D content generation and world model:
-- Generalizable 3D Foundation Models: Generative 3D reconstruction from sparse, multi-view, or in-the-wild data.
-- Interactive World Models: Real-time inference and control with Long-term memory.
+My research focuses on **multimodal real-time interactive world models** for embodied intelligence and game prototyping:
+- **Embodied Intelligence**: Building world models that enable agents to perceive, reason, and interact with physical and virtual environments in real-time.
+- **Game Prototyping**: Developing generative systems for rapid creation and iteration of interactive game content and mechanics.
 
 <span class='anchor' id='-news'></span>
 
