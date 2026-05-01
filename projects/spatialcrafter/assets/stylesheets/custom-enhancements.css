@@ -1,0 +1,231 @@
+/* Custom enhancements for SpatialCrafter project page */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Improved header gradient */
+#first-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+#first-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Better title styling */
+.blog-title h1 {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+/* Enhanced conference badge */
+.conference-badge {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.8rem 2rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Better button styling */
+.button.icon {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button.icon:hover {
+    background-color: rgba(255, 255, 255, 0.35) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Improved author text */
+.author {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    font-weight: 400 !important;
+}
+
+/* Better section headings */
+.blog.main h1 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #667eea;
+    position: relative;
+}
+
+.blog.main h1::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.blog.main h2 {
+    color: #34495e;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced content container */
+.blog.main {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    padding: 3rem 6vw;
+    margin-top: -2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Better image styling */
+.blog.main img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 1.5rem auto;
+}
+
+.blog.main img:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Better video styling */
+.blog.main video {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
+}
+
+/* Improved paragraph spacing */
+.blog.main p {
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Better link styling */
+.blog.main a:not(.button) {
+    color: #667eea;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.blog.main a:not(.button):hover {
+    color: #764ba2;
+    border-bottom-color: #764ba2;
+}
+
+/* Code block improvements */
+pre {
+    background: #f8f9fa !important;
+    border-radius: 8px;
+    padding: 1.5rem !important;
+    border-left: 4px solid #667eea;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+}
+
+/* Better list styling */
+.blog.main ul, .blog.main ol {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog.main li {
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+/* Table improvements */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 1rem;
+    text-align: left;
+}
+
+td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 769px) {
+    .blog.main {
+        padding: 2rem 4vw;
+        margin-top: -1rem;
+    }
+
+    .button.icon {
+        padding: 0.6rem 1rem;
+        font-size: 14px;
+    }
+
+    .conference-badge {
+        padding: 0.6rem 1.5rem !important;
+    }
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.blog.main > * {
+    animation: fadeInUp 0.6s ease-out;
+}
