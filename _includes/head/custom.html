@@ -85,6 +85,129 @@ html {
 .paper-box {
     animation: fadeInUp 0.6s ease-out;
 }
+
+/* About Me research focus - remove bullets and add cards */
+#about-me + p + ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5em;
+}
+
+#about-me + p + ul li {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 1em 1.5em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+#about-me + p + ul li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Experience section - timeline style */
+#-experience + ul {
+    list-style: none;
+    padding-left: 0;
+    position: relative;
+}
+
+#-experience + ul::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+#-experience + ul > li {
+    position: relative;
+    padding-left: 2.5em;
+    margin-bottom: 2em;
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#-experience + ul > li::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0.3em;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #667eea;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #667eea;
+}
+
+#-experience + ul > li:last-child {
+    border-bottom: none;
+}
+
+/* Academic Service - clean card style */
+#-academic-service + ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#-academic-service + ul > li {
+    background: #f8f9fa;
+    padding: 1.2em 1.5em;
+    margin-bottom: 0.8em;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+}
+
+#-academic-service + ul > li > ul {
+    margin-top: 0.5em;
+    list-style: none;
+    padding-left: 0;
+}
+
+#-academic-service + ul > li > ul > li {
+    padding: 0.3em 0;
+    color: #555;
+}
+
+#-academic-service + ul > li > ul > li::before {
+    content: '▸';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* Honors and Awards - badge style */
+#-honors-and-awards + ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#-honors-and-awards + ul > li {
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+    padding: 1em 1.5em;
+    margin-bottom: 0.8em;
+    border-radius: 8px;
+    border-left: 4px solid #ffa500;
+    box-shadow: 0 2px 6px rgba(255, 165, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#-honors-and-awards + ul > li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+}
+
+#-honors-and-awards + ul > li em {
+    color: #ff8c00;
+    font-weight: 600;
+    font-style: normal;
+}
 </style>
 
 <!-- end custom head snippets -->
