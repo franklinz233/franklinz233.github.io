@@ -108,22 +108,66 @@ html {
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
-/* News section - keep simple bullets but style them */
+/* Publications - fix spacing for non-paper-box items */
+.page__content > ul > li > strong {
+    margin-right: 0.5em;
+}
+
+.page__content > ul > li a {
+    margin-right: 0.3em;
+}
+
+/* News section - timeline style without bullets */
 #-news ~ ul {
     list-style: none;
     padding-left: 0;
-}
-
-#-news ~ ul > li {
-    padding: 0.5em 0;
-    padding-left: 1.5em;
     position: relative;
 }
 
+#-news ~ ul::before {
+    content: '';
+    position: absolute;
+    left: 5.5em;
+    top: 0.5em;
+    bottom: 0.5em;
+    width: 2px;
+    background: linear-gradient(180deg, #ff6b6b 0%, #feca57 100%);
+}
+
+#-news ~ ul > li {
+    padding: 0.6em 0 0.6em 7em;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
 #-news ~ ul > li::before {
-    content: '🔥';
+    content: '';
+    position: absolute;
+    left: 5em;
+    top: 1em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #ff6b6b;
+    z-index: 1;
+}
+
+#-news ~ ul > li em {
     position: absolute;
     left: 0;
+    top: 0.6em;
+    font-style: normal;
+    font-weight: 600;
+    color: #666;
+    width: 4.5em;
+    text-align: right;
+}
+
+#-news ~ ul > li:hover {
+    background: #fafafa;
+    padding-left: 7.5em;
 }
 
 /* Experience section - timeline style */
