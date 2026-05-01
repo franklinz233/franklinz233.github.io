@@ -87,13 +87,13 @@ html {
 }
 
 /* About Me research focus - remove bullets and add cards */
-#about-me + p + ul {
+#about-me ~ p:first-of-type + ul {
     list-style: none;
     padding-left: 0;
     margin-top: 1.5em;
 }
 
-#about-me + p + ul li {
+#about-me ~ p:first-of-type + ul li {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 1em 1.5em;
     margin-bottom: 1em;
@@ -103,19 +103,37 @@ html {
     transition: all 0.3s ease;
 }
 
-#about-me + p + ul li:hover {
+#about-me ~ p:first-of-type + ul li:hover {
     transform: translateX(5px);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
+/* News section - keep simple bullets but style them */
+#-news ~ ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#-news ~ ul > li {
+    padding: 0.5em 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+#-news ~ ul > li::before {
+    content: '🔥';
+    position: absolute;
+    left: 0;
+}
+
 /* Experience section - timeline style */
-#-experience + ul {
+#-experience ~ ul {
     list-style: none;
     padding-left: 0;
     position: relative;
 }
 
-#-experience + ul::before {
+#-experience ~ ul::before {
     content: '';
     position: absolute;
     left: 0;
@@ -125,7 +143,7 @@ html {
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
 }
 
-#-experience + ul > li {
+#-experience ~ ul > li {
     position: relative;
     padding-left: 2.5em;
     margin-bottom: 2em;
@@ -133,7 +151,7 @@ html {
     border-bottom: 1px solid #e8e8e8;
 }
 
-#-experience + ul > li::before {
+#-experience ~ ul > li::before {
     content: '';
     position: absolute;
     left: -6px;
@@ -146,17 +164,17 @@ html {
     box-shadow: 0 0 0 2px #667eea;
 }
 
-#-experience + ul > li:last-child {
+#-experience ~ ul > li:last-child {
     border-bottom: none;
 }
 
 /* Academic Service - clean card style */
-#-academic-service + ul {
+#-academic-service ~ ul {
     list-style: none;
     padding-left: 0;
 }
 
-#-academic-service + ul > li {
+#-academic-service ~ ul > li {
     background: #f8f9fa;
     padding: 1.2em 1.5em;
     margin-bottom: 0.8em;
@@ -164,47 +182,46 @@ html {
     border-left: 3px solid #667eea;
 }
 
-#-academic-service + ul > li > ul {
+#-academic-service ~ ul > li > ul {
     margin-top: 0.5em;
     list-style: none;
     padding-left: 0;
 }
 
-#-academic-service + ul > li > ul > li {
+#-academic-service ~ ul > li > ul > li {
     padding: 0.3em 0;
     color: #555;
 }
 
-#-academic-service + ul > li > ul > li::before {
+#-academic-service ~ ul > li > ul > li::before {
     content: '▸';
     color: #667eea;
     font-weight: bold;
     margin-right: 0.5em;
 }
 
-/* Honors and Awards - badge style */
-#-honors-and-awards + ul {
+/* Honors and Awards - subtle style */
+#-honors-and-awards ~ ul {
     list-style: none;
     padding-left: 0;
 }
 
-#-honors-and-awards + ul > li {
-    background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+#-honors-and-awards ~ ul > li {
+    background: #fafafa;
     padding: 1em 1.5em;
     margin-bottom: 0.8em;
-    border-radius: 8px;
-    border-left: 4px solid #ffa500;
-    box-shadow: 0 2px 6px rgba(255, 165, 0, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #d4af37;
     transition: all 0.3s ease;
 }
 
-#-honors-and-awards + ul > li:hover {
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+#-honors-and-awards ~ ul > li:hover {
+    background: #f5f5f5;
+    border-left-width: 4px;
 }
 
-#-honors-and-awards + ul > li em {
-    color: #ff8c00;
+#-honors-and-awards ~ ul > li em {
+    color: #c9a227;
     font-weight: 600;
     font-style: normal;
 }
