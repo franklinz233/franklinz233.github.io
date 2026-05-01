@@ -116,9 +116,6 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 </div>
 </div>
 
-- **[ICRA 2023]** [Dyna-DepthFormer: Multi-frame Transformer for Self-Supervised Depth Estimation in Dynamic Scenes](https://arxiv.org/abs/2301.05871), **Songchun Zhang**, Chunhui Zhao. 
-
-
 <span class='anchor' id='-experience'></span>
 
 # 🖥️ Experience

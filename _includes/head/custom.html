@@ -118,13 +118,15 @@ html {
 }
 
 /* News section - timeline style without bullets */
-#-news ~ ul {
+#-news + h1 + ul,
+#-news + * + ul {
     list-style: none;
     padding-left: 0;
     position: relative;
 }
 
-#-news ~ ul::before {
+#-news + h1 + ul::before,
+#-news + * + ul::before {
     content: '';
     position: absolute;
     left: 5.5em;
@@ -134,13 +136,15 @@ html {
     background: linear-gradient(180deg, #ff6b6b 0%, #feca57 100%);
 }
 
-#-news ~ ul > li {
+#-news + h1 + ul > li,
+#-news + * + ul > li {
     padding: 0.6em 0 0.6em 7em;
     position: relative;
     transition: all 0.3s ease;
 }
 
-#-news ~ ul > li::before {
+#-news + h1 + ul > li::before,
+#-news + * + ul > li::before {
     content: '';
     position: absolute;
     left: 5em;
@@ -154,7 +158,8 @@ html {
     z-index: 1;
 }
 
-#-news ~ ul > li em {
+#-news + h1 + ul > li em,
+#-news + * + ul > li em {
     position: absolute;
     left: 0;
     top: 0.6em;
@@ -165,19 +170,22 @@ html {
     text-align: right;
 }
 
-#-news ~ ul > li:hover {
+#-news + h1 + ul > li:hover,
+#-news + * + ul > li:hover {
     background: #fafafa;
     padding-left: 7.5em;
 }
 
-/* Experience section - timeline style */
-#-experience ~ ul {
+/* Experience section - timeline style, only the ul directly after the anchor */
+#-experience + h1 + ul,
+#-experience + * + ul {
     list-style: none;
     padding-left: 0;
     position: relative;
 }
 
-#-experience ~ ul::before {
+#-experience + h1 + ul::before,
+#-experience + * + ul::before {
     content: '';
     position: absolute;
     left: 0;
@@ -187,7 +195,8 @@ html {
     background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
 }
 
-#-experience ~ ul > li {
+#-experience + h1 + ul > li,
+#-experience + * + ul > li {
     position: relative;
     padding-left: 2.5em;
     margin-bottom: 2em;
@@ -195,7 +204,8 @@ html {
     border-bottom: 1px solid #e8e8e8;
 }
 
-#-experience ~ ul > li::before {
+#-experience + h1 + ul > li::before,
+#-experience + * + ul > li::before {
     content: '';
     position: absolute;
     left: -6px;
@@ -208,63 +218,108 @@ html {
     box-shadow: 0 0 0 2px #667eea;
 }
 
-#-experience ~ ul > li:last-child {
+#-experience + h1 + ul > li:last-child,
+#-experience + * + ul > li:last-child {
     border-bottom: none;
 }
 
 /* Academic Service - clean card style */
-#-academic-service ~ ul {
+#-academic-service + h1 + ul,
+#-academic-service + * + ul {
     list-style: none;
     padding-left: 0;
+    position: static;
 }
 
-#-academic-service ~ ul > li {
+#-academic-service + h1 + ul::before,
+#-academic-service + * + ul::before {
+    display: none;
+}
+
+#-academic-service + h1 + ul > li,
+#-academic-service + * + ul > li {
     background: #f8f9fa;
     padding: 1.2em 1.5em;
     margin-bottom: 0.8em;
     border-radius: 8px;
     border-left: 3px solid #667eea;
+    padding-left: 1.5em;
+    border-bottom: none;
 }
 
-#-academic-service ~ ul > li > ul {
+#-academic-service + h1 + ul > li::before,
+#-academic-service + * + ul > li::before {
+    display: none;
+}
+
+#-academic-service + h1 + ul > li > ul,
+#-academic-service + * + ul > li > ul {
     margin-top: 0.5em;
     list-style: none;
     padding-left: 0;
 }
 
-#-academic-service ~ ul > li > ul > li {
+#-academic-service + h1 + ul > li > ul > li,
+#-academic-service + * + ul > li > ul > li {
     padding: 0.3em 0;
     color: #555;
+    padding-left: 0;
+    border-bottom: none;
 }
 
-#-academic-service ~ ul > li > ul > li::before {
+#-academic-service + h1 + ul > li > ul > li::before,
+#-academic-service + * + ul > li > ul > li::before {
     content: '▸';
     color: #667eea;
     font-weight: bold;
     margin-right: 0.5em;
+    display: inline;
+    position: static;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
 }
 
 /* Honors and Awards - subtle style */
-#-honors-and-awards ~ ul {
+#-honors-and-awards + h1 + ul,
+#-honors-and-awards + * + ul {
     list-style: none;
     padding-left: 0;
+    position: static;
 }
 
-#-honors-and-awards ~ ul > li {
+#-honors-and-awards + h1 + ul::before,
+#-honors-and-awards + * + ul::before {
+    display: none;
+}
+
+#-honors-and-awards + h1 + ul > li,
+#-honors-and-awards + * + ul > li {
     background: #fafafa;
     padding: 1em 1.5em;
     margin-bottom: 0.8em;
     border-radius: 6px;
     border-left: 3px solid #d4af37;
+    border-bottom: none;
     transition: all 0.3s ease;
 }
 
-#-honors-and-awards ~ ul > li:hover {
+#-honors-and-awards + h1 + ul > li::before,
+#-honors-and-awards + * + ul > li::before {
+    display: none;
+}
+
+#-honors-and-awards + h1 + ul > li:hover,
+#-honors-and-awards + * + ul > li:hover {
     background: #f5f5f5;
     border-left-width: 4px;
 }
 
-#-honors-and-awards ~ ul > li em {
+#-honors-and-awards + h1 + ul > li em,
+#-honors-and-awards + * + ul > li em {
     color: #c9a227;
     font-weight: 600;
     font-style: normal;
