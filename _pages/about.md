@@ -52,7 +52,7 @@ Echo Team @ Joy Future Academy, JD \\
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='https://echo-team-joy-future-academy-jd.github.io/Echo-Infinity/assets/figs/method.webp' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/echo_infinity.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Arxiv**] [Echo-Infinity: Learnable Evolving Memory for Real-Time Infinite Video Generation](https://arxiv.org/abs/2606.04527)  \\
