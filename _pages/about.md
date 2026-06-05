@@ -28,6 +28,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <span class='anchor' id='-news'></span>
 
 # 🔥 News
+- *2026.05*: &nbsp;🎉🎉 JoyAI-Echo technical report released.
 - *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
 - *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
 - *2024.02*: &nbsp;🎉🎉 One paper accepted by CVPR 2024.
@@ -36,6 +37,20 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <span class='anchor' id='-publications'></span>
 
 # 📝 Publications
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='https://raw.githubusercontent.com/jd-opensource/JoyAI-Echo/main/assets/image.png' alt="sym" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Technical Report**] [JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation](https://echo-team-joy-future-academy-jd.github.io/Echo-LongVideo-Page/)  \\
+Echo Team @ Joy Future Academy, JD \\
+[[Project page]](https://echo-team-joy-future-academy-jd.github.io/Echo-LongVideo-Page/)
+[[Paper]](https://www.researchgate.net/publication/405770309_JoyAI-Echo_Pushing_the_Frontier_of_Long_Audio-Visual_Generation)
+[[Code]](https://github.com/jd-opensource/JoyAI-Echo)
+
+- This technical report presents a memory-driven audio-visual generation framework for minute-level coherent video, real-time streaming, conversational control, and high-resolution output.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
