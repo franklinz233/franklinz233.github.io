@@ -28,6 +28,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <span class='anchor' id='-news'></span>
 
 # 🔥 News
+- *2026.06*: &nbsp;🎉🎉 Echo-Infinity paper, project page, model, and code released.
 - *2026.05*: &nbsp;🎉🎉 JoyAI-Echo technical report released.
 - *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
 - *2024.12*: &nbsp;🎉🎉 One paper accepted by AAAI 2025.
@@ -47,6 +48,21 @@ Echo Team @ Joy Future Academy, JD \\
 [[Code]](https://github.com/jd-opensource/JoyAI-Echo)
 
 - This technical report presents a memory-driven audio-visual generation framework for minute-level coherent video, real-time streaming, conversational control, and high-resolution output.
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='https://echo-team-joy-future-academy-jd.github.io/Echo-Infinity/assets/figs/method.webp' alt="sym" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**Arxiv**] [Echo-Infinity: Learnable Evolving Memory for Real-Time Infinite Video Generation](https://arxiv.org/abs/2606.04527)  \\
+Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li, Junhao Zhuang, Haoran Li, Jie Huang, Haoyang Huang, Nan Duan, Qiang Xu. \\
+[[Project page]](https://echo-team-joy-future-academy-jd.github.io/Echo-Infinity/)
+[[Paper]](https://arxiv.org/abs/2606.04527)
+[[Code]](https://github.com/Echo-Team-Joy-Future-Academy-JD/Echo-Infinity)
+[[Model]](https://huggingface.co/Echo-Team/Echo-Infinity)
+
+- This paper presents a learnable evolving memory framework for real-time infinite video generation with constant-cost long-history compression.
 
 </div>
 </div>
