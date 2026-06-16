@@ -112,7 +112,7 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
 **Songchun Zhang**, Chunhui Zhao. \\
-[[Paper]](https://ojs.aaai.org/index.php/AAAI/article/view/33097)
+[[Paper]](https://arxiv.org/pdf/2412.08412)
 [[Code]](https://github.com/franklinz233/Sparserecon)
 
 - This paper presents a 3D object reconstruction method from sparse and unposed inputs.
