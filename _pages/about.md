@@ -28,6 +28,8 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <span class='anchor' id='-news'></span>
 
 # 🔥 News
+- *2026.06*: &nbsp;🎉🎉 Two papers accepted to SIGGRAPH Asia, including one TOG paper.
+- *2026.06*: &nbsp;🎉🎉 Two papers are accepted by ECCV 2026.
 - *2026.06*: &nbsp;🎉🎉 Echo-Infinity paper, project page, model, and code released.
 - *2026.05*: &nbsp;🎉🎉 JoyAI-Echo technical report released.
 - *2025.06*: &nbsp;🎉🎉 One paper accepted by ICCV 2025.
