@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FlexComposer, accepted to ECCV 2026, unifies trajectory-controlled compositing for static images and dynamic video assets."
+    />
+    <meta name="theme-color" content="#101311" />
+    <title>FlexComposer | ECCV 2026</title>
+    <link rel="icon" href="./assets/favicon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-reel" aria-hidden="true">
+          <div class="hero-reel-set">
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/airplane.webp" data-src="./assets/videos/airplane.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Trajectory control</figcaption>
+            </figure>
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/dynamic.webp" data-src="./assets/videos/camel.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Dynamic foreground</figcaption>
+            </figure>
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/balloon.webp" data-src="./assets/videos/balloon.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Lighting harmony</figcaption>
+            </figure>
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/car.webp" data-src="./assets/videos/car.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Depth occlusion</figcaption>
+            </figure>
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/fire.webp" data-src="./assets/videos/fireplace.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Scene adaptation</figcaption>
+            </figure>
+            <figure class="hero-reel-card">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/robot.webp" data-src="./assets/videos/robot.mp4" muted loop playsinline preload="none"></video>
+              <figcaption>Asset insertion</figcaption>
+            </figure>
+          </div>
+          <div class="hero-reel-set">
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/airplane.webp" data-src="./assets/videos/airplane.mp4" muted loop playsinline preload="none"></video><figcaption>Trajectory control</figcaption></figure>
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/dynamic.webp" data-src="./assets/videos/camel.mp4" muted loop playsinline preload="none"></video><figcaption>Dynamic foreground</figcaption></figure>
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/balloon.webp" data-src="./assets/videos/balloon.mp4" muted loop playsinline preload="none"></video><figcaption>Lighting harmony</figcaption></figure>
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/car.webp" data-src="./assets/videos/car.mp4" muted loop playsinline preload="none"></video><figcaption>Depth occlusion</figcaption></figure>
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/fire.webp" data-src="./assets/videos/fireplace.mp4" muted loop playsinline preload="none"></video><figcaption>Scene adaptation</figcaption></figure>
+            <figure class="hero-reel-card"><video class="lazy-video" poster="./assets/posters/flexcomposer/robot.webp" data-src="./assets/videos/robot.mp4" muted loop playsinline preload="none"></video><figcaption>Asset insertion</figcaption></figure>
+          </div>
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+
+        <div class="hero-stage">
+          <nav class="topbar" aria-label="Project navigation">
+            <a class="wordmark" href="#top">FlexComposer</a>
+            <div class="topbar-links">
+              <a href="#method">Method</a>
+              <a href="#results">Results</a>
+              <a href="#citation">Citation</a>
+            </div>
+          </nav>
+
+          <header class="hero-heading">
+            <p class="hero-kicker">ECCV 2026 | Accepted Paper</p>
+            <h1 id="hero-title">FlexComposer</h1>
+            <p class="hero-subtitle">Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control</p>
+            <p class="hero-authors">Songchun Zhang<sup>1</sup>, Sitong Guo<sup>2</sup>, Xianghao Kong<sup>1</sup>, Pengwei Liu<sup>2</sup>, Yuwei Guo<sup>3</sup>, Lvmin Zhang<sup>4</sup>, and Anyi Rao<sup>1</sup></p>
+            <p class="hero-affiliations">
+              <span><sup>1</sup> Hong Kong University of Science and Technology</span>
+              <span><sup>2</sup> Zhejiang University</span>
+              <span><sup>3</sup> The Chinese University of Hong Kong</span>
+              <span><sup>4</sup> Stanford University</span>
+            </p>
+            <nav class="hero-actions" aria-label="Paper resources">
+              <a class="button button-primary" href="./assets/FlexComposer-paper.pdf">Paper <span aria-hidden="true">&#8599;</span></a>
+              <a class="button button-secondary" href="./assets/FlexComposer-full.pdf">Full paper <span aria-hidden="true">&#8599;</span></a>
+              <a class="button button-secondary" href="#demos">Demos <span aria-hidden="true">&#8595;</span></a>
+            </nav>
+          </header>
+
+          <div class="hero-facts" aria-label="Core capabilities">
+            <p><strong>01</strong><span>Static and dynamic foregrounds</span></p>
+            <p><strong>02</strong><span>Flexible 3D trajectory control</span></p>
+            <p><strong>03</strong><span>End-to-end scene harmonization</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview section-light" id="overview" aria-labelledby="overview-title">
+        <div class="overview-inner">
+          <header class="section-heading overview-heading">
+            <p class="eyebrow">Paper overview</p>
+            <h2 id="overview-title">One framework.<br />Any foreground.</h2>
+          </header>
+          <div class="overview-copy">
+            <p>
+              Generative video compositing should preserve the identity and motion of an inserted asset while giving creators precise control over where it moves. Existing systems typically trade one for the other.
+            </p>
+            <p>
+              <strong>FlexComposer</strong> standardizes static images and dynamic footage in a canonical foreground space, transports their latent features along a user trajectory, and synthesizes the final video with coherent occlusion, lighting, and shadows.
+            </p>
+          </div>
+        </div>
+        <figure class="workflow-figure" aria-labelledby="workflow-title workflow-caption">
+          <svg class="workflow-svg" viewBox="0 0 1200 430" role="img" aria-labelledby="workflow-title workflow-description">
+            <title id="workflow-title">How FlexComposer creates a controlled composite video</title>
+            <desc id="workflow-description">A static image or dynamic clip is converted into a canonical foreground, moved through latent space along a trajectory with occlusion awareness, and composed into a coherent output video.</desc>
+            <defs>
+              <clipPath id="workflow-output-clip"><rect x="900" y="92" width="250" height="210" rx="4" /></clipPath>
+              <filter id="workflow-shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-opacity="0.16" /></filter>
+            </defs>
+
+            <g class="workflow-stage">
+              <text class="workflow-index" x="32" y="38">01 / REPRESENT</text>
+              <text class="workflow-heading" x="32" y="68">Canonical foreground</text>
+              <rect class="workflow-panel" x="26" y="88" width="324" height="224" rx="5" />
+              <g class="workflow-input workflow-input-static">
+                <rect x="48" y="111" width="112" height="84" rx="3" />
+                <circle cx="103" cy="142" r="15" />
+                <path d="M80 181c7-22 39-22 47 0" />
+                <text x="48" y="216">IMAGE</text>
+              </g>
+              <g class="workflow-input workflow-input-dynamic">
+                <rect x="49" y="236" width="58" height="43" rx="2" />
+                <rect x="59" y="226" width="58" height="43" rx="2" />
+                <rect x="69" y="216" width="58" height="43" rx="2" />
+                <path d="M84 248c4-15 23-15 29 0" />
+                <circle cx="98" cy="229" r="8" />
+                <text x="49" y="298">VIDEO</text>
+              </g>
+              <path class="workflow-flow" d="M164 170 C192 170 195 200 218 200" />
+              <path class="workflow-flow" d="M130 250 C182 250 186 217 218 217" />
+              <g class="workflow-canonical" filter="url(#workflow-shadow)">
+                <rect x="218" y="132" width="108" height="126" rx="4" />
+                <circle cx="272" cy="173" r="18" />
+                <path d="M243 232c9-30 48-30 58 0" />
+                <path class="workflow-axis" d="M232 243h80M272 146v99" />
+              </g>
+              <text class="workflow-note" x="188" y="287">Decouple local motion</text>
+            </g>
+
+            <path class="workflow-bridge" d="M372 200h52" />
+            <path class="workflow-arrow" d="m416 193 10 7-10 7" />
+
+            <g class="workflow-stage">
+              <text class="workflow-index" x="448" y="38">02 / TRANSPORT</text>
+              <text class="workflow-heading" x="448" y="68">Spatial-aware latent injection</text>
+              <rect class="workflow-panel" x="442" y="88" width="324" height="224" rx="5" />
+              <path class="workflow-grid" d="M464 120h280M464 160h280M464 200h280M464 240h280M464 280h280M504 108v184M552 108v184M600 108v184M648 108v184M696 108v184" />
+              <path class="workflow-trajectory" d="M478 255 C535 111 626 286 731 134" />
+              <g class="workflow-token">
+                <circle cx="0" cy="0" r="18" />
+                <circle cx="0" cy="-3" r="6" />
+                <path d="M-10 12c3-12 17-12 20 0" />
+                <animateMotion dur="5.5s" repeatCount="indefinite" path="M478 255 C535 111 626 286 731 134" />
+              </g>
+              <g class="workflow-occluder">
+                <rect x="614" y="111" width="54" height="181" rx="3" />
+                <path d="M624 111v181M637 111v181M650 111v181" />
+                <text x="606" y="303">VISIBILITY GATE</text>
+              </g>
+              <text class="workflow-note" x="483" y="287">Follow the user trajectory</text>
+            </g>
+
+            <path class="workflow-bridge" d="M788 200h52" />
+            <path class="workflow-arrow" d="m832 193 10 7-10 7" />
+
+            <g class="workflow-stage">
+              <text class="workflow-index" x="864" y="38">03 / GENERATE</text>
+              <text class="workflow-heading" x="864" y="68">Coherent video composition</text>
+              <rect class="workflow-panel" x="858" y="88" width="316" height="224" rx="5" />
+              <g clip-path="url(#workflow-output-clip)">
+                <rect class="workflow-sky" x="900" y="92" width="250" height="210" />
+                <path class="workflow-ground" d="M900 238c48-35 92-17 126-44 36-28 74-17 124 2v106H900Z" />
+                <circle class="workflow-sun" cx="1100" cy="134" r="19" />
+                <g class="workflow-output-subject">
+                  <circle cx="1015" cy="176" r="18" />
+                  <path d="M986 236c9-38 49-38 58 0" />
+                  <ellipse cx="1015" cy="242" rx="39" ry="8" />
+                </g>
+                <rect class="workflow-scan" x="900" y="90" width="250" height="5">
+                  <animate attributeName="y" values="94;292;94" dur="4.6s" repeatCount="indefinite" />
+                </rect>
+              </g>
+              <rect class="workflow-output-frame" x="900" y="92" width="250" height="210" rx="4" />
+              <text class="workflow-note" x="918" y="287">Relight, occlude, harmonize</text>
+            </g>
+
+            <g class="workflow-legend">
+              <circle cx="32" cy="378" r="5" /><text x="46" y="382">Static or dynamic asset</text>
+              <path d="M224 378h34" /><text x="270" y="382">Controllable global trajectory</text>
+              <rect x="504" y="371" width="14" height="14" rx="2" /><text x="530" y="382">Background-aware generation</text>
+            </g>
+          </svg>
+          <figcaption id="workflow-caption">FlexComposer preserves a foreground's identity and intrinsic motion while giving the user direct control over its global path.</figcaption>
+        </figure>
+        <div class="overview-video-grid" aria-label="Representative FlexComposer videos">
+          <article class="overview-video">
+            <video class="lazy-video" poster="./assets/posters/flexcomposer/overview-static.webp" data-src="./assets/videos/overview-static.mp4" muted loop playsinline preload="none"></video>
+            <div><span>Static foreground</span><h3>Trajectory with depth awareness</h3></div>
+          </article>
+          <article class="overview-video">
+            <video class="lazy-video" poster="./assets/posters/flexcomposer/overview-dynamic.webp" data-src="./assets/videos/overview-dynamic.mp4" muted loop playsinline preload="none"></video>
+            <div><span>Dynamic foreground</span><h3>Intrinsic motion preserved</h3></div>
+          </article>
+          <article class="overview-video">
+            <video class="lazy-video" poster="./assets/posters/flexcomposer/overview-harmony.webp" data-src="./assets/videos/overview-harmony.mp4" muted loop playsinline preload="none"></video>
+            <div><span>Harmonization</span><h3>Lighting and shadow adaptation</h3></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contributions" aria-labelledby="contributions-title">
+        <div class="section-shell">
+          <header class="compact-heading">
+            <p class="eyebrow">Core design</p>
+            <h2 id="contributions-title">Control without sacrificing fidelity.</h2>
+          </header>
+          <div class="contribution-list">
+            <article>
+              <span>01</span>
+              <h3>Unified canonical foreground</h3>
+              <p>Stabilizes dynamic clips and expands static images into one centered representation, separating intrinsic motion from global displacement.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Spatial-aware latent injection</h3>
+              <p>Transports canonical VAE features directly onto user-defined trajectories with a parameter-free mapping and visibility-aware occlusion.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Synthetic-to-real curriculum</h3>
+              <p>Combines procedural geometry, cinematic real footage, and generative data to learn control, realism, and open-domain composition in stages.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="method section-dark" id="method" aria-labelledby="method-title">
+        <div class="section-shell">
+          <header class="method-heading">
+            <div>
+              <p class="eyebrow eyebrow-bright">Method</p>
+              <h2 id="method-title">Canonicalize, transport, compose.</h2>
+            </div>
+            <p>A single conditional generation pipeline replaces brittle reconstruction, lighting estimation, and rendering stages.</p>
+          </header>
+          <figure class="method-figure media-figure dark-figure">
+            <img src="./assets/figures/pipeline.webp" alt="The FlexComposer pipeline from input assets through latent injection to final video" />
+            <figcaption>Foreground motion is decoupled, mapped into the background latent, and fused as dense spatiotemporal conditioning.</figcaption>
+          </figure>
+          <div class="method-stages" aria-label="Method stages">
+            <p><strong>01 / Represent</strong><span>Center and encode heterogeneous foreground assets.</span></p>
+            <p><strong>02 / Transport</strong><span>Project the trajectory and move features in latent space.</span></p>
+            <p><strong>03 / Generate</strong><span>Diffuse a coherent composite with background context.</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="demos" id="demos" aria-labelledby="demos-title">
+        <div class="section-shell">
+          <header class="demo-heading">
+            <div>
+              <p class="eyebrow">Video results</p>
+              <h2 id="demos-title">Composition in motion.</h2>
+            </div>
+            <div class="demo-tabs" role="tablist" aria-label="Video result categories">
+              <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-static" id="tab-static" data-panel="static">Static</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-dynamic" id="tab-dynamic" data-panel="dynamic">Dynamic</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-rotation" id="tab-rotation" data-panel="rotation">3D rotation</button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-transfer" id="tab-transfer" data-panel="transfer">Motion transfer</button>
+            </div>
+          </header>
+
+          <div class="demo-panel is-active" role="tabpanel" id="panel-static" aria-labelledby="tab-static" data-demo-panel="static">
+            <article class="demo-item demo-item-wide">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/airplane.webp" data-src="./assets/videos/airplane.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Occlusion</span><h3>Airplane across a steel bridge</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/car.webp" data-src="./assets/videos/car.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Trajectory</span><h3>Car through a dynamic landscape</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/flying.webp" data-src="./assets/videos/flying-object.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Micro-motion</span><h3>Animated subject in a natural scene</h3></div>
+            </article>
+            <section class="composition-case" data-sync-group="static-insertion">
+              <header><span>Static composition</span><h3>One scene, multiple inserted assets.</h3></header>
+              <div class="composition-strip composition-strip-three">
+                <article class="is-input"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-ocean-background.webp" data-src="./assets/videos/static-ocean-background.mp4" muted playsinline preload="none"></video><p>Background</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-balloon-ppt.webp" data-src="./assets/videos/static-balloon-ppt.mp4" muted playsinline preload="none"></video><p>Balloon composition</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-chair.webp" data-src="./assets/videos/static-chair.mp4" muted playsinline preload="none"></video><p>Chair composition</p></article>
+              </div>
+            </section>
+            <section class="composition-case" data-sync-group="static-control">
+              <header><span>Trajectory control</span><h3>The same background supports different objects and paths.</h3></header>
+              <div class="composition-strip composition-strip-five">
+                <article class="is-input"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-control-background.webp" data-src="./assets/videos/static-control-background.mp4" muted playsinline preload="none"></video><p>Background</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-teapot-path-a.webp" data-src="./assets/videos/static-teapot-path-a.mp4" muted playsinline preload="none"></video><p>Teapot / Path A</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-teapot-path-b.webp" data-src="./assets/videos/static-teapot-path-b.mp4" muted playsinline preload="none"></video><p>Teapot / Path B</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-motorcycle-path-a.webp" data-src="./assets/videos/static-motorcycle-path-a.mp4" muted playsinline preload="none"></video><p>Motorcycle / Path A</p></article>
+                <article class="is-output"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-motorcycle-path-b.webp" data-src="./assets/videos/static-motorcycle-path-b.mp4" muted playsinline preload="none"></video><p>Motorcycle / Path B</p></article>
+              </div>
+            </section>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="panel-dynamic" aria-labelledby="tab-dynamic" data-demo-panel="dynamic" hidden>
+            <article class="demo-item demo-item-wide">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/dynamic.webp" data-src="./assets/videos/camel.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Intrinsic dynamics</span><h3>Preserving a walking gait</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/robot.webp" data-src="./assets/videos/robot.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Environment</span><h3>Dynamic asset with relighting</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/fire.webp" data-src="./assets/videos/fireplace.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Appearance</span><h3>Illumination and reflection adaptation</h3></div>
+            </article>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="panel-rotation" aria-labelledby="tab-rotation" data-demo-panel="rotation" hidden>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-car-a.webp" data-src="./assets/videos/rotation-car-a.mp4" muted loop playsinline preload="none"></video>
+              <div><span>3D rotation</span><h3>Controlled car viewpoint</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-airplane.webp" data-src="./assets/videos/rotation-airplane.mp4" muted loop playsinline preload="none"></video>
+              <div><span>3D control</span><h3>Aircraft rotation with scene consistency</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-surf.webp" data-src="./assets/videos/rotation-surf.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Viewpoint change</span><h3>Rotating subject over open water</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-motorcycle.webp" data-src="./assets/videos/rotation-motorcycle.mp4" muted loop playsinline preload="none"></video>
+              <div><span>3D rotation</span><h3>Motorcycle orientation control</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-car-b.webp" data-src="./assets/videos/rotation-car-b.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Camera-relative motion</span><h3>Car rotation across a new scene</h3></div>
+            </article>
+            <article class="demo-item">
+              <video class="lazy-video" poster="./assets/posters/flexcomposer/rotation-car-c.webp" data-src="./assets/videos/rotation-car-c.mp4" muted loop playsinline preload="none"></video>
+              <div><span>Pose control</span><h3>Continuous viewpoint transformation</h3></div>
+            </article>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="panel-transfer" aria-labelledby="tab-transfer" data-demo-panel="transfer" hidden>
+            <div class="transfer-case" data-sync-group="transfer-a">
+              <header><span>Case 01</span><h3>Motion remapped into a new environment</h3></header>
+              <article><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-a-background.webp" data-src="./assets/videos/transfer-a-background.mp4" muted loop playsinline preload="none"></video><p>Background</p></article>
+              <article><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-a-source.webp" data-src="./assets/videos/transfer-a-source.mp4" muted loop playsinline preload="none"></video><p>Source motion</p></article>
+              <article class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-a-output.webp" data-src="./assets/videos/transfer-a-output.mp4" muted loop playsinline preload="none"></video><p>FlexComposer</p></article>
+            </div>
+            <div class="transfer-case" data-sync-group="transfer-b">
+              <header><span>Case 02</span><h3>Intrinsic dynamics preserved during transfer</h3></header>
+              <article><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-b-background.webp" data-src="./assets/videos/transfer-b-background.mp4" muted loop playsinline preload="none"></video><p>Background</p></article>
+              <article><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-b-source.webp" data-src="./assets/videos/transfer-b-source.mp4" muted loop playsinline preload="none"></video><p>Source motion</p></article>
+              <article class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/transfer-b-output.webp" data-src="./assets/videos/transfer-b-output.mp4" muted loop playsinline preload="none"></video><p>FlexComposer</p></article>
+            </div>
+          </div>
+
+          <section class="more-results" aria-labelledby="more-results-title">
+            <header>
+              <p class="eyebrow">More cases</p>
+              <h3 id="more-results-title">Across subjects, scenes, and trajectories.</h3>
+            </header>
+            <div class="result-video-wall">
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/intro-highlight-a.webp" data-src="./assets/videos/intro-highlight-a.mp4" muted loop playsinline preload="none"></video><span>Opening highlight A</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/intro-highlight-b.webp" data-src="./assets/videos/intro-highlight-b.mp4" muted loop playsinline preload="none"></video><span>Opening highlight B</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-01.webp" data-src="./assets/videos/result-01.mp4" muted loop playsinline preload="none"></video><span>Case 01</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-02.webp" data-src="./assets/videos/result-02.mp4" muted loop playsinline preload="none"></video><span>Case 02</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-03.webp" data-src="./assets/videos/result-03.mp4" muted loop playsinline preload="none"></video><span>Case 03</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-04.webp" data-src="./assets/videos/result-04.mp4" muted loop playsinline preload="none"></video><span>Case 04</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-05.webp" data-src="./assets/videos/result-05.mp4" muted loop playsinline preload="none"></video><span>Case 05</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-06.webp" data-src="./assets/videos/result-06.mp4" muted loop playsinline preload="none"></video><span>Case 06</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-07.webp" data-src="./assets/videos/result-07.mp4" muted loop playsinline preload="none"></video><span>Case 07</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-08.webp" data-src="./assets/videos/result-08.mp4" muted loop playsinline preload="none"></video><span>Case 08</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-09.webp" data-src="./assets/videos/result-09.mp4" muted loop playsinline preload="none"></video><span>Case 09</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-10.webp" data-src="./assets/videos/result-10.mp4" muted loop playsinline preload="none"></video><span>Case 10</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-11.webp" data-src="./assets/videos/result-11.mp4" muted loop playsinline preload="none"></video><span>Case 11</span></article>
+              <article><video class="lazy-video" poster="./assets/posters/flexcomposer/result-12.webp" data-src="./assets/videos/result-12.mp4" muted loop playsinline preload="none"></video><span>Case 12</span></article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="results section-dark" id="results" aria-labelledby="results-title">
+        <div class="section-shell">
+          <header class="results-heading">
+            <p class="eyebrow eyebrow-bright">Quantitative results</p>
+            <h2 id="results-title">Better control, consistency, and realism.</h2>
+          </header>
+          <div class="metric-grid">
+            <article><strong>2.15</strong><span>EPE on DAVIS</span><p>Best trajectory error in the V2V setting.</p></article>
+            <article><strong>468.30</strong><span>FVD on dynamic composition</span><p>Lower than AnyV2V, VACE, and GenCompositor.</p></article>
+            <article><strong>91.20%</strong><span>Subject consistency</span><p>Preserves asset identity through motion and placement.</p></article>
+            <article><strong>0.974</strong><span>Harmonization CLIP score</span><p>Balances photometric and geometric scene consistency.</p></article>
+          </div>
+          <div class="comparison-stack">
+            <section class="comparison-section">
+              <div class="comparison-title"><span>01</span><h3>Static foreground compositing</h3><p>Ours vs. Kling 1.5, Tora, and Wan-Move</p></div>
+              <div class="comparison-cases comparison-cases-static">
+                <article class="comparison-case" data-sync-group="static-a">
+                  <header><strong>Case A</strong><span>Trajectory following and occlusion</span></header>
+                  <div class="comparison-video-grid">
+                    <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-a-ours.webp" data-src="./assets/videos/static-a-ours.mp4" muted loop playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-a-kling.webp" data-src="./assets/videos/static-a-kling.mp4" muted loop playsinline preload="none"></video><figcaption>Kling 1.5</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-a-tora.webp" data-src="./assets/videos/static-a-tora.mp4" muted loop playsinline preload="none"></video><figcaption>Tora</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-a-wan-move.webp" data-src="./assets/videos/static-a-wan-move.mp4" muted loop playsinline preload="none"></video><figcaption>Wan-Move</figcaption></figure>
+                  </div>
+                </article>
+                <article class="comparison-case" data-sync-group="static-b">
+                  <header><strong>Case B</strong><span>Identity and scene consistency</span></header>
+                  <div class="comparison-video-grid">
+                    <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-b-ours.webp" data-src="./assets/videos/static-b-ours.mp4" muted loop playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-b-kling.webp" data-src="./assets/videos/static-b-kling.mp4" muted loop playsinline preload="none"></video><figcaption>Kling 1.5</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-b-tora.webp" data-src="./assets/videos/static-b-tora.mp4" muted loop playsinline preload="none"></video><figcaption>Tora</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-b-wan-move.webp" data-src="./assets/videos/static-b-wan-move.mp4" muted loop playsinline preload="none"></video><figcaption>Wan-Move</figcaption></figure>
+                  </div>
+                </article>
+                <article class="comparison-case" data-sync-group="static-c">
+                  <header><strong>Case C</strong><span>Small-object control in an open scene</span></header>
+                  <div class="comparison-video-grid">
+                    <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-c-ours.webp" data-src="./assets/videos/static-c-ours.mp4" muted loop playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-c-kling.webp" data-src="./assets/videos/static-c-kling.mp4" muted loop playsinline preload="none"></video><figcaption>Kling 1.5</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-c-tora.webp" data-src="./assets/videos/static-c-tora.mp4" muted loop playsinline preload="none"></video><figcaption>Tora</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/static-c-wan-move.webp" data-src="./assets/videos/static-c-wan-move.mp4" muted loop playsinline preload="none"></video><figcaption>Wan-Move</figcaption></figure>
+                  </div>
+                </article>
+              </div>
+            </section>
+            <section class="comparison-section">
+              <div class="comparison-title"><span>02</span><h3>Dynamic foreground compositing</h3><p>Ours vs. AnyV2V, VACE, and GenCompositor</p></div>
+              <div class="comparison-cases">
+                <article class="comparison-case" data-sync-group="dynamic-camel">
+                  <header><strong>Case A</strong><span>Preserving intrinsic foreground motion</span></header>
+                  <div class="comparison-input-grid">
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-background.webp" data-src="./assets/videos/dynamic-camel-background.mp4" muted loop playsinline preload="none"></video><figcaption>Background input</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-input.webp" data-src="./assets/videos/dynamic-camel-input.mp4" muted loop playsinline preload="none"></video><figcaption>Foreground input</figcaption></figure>
+                  </div>
+                  <div class="comparison-video-grid">
+                    <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-ours.webp" data-src="./assets/videos/dynamic-camel-ours.mp4" muted loop playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-anyv2v-vace.webp" data-src="./assets/videos/dynamic-camel-anyv2v-vace.mp4" muted loop playsinline preload="none"></video><figcaption>AnyV2V</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-anyv2v-vace.webp" data-src="./assets/videos/dynamic-camel-anyv2v-vace.mp4" muted loop playsinline preload="none"></video><figcaption>VACE</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-camel-gencompositor.webp" data-src="./assets/videos/dynamic-camel-gencompositor.mp4" muted loop playsinline preload="none"></video><figcaption>GenCompositor</figcaption></figure>
+                  </div>
+                </article>
+                <article class="comparison-case" data-sync-group="dynamic-car">
+                  <header><strong>Case B</strong><span>Motion fidelity under global displacement</span></header>
+                  <div class="comparison-input-grid">
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-background.webp" data-src="./assets/videos/dynamic-car-background.mp4" muted loop playsinline preload="none"></video><figcaption>Background input</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-input.webp" data-src="./assets/videos/dynamic-car-input.mp4" muted loop playsinline preload="none"></video><figcaption>Foreground input</figcaption></figure>
+                  </div>
+                  <div class="comparison-video-grid">
+                    <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-ours.webp" data-src="./assets/videos/dynamic-car-ours.mp4" muted loop playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-anyv2v.webp" data-src="./assets/videos/dynamic-car-anyv2v.mp4" muted loop playsinline preload="none"></video><figcaption>AnyV2V</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-vace.webp" data-src="./assets/videos/dynamic-car-vace.mp4" muted loop playsinline preload="none"></video><figcaption>VACE</figcaption></figure>
+                    <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/dynamic-car-gencompositor.webp" data-src="./assets/videos/dynamic-car-gencompositor.mp4" muted loop playsinline preload="none"></video><figcaption>GenCompositor</figcaption></figure>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="ablation section-light" id="ablation" aria-labelledby="ablation-title">
+        <div class="section-shell">
+          <header class="ablation-intro">
+            <p class="eyebrow">Ablation</p>
+            <h2 id="ablation-title">Every component has a visible job.</h2>
+            <p>Background context, trajectory conditioning, visibility reasoning, and canonical representation each address a distinct failure mode.</p>
+          </header>
+          <div class="ablation-suite">
+            <section class="ablation-group" data-sync-group="ablation-components">
+              <header><span>01</span><h3>Component ablation</h3><p>One controlled case, five model variants</p></header>
+              <div class="ablation-video-grid ablation-video-grid-five">
+                <article class="ablation-video"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-without-background.webp" data-src="./assets/videos/ablation-without-background.mp4" muted playsinline preload="none"></video><div><span>W/o BG context</span><p>Background structure becomes less stable.</p></div></article>
+                <article class="ablation-video"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-text-only.webp" data-src="./assets/videos/ablation-text-only.mp4" muted playsinline preload="none"></video><div><span>Text only</span><p>Spatial control is weakened.</p></div></article>
+                <article class="ablation-video"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-without-visibility.webp" data-src="./assets/videos/ablation-without-visibility.mp4" muted playsinline preload="none"></video><div><span>W/o visibility</span><p>Occlusion ordering is less reliable.</p></div></article>
+                <article class="ablation-video"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-without-canonical-ppt.webp" data-src="./assets/videos/ablation-without-canonical-ppt.mp4" muted playsinline preload="none"></video><div><span>W/o canonical</span><p>Local and global motion interfere.</p></div></article>
+                <article class="ablation-video ablation-video-full"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-full-ppt.webp" data-src="./assets/videos/ablation-full-ppt.mp4" muted playsinline preload="none"></video><div><span>Full model</span><p>Control and appearance remain coherent.</p></div></article>
+              </div>
+            </section>
+            <section class="ablation-group" data-sync-group="ablation-canonical">
+              <header><span>02</span><h3>Canonical representation</h3><p>A second dynamic foreground case</p></header>
+              <div class="ablation-video-grid ablation-video-grid-two">
+                <article class="ablation-video"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-without.webp" data-src="./assets/videos/ablation-without-canonical-web.mp4" muted playsinline preload="none"></video><div><span>W/o canonical representation</span><p>Global motion conflicts with the subject's local dynamics.</p></div></article>
+                <article class="ablation-video ablation-video-full"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/ablation-full.webp" data-src="./assets/videos/ablation-full-model-web.mp4" muted playsinline preload="none"></video><div><span>Full model</span><p>Local motion remains stable along the target trajectory.</p></div></article>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge section-dark" id="challenge" aria-labelledby="challenge-title">
+        <div class="section-shell">
+          <header class="challenge-heading">
+            <div><p class="eyebrow eyebrow-bright">Failure analysis</p><h2 id="challenge-title">A challenging composition case.</h2></div>
+            <p>Complex foreground motion and close scene interaction remain difficult. The same input is shown across commercial systems and FlexComposer for direct inspection.</p>
+          </header>
+          <div class="challenge-case" data-sync-group="challenge-case">
+            <div class="challenge-inputs">
+              <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/challenge-input.webp" data-src="./assets/videos/challenge-input.mp4" muted playsinline preload="none"></video><figcaption>Input video</figcaption></figure>
+              <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/challenge-background.webp" data-src="./assets/videos/challenge-background.mp4" muted playsinline preload="none"></video><figcaption>Background</figcaption></figure>
+            </div>
+            <div class="challenge-results">
+              <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/challenge-pixelverse.webp" data-src="./assets/videos/challenge-pixelverse.mp4" muted playsinline preload="none"></video><figcaption>Pixelverse</figcaption></figure>
+              <figure><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/challenge-runway.webp" data-src="./assets/videos/challenge-runway.mp4" muted playsinline preload="none"></video><figcaption>Runway</figcaption></figure>
+              <figure class="is-ours"><video class="lazy-video synced-video" poster="./assets/posters/flexcomposer/challenge-ours.webp" data-src="./assets/videos/challenge-ours.mp4" muted playsinline preload="none"></video><figcaption>FlexComposer</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="citation" id="citation" aria-labelledby="citation-title">
+        <div class="citation-inner">
+          <div class="citation-title">
+            <p class="eyebrow">Paper</p>
+            <h2 id="citation-title">FlexComposer</h2>
+            <p class="citation-paper-title">Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control</p>
+            <p class="citation-authors">Songchun Zhang<sup>1</sup>, Sitong Guo<sup>2</sup>, Xianghao Kong<sup>1</sup>, Pengwei Liu<sup>2</sup>, Yuwei Guo<sup>3</sup>, Lvmin Zhang<sup>4</sup>, and Anyi Rao<sup>1</sup></p>
+            <p class="citation-affiliations"><span><sup>1</sup> HKUST</span><span><sup>2</sup> Zhejiang University</span><span><sup>3</sup> CUHK</span><span><sup>4</sup> Stanford University</span></p>
+            <p class="citation-venue">ECCV 2026</p>
+            <nav class="citation-actions" aria-label="Citation links">
+              <a class="citation-button" href="./assets/FlexComposer-paper.pdf">Paper <span aria-hidden="true">&#8599;</span></a>
+              <a class="citation-button" href="./assets/FlexComposer-full.pdf">Supplement <span aria-hidden="true">&#8599;</span></a>
+              <a class="citation-button" href="#top">Top <span aria-hidden="true">&#8593;</span></a>
+            </nav>
+          </div>
+          <div class="bibtex">
+            <div class="bibtex-toolbar"><span>BibTeX</span><button id="copy-bibtex" type="button">Copy</button></div>
+            <pre id="bibtex-code">@inproceedings{zhang2026flexcomposer,
+  title={FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control},
+  author={Zhang, Songchun and Guo, Sitong and Kong, Xianghao and Liu, Pengwei and Guo, Yuwei and Zhang, Lvmin and Rao, Anyi},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}</pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
