@@ -1,326 +1,297 @@
-<html lang="en-GB">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SpatialCrafter</title>
-    <meta name="description" content="We've presented Clarity, a minimalist and elegant website template for AI research.">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta name="robots" content="all">
-    <meta content="en_EN" property="og:locale">
-    <meta content="website" property="og:type">
-    <meta content="https://shikun.io/projects/clarity" property="og:url">
-    <meta content="Clarity" property="og:title">
-    <meta content="Website Template for AI Research" property="og:description">
-
-    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/main_free.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="assets/stylesheets/custom-enhancements.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="clarity/clarity.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/foundation.min.css">
-    <link href="assets/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"/>
-    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            "HTML-CSS": {
-              scale: 95,
-              fonts: ["Gyre-Pagella"],
-              imageFont: null,
-              undefinedFamily: "'Arial Unicode MS', cmbright"
-            },
-            tex2jax: {
-                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-                processEscapes: true
-              }
-          });
-    </script>
-    <script type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-
-<body>
-    <!-- Title Page -->
-    <!-- Dark Theme Example: Change the background colour dark and change the following div "blog-title" into "blog-title white". -->
-    <!-- <div class="container blog" id="first-content" style="background-color: #E0E4E6;"> -->
-    <div class="container blog" id="first-content" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-        <div class="blog-title white no-cover">
-            <div class="blog-intro">
-                <div>
-                    <h1>SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations</h1>
-                    
-                    <div class="conference-badge">
-                        <h4 style="color: white; margin: 0; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.3); font-size: 1.4rem; text-align: center;">
-                            ICCV 2025
-                        </h4>
-                    </div>
-
-                    <!-- <p class="author">
-                        John Doe <sup>1</sup>, John Doe <sup>2</sup>, John Doe, John Doe, and John Doe
-                    </p> -->
-
-                    <p class="author">
-                        Songchun Zhang <sup>1</sup>, Huiyao Xu <sup>1</sup>, Sitong Guo <sup>1</sup>, Zhongwei Xie <sup>3</sup>, Hujun Bao <sup>1</sup>, Weiwei Xu <sup>1</sup>, Changqing Zou <sup>1,2</sup>
-                    </p>
-
-                    <p class="author" style="padding-top: 0px;">
-                        <sup>1</sup> Zhejiang University, <sup>2</sup> Zhejiang Lab, <sup>3</sup> Wuhan University
-                    </p>
-                    
-                    <!-- Using FontAwesome Pro -->
-                    <!-- <div class="info">
-                        <div>
-                            <a href="https://arxiv.org" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)"> Paper <i class="far fa-book-open"></i></a> &nbsp;&nbsp; 
-                            <!-- <a href="https://github.com" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)">Code <i class="far fa-code"></i></a>  &nbsp;&nbsp;  -->
-                            <a href="https://www.microsoft.com/en-gb/microsoft-370/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.3);">Slides <i class="far fa-presentation"></i></a>  &nbsp;&nbsp; 
-                            <a href="https://huggingface.co/spaces" class="button icon" style="background-color: rgba(255, 255, 255, 0.3)">Demo <i class="fa-light fa-face-smiling-hands"></i></a>
-                        </div>
-                    </div> -->
-
-                    <!-- Using FontAwesome Free -->
-                    <div class="info">
-                        <div>
-                            <a href="https://arxiv.org/abs/2505.11992" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)"> Paper <i class="fa-solid fa-book-open"></i></a> &nbsp;&nbsp; 
-                            <a href="https://github.com" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Code <i class="fa-solid fa-code"></i></a>  &nbsp;&nbsp; 
-                            <a href="https://www.microsoft.com/en-gb/microsoft-370/powerpoint" class="button icon" style="background-color: rgba(255, 255, 255, 0.2);">Slides <i class="fa-regular fa-file-powerpoint"></i></a> &nbsp;&nbsp; 
-                            <a href="https://huggingface.co/spaces/" class="button icon" style="background-color: rgba(255, 255, 255, 0.2)">Demo <i class="fa-solid fa-laptop-code"></i></a> 
-                        </div>
-                    </div>
-                </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SpatialCrafter reconstructs photorealistic 3D scenes from one or a few observations using camera-controlled video diffusion and feed-forward 3D Gaussian prediction." />
+    <meta name="theme-color" content="#111512" />
+    <meta property="og:title" content="SpatialCrafter | ICCV 2025" />
+    <meta property="og:description" content="Scene reconstruction from limited observations with camera-controlled video diffusion." />
+    <meta property="og:type" content="website" />
+    <title>SpatialCrafter | ICCV 2025</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <video class="lazy-video" data-src="./assets/videos/demo_12_view.mp4" muted loop playsinline preload="none"></video>
+          <video class="lazy-video" data-src="./assets/figures/res/8.mp4" poster="./assets/figures/res/8.png" muted loop playsinline preload="none"></video>
+          <video class="lazy-video" data-src="./assets/figures/res/1.mp4" poster="./assets/figures/res/1.png" muted loop playsinline preload="none"></video>
+          <video class="lazy-video" data-src="./assets/figures/res/sparse/1.mp4" poster="./assets/figures/res/sparse/1.png" muted loop playsinline preload="none"></video>
+          <video class="lazy-video" data-src="./assets/figures/res/forest.mp4" muted loop playsinline preload="none"></video>
+          <video class="lazy-video" data-src="./assets/videos/2.mp4" muted loop playsinline preload="none"></video>
+        </div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-stage">
+          <nav class="topbar" aria-label="Project navigation">
+            <a class="wordmark" href="#top">SpatialCrafter</a>
+            <div class="topbar-links">
+              <a href="#method">Method</a>
+              <a href="#results">Results</a>
+              <a href="#citation">Citation</a>
             </div>
-        </div>
-    </div>
+          </nav>
 
-
-    <div class="container blog main first" id="blog-main">
-        <h1 style="text-align: center">
-            Abstract
-        </h1>
-        <p class='text' style="text-align: justify;">
-            Novel view synthesis (NVS) boosts immersive experiences in computer vision and graphics. Existing techniques, though progressed, rely on dense multi-view observations, restricting their application. This work takes on the challenge of reconstructing photorealistic 3D scenes from sparse or single-view inputs. We introduce SpatialCrafter, a framework that leverages the rich knowledge in video diffusion models to generate plausible additional observations, thereby alleviating reconstruction ambiguity. Through a trainable camera encoder and an epipolar attention mechanism for explicit geometric constraints, we achieve precise camera control and 3D consistency, further reinforced by a unified scale estimation strategy to handle scale discrepancies across datasets. Furthermore, by integrating monocular depth priors with semantic features in the video latent space, our framework directly regresses 3D Gaussian primitives and efficiently processes long-sequence features using a hybrid network structure.  Extensive experiments show our method enhances sparse view reconstruction and restores the realistic appearance of 3D scenes. 
-        </p>
-    </div>
-
-
-    <div class="container blog main">
-        <h1 style="text-align: center">
-            Method
-        </h1>
-        <h1>
-
-        </h1>
-        <img src="assets\figures\pipeline_2.png">
-        <p class="caption" style="text-align: justify;">
-            <b>Overview of our pipeline.</b> Our generative reconstruction pipeline consists of two parts: camera-controlled video generation, and then reconstruction. 
-    First, we set the exploration path based on the input views. In the video generation module, ray embedding is used to parameterize the camera information, and a cross-attention mechanism with epipolar constraints is introduced to improve the 3D consistency of the generated video.
-    The robust 3D scene reconstruction pipeline integrates monocular depth priors with semantic features extracted from the video latent space, and directly regress 3D Gaussian primitives through a feed-forward manner.
-        </p>
-        <!-- <p class='text'>
-            Our generative reconstruction pipeline consists of three parts: trajectory planning, camera-controlled video generation, and robust reconstruction. 
-            First, we set the exploration path based on the input views. In the video generation module, ray embedding is used to parameterize the camera, and a cross-attention mechanism with epipolar constraints is introduced to improve the 3D consistency of the generated video.
-            The robust 3D scene reconstruction pipeline integrates an uncertainty-aware optimization process, which uses monocular and stereo priors to obtain the aligned canonical point cloud for geometric initialization, thereby improving the quality of the final 3D reconstruction.   
-        </p> -->
-    </div>
-
-    <!-- <style>
-        .card-img {
-            border: 2px solid #c1bfbf;
-            border-radius: 8px;
-            padding: 2px;
-            display: inline-block;
-            transition: transform 0.3s ease-in-out; 
-            transform-origin: center center; 
-        }
-    
-        .card-img:active {
-            transform: scale(1.2); 
-        }
-    </style>
-     -->
-
-    <style>
-        .hidden {
-        display: none;
-    }
-    </style>
-
-
-    <div class="container blog main">
-        <h1 style="text-align: center;">
-            Controllable Video Generation - Indoor Scenes
-        </h1>
-
-        <div class="slide-menu" style="margin-bottom: 60px;">
-            <ul class="dots" id="slide-menu-1" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
-                <li class="dot active" data-slide="0"><img class="card-img" src="assets/figures/res/8.png" alt="Slide 1" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="1"><img class="card-img" src="assets/figures/res/5.png" alt="Slide 2" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="2"><img class="card-img" src="assets/figures/res/10.png" alt="Slide 3" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="3"><img class="card-img" src="assets/figures/res/13.png" alt="Slide 4" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="4"><img class="card-img" src="assets/figures/res/14.png" alt="Slide 5" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="5"><img class="card-img" src="assets/figures/res/15.png" alt="Slide 6" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="6"><img class="card-img" src="assets/figures/res/16.png" alt="Slide 7" style="width: 50px; height: 50px;"></li>
-            
-            </ul>
-        </div>
-       
-        <div class="slide-content" data-slide="0" style="display: block;">
-            <video loop playsinline muted autoplay src="assets/figures/res/8.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="1" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/5.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="2" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/10.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="3" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/13.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="4" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/14.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="5" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/15.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="6" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/16.mp4" style="width: 70%"> </video>
-        </div>
-
-    </div>
-
-    <div class="container blog main gray">
-        <h1 style="text-align: center;">
-            Controllable Video Generation - Outdoor Scenes
-        </h1>
-
-        <div class="slide-menu" style="margin-bottom: 60px;">
-            <ul class="dots" id="slide-menu-2" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
-                <li class="dot active" data-slide="0"><img class="card-img" src="assets/figures/res/4.png" alt="Slide 1" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="1"><img class="card-img" src="assets/figures/res/3.png" alt="Slide 2" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="2"><img class="card-img" src="assets/figures/res/1.png" alt="Slide 3" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="3"><img class="card-img" src="assets/figures/res/7.png" alt="Slide 4" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="4"><img class="card-img" src="assets/figures/res/9.png" alt="Slide 5" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="5"><img class="card-img" src="assets/figures/res/11.png" alt="Slide 6" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="6"><img class="card-img" src="assets/figures/res/17.png" alt="Slide 7" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="7"><img class="card-img" src="assets/figures/res/18.png" alt="Slide 8" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="8"><img class="card-img" src="assets/figures/res/19.png" alt="Slide 9" style="width: 50px; height: 50px;"></li>
-            
-            </ul>
-        </div>
-       
-        <div class="slide-content" data-slide="0" style="display: block;">
-            <video loop playsinline muted autoplay src="assets/figures/res/4.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="1" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/3.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="2" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/1.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="3" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/7.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="4" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/9.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="5" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/11.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="6" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/17.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="7" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/18.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="8" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/19.mp4" style="width: 70%"> </video>
-        </div>
-
-    </div>
-
-    
-
-    <div class="container blog main">
-        <h1 style="text-align: center;">
-            Sparse-View Novel View Synthesis
-        </h1>
-
-        <div class="slide-menu" style="margin-bottom: 60px;">
-            <ul class="dots" id="slide-menu-3" style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap;">
-                <li class="dot active" data-slide="0"><img class="card-img" src="assets/figures/res/sparse/1.png" alt="Slide 1" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="1"><img class="card-img" src="assets/figures/res/sparse/7.png" alt="Slide 2" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="2"><img class="card-img" src="assets/figures/res/sparse/3.png" alt="Slide 3" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="3"><img class="card-img" src="assets/figures/res/sparse/4.png" alt="Slide 4" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="4"><img class="card-img" src="assets/figures/res/sparse/5.png" alt="Slide 5" style="width: 50px; height: 50px;"></li>
-                <li class="dot" data-slide="5"><img class="card-img" src="assets/figures/res/sparse/6.png" alt="Slide 6" style="width: 50px; height: 50px;"></li>
-            
-            </ul>
-        </div>
-       
-        <div class="slide-content" data-slide="0" style="display: block;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/1.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="1" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/7.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="2" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/3.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="3" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/4.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="4" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/5.mp4" style="width: 70%"> </video>
-        </div>
-
-        <div class="slide-content" data-slide="5" style="display: none;">
-            <video loop playsinline muted autoplay src="assets/figures/res/sparse/6.mp4" style="width: 70%"> </video>
-        </div>
-
-    </div>
-
-    <div class="container blog main">
-        <h1>Citation</h1>
-    <pre><code class="plaintext">@article{zhang2025spatialcrafter,
-  title={SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations},
-  author={Zhang, Songchun and Xu, Huiyao and Guo, Sitong and Xie, Zhongwei and Liu, Pengwei and Bao, Hujun and Xu, Weiwei and Zou, Changqing},
-  journal={arXiv preprint arXiv:2505.11992},
-  year={2025}
-}</code></pre>
-    </div>
-
-
-    <!-- Footer Page -->
-    <footer>
-        <div class="container">
-            <p>
-                This website is built on the <a href="https://shikun.io/projects/clarity">Clarity Template</a>, designed by <a href="https://shikun.io/">Shikun Liu</a>.
+          <header class="hero-heading">
+            <p class="hero-kicker">ICCV 2025</p>
+            <h1 id="hero-title">SpatialCrafter</h1>
+            <p class="hero-subtitle">Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations</p>
+            <p class="hero-authors">
+              Songchun Zhang<sup>1,2</sup>, Huiyao Xu<sup>1</sup>, Sitong Guo<sup>1</sup>, Zhongwei Xie<sup>2</sup>, Hujun Bao<sup>1</sup>, Weiwei Xu<sup>1</sup>, and Changqing Zou<sup>1,3*</sup>
             </p>
-        </div>    
-    </footer>
-    
+            <p class="hero-affiliations">
+              <span><sup>1</sup> Zhejiang University</span>
+              <span><sup>2</sup> Hong Kong University of Science and Technology</span>
+              <span><sup>3</sup> Zhejiang Lab</span>
+              <span><sup>*</sup> Corresponding author</span>
+            </p>
+            <nav class="hero-actions" aria-label="Paper resources">
+              <a class="button button-primary" href="https://arxiv.org/abs/2505.11992">Paper <span aria-hidden="true">&#8599;</span></a>
+              <a class="button button-secondary" href="#video-results">Video results <span aria-hidden="true">&#8595;</span></a>
+            </nav>
+          </header>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="clarity/clarity.js"></script>    
-    <script src="assets/scripts/main.js"></script>    
-    </html>
-</body>
+          <div class="hero-facts" aria-label="Core capabilities">
+            <p><strong>01</strong><span>Single or sparse-view input</span></p>
+            <p><strong>02</strong><span>Camera-controlled imagination</span></p>
+            <p><strong>03</strong><span>Feed-forward 3D Gaussians</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="overview section-light" id="overview" aria-labelledby="overview-title">
+        <div class="section-shell overview-grid">
+          <header class="section-heading">
+            <p class="eyebrow">Paper overview</p>
+            <h2 id="overview-title">Observe less.<br />Reconstruct more.</h2>
+          </header>
+          <div class="overview-copy">
+            <p>Reconstructing a complete 3D scene from one or a few views is fundamentally ambiguous: large parts of the world are never observed, while sparse geometry provides too little constraint.</p>
+            <p><strong>SpatialCrafter</strong> turns the physical-world knowledge of a video diffusion model into additional, camera-guided observations, then converts the generated sequence into a photorealistic 3D Gaussian scene in one feed-forward pass.</p>
+          </div>
+        </div>
+
+        <figure class="workflow-figure" aria-labelledby="workflow-title workflow-caption">
+          <svg class="workflow-svg" viewBox="0 0 1200 390" role="img" aria-labelledby="workflow-title workflow-desc">
+            <title id="workflow-title">SpatialCrafter workflow</title>
+            <desc id="workflow-desc">Sparse observations are expanded into camera-controlled video frames and decoded into a 3D Gaussian scene for novel-view rendering.</desc>
+            <defs>
+              <marker id="arrow-head" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5 0 9Z" /></marker>
+              <clipPath id="scene-clip"><rect x="824" y="86" width="322" height="218" rx="4" /></clipPath>
+            </defs>
+            <g class="workflow-stage">
+              <text class="workflow-index" x="36" y="44">01 / OBSERVE</text>
+              <text class="workflow-heading" x="36" y="73">Limited input views</text>
+              <rect class="workflow-panel" x="30" y="86" width="280" height="218" rx="4" />
+              <g class="input-frame input-back"><rect x="62" y="126" width="128" height="92" rx="3" /><path d="M72 196l35-35 28 25 21-19 24 29Z" /><circle cx="157" cy="149" r="10" /></g>
+              <g class="input-frame input-front"><rect x="118" y="153" width="152" height="108" rx="3" /><path d="M128 236l41-42 30 28 25-23 35 37Z" /><circle cx="236" cy="178" r="11" /></g>
+              <path class="camera-ray" d="M82 278L144 222M82 278L258 254M82 278L182 128" />
+              <circle class="camera-dot" cx="82" cy="278" r="7" />
+              <text class="workflow-note" x="112" y="289">One or a few observations</text>
+            </g>
+
+            <path class="workflow-bridge" d="M330 195h68" marker-end="url(#arrow-head)" />
+
+            <g class="workflow-stage">
+              <text class="workflow-index" x="420" y="44">02 / IMAGINE</text>
+              <text class="workflow-heading" x="420" y="73">Camera-guided video diffusion</text>
+              <rect class="workflow-panel" x="414" y="86" width="330" height="218" rx="4" />
+              <path class="trajectory" d="M449 252C496 95 622 307 709 128" />
+              <g class="generated-frame frame-a"><rect x="448" y="130" width="84" height="63" rx="3" /><path d="M455 184l21-25 18 16 14-11 17 20Z" /></g>
+              <g class="generated-frame frame-b"><rect x="534" y="160" width="84" height="63" rx="3" /><path d="M541 214l21-25 18 16 14-11 17 20Z" /></g>
+              <g class="generated-frame frame-c"><rect x="620" y="112" width="84" height="63" rx="3" /><path d="M627 166l21-25 18 16 14-11 17 20Z" /></g>
+              <circle class="trajectory-token" r="10"><animateMotion dur="5.4s" repeatCount="indefinite" path="M449 252C496 95 622 307 709 128" /></circle>
+              <path class="epipolar-line line-a" d="M458 145l63 37" />
+              <path class="epipolar-line line-b" d="M544 175l63 37" />
+              <path class="epipolar-line line-c" d="M630 127l63 37" />
+              <text class="workflow-note" x="458" y="289">Ray control + epipolar consistency</text>
+            </g>
+
+            <path class="workflow-bridge" d="M764 195h38" marker-end="url(#arrow-head)" />
+
+            <g class="workflow-stage">
+              <text class="workflow-index" x="824" y="44">03 / RECONSTRUCT</text>
+              <text class="workflow-heading" x="824" y="73">Feed-forward 3D Gaussian scene</text>
+              <rect class="workflow-panel" x="818" y="86" width="328" height="218" rx="4" />
+              <g clip-path="url(#scene-clip)">
+                <rect class="scene-sky" x="824" y="86" width="322" height="218" />
+                <path class="scene-ground" d="M824 238c74-56 129-23 182-58 45-30 93-22 140 3v121H824Z" />
+                <g class="gaussians">
+                  <circle cx="897" cy="217" r="9" /><circle cx="915" cy="199" r="13" /><circle cx="936" cy="221" r="11" /><circle cx="961" cy="190" r="15" />
+                  <circle cx="991" cy="216" r="10" /><circle cx="1015" cy="181" r="12" /><circle cx="1043" cy="210" r="15" /><circle cx="1070" cy="174" r="11" />
+                  <circle cx="1091" cy="214" r="14" /><circle cx="1115" cy="194" r="10" />
+                </g>
+                <path class="render-scan" d="M824 105h322"><animateTransform attributeName="transform" type="translate" values="0 0;0 170;0 0" dur="4.6s" repeatCount="indefinite" /></path>
+              </g>
+              <text class="workflow-note" x="847" y="289">Render photorealistic novel views</text>
+            </g>
+          </svg>
+          <figcaption id="workflow-caption">Sparse observations become a controllable video sequence; latent semantics and monocular depth then guide direct 3D Gaussian prediction.</figcaption>
+        </figure>
+
+        <div class="overview-videos" aria-label="Representative results">
+          <article class="video-card feature-video">
+            <video class="lazy-video" data-src="./assets/videos/demo_12_view.mp4" muted loop playsinline preload="none"></video>
+            <div><span>Camera exploration</span><h3>Generate plausible views beyond the input</h3></div>
+          </article>
+          <article class="video-card feature-video">
+            <video class="lazy-video" data-src="./assets/figures/res/building.mp4" muted loop playsinline preload="none"></video>
+            <div><span>Generative reconstruction</span><h3>Turn imagined observations into a 3D scene</h3></div>
+          </article>
+          <article class="video-card feature-video">
+            <video class="lazy-video" data-src="./assets/figures/res/sparse/3.mp4" poster="./assets/figures/res/sparse/3.png" muted loop playsinline preload="none"></video>
+            <div><span>Sparse-view NVS</span><h3>Preserve geometry from limited overlap</h3></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="method section-dark" id="method" aria-labelledby="method-title">
+        <div class="section-shell">
+          <header class="split-heading">
+            <div><p class="eyebrow eyebrow-bright">Method</p><h2 id="method-title">A generative reconstruction pipeline.</h2></div>
+            <p>SpatialCrafter couples a camera-conditioned video model with a feed-forward Gaussian decoder, so generation and reconstruction reinforce the same spatial scene.</p>
+          </header>
+          <figure class="method-figure">
+            <img src="./assets/figures/pipeline_2.png" alt="SpatialCrafter pipeline from limited input views through camera-conditioned video generation to 3D Gaussian reconstruction" />
+            <figcaption>Camera trajectories are represented by rays, epipolar attention improves cross-frame consistency, and a hybrid Transformer-Mamba network decodes video, depth, and camera tokens into 3D Gaussians.</figcaption>
+          </figure>
+          <div class="method-stages">
+            <article><span>01</span><h3>Scale-aware camera control</h3><p>A unified scale estimator calibrates trajectories across datasets, while dense ray embeddings provide precise pose conditioning.</p></article>
+            <article><span>02</span><h3>Epipolar video generation</h3><p>Explicit geometric masks guide cross-frame attention, improving 3D consistency under large camera motion.</p></article>
+            <article><span>03</span><h3>Latent Gaussian decoding</h3><p>Monocular depth and video semantics are fused by Transformer and Mamba blocks to directly regress per-pixel Gaussian primitives.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="video-results" id="video-results" aria-labelledby="video-results-title">
+        <div class="section-shell">
+          <header class="split-heading results-intro">
+            <div><p class="eyebrow">Video results</p><h2 id="video-results-title">From imagination to navigable 3D.</h2></div>
+            <p>Each case follows the full pipeline from generated observations to a reconstructed scene. Play or pause any result by clicking the video.</p>
+          </header>
+          <div class="reconstruction-grid">
+            <article class="video-card video-card-wide"><video class="lazy-video" data-src="./assets/figures/res/building.mp4" muted loop playsinline preload="none"></video><div><span>Outdoor scene</span><h3>Waterside building</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/forest.mp4" muted loop playsinline preload="none"></video><div><span>Generated scene</span><h3>Forest stream</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/car.mp4" muted loop playsinline preload="none"></video><div><span>Real capture</span><h3>Urban utility vehicle</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/castle.mp4" muted loop playsinline preload="none"></video><div><span>Stylized scene</span><h3>Illustrated castle</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/desk.mp4" muted loop playsinline preload="none"></video><div><span>Indoor scene</span><h3>Detailed office</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/room.mp4" muted loop playsinline preload="none"></video><div><span>Indoor scene</span><h3>Living room</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/chair.mp4" muted loop playsinline preload="none"></video><div><span>Object scene</span><h3>Stone bench</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/man.mp4" muted loop playsinline preload="none"></video><div><span>Object scene</span><h3>Sculpture</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/figures/res/stone.mp4" muted loop playsinline preload="none"></video><div><span>Object scene</span><h3>Reflective stone stack</h3></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="results" aria-labelledby="gallery-title">
+        <div class="section-shell">
+          <header class="gallery-heading">
+            <div><p class="eyebrow">All generated cases</p><h2 id="gallery-title">Controlled views across diverse scenes.</h2></div>
+            <div class="demo-tabs" role="tablist" aria-label="Generation result categories">
+              <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-indoor" id="tab-indoor" data-panel="indoor">Indoor <span>07</span></button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-outdoor" id="tab-outdoor" data-panel="outdoor">Outdoor <span>12</span></button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-sparse" id="tab-sparse" data-panel="sparse">Sparse-view <span>07</span></button>
+            </div>
+          </header>
+
+          <div class="demo-panel is-active" id="panel-indoor" role="tabpanel" aria-labelledby="tab-indoor" data-demo-panel="indoor">
+            <div class="result-wall">
+              <article><video class="lazy-video" data-src="./assets/figures/res/8.mp4" poster="./assets/figures/res/8.png" muted loop playsinline preload="none"></video><span>Indoor 01</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/5.mp4" poster="./assets/figures/res/5.png" muted loop playsinline preload="none"></video><span>Indoor 02</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/10.mp4" poster="./assets/figures/res/10.png" muted loop playsinline preload="none"></video><span>Indoor 03</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/13.mp4" poster="./assets/figures/res/13.png" muted loop playsinline preload="none"></video><span>Indoor 04</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/14.mp4" poster="./assets/figures/res/14.png" muted loop playsinline preload="none"></video><span>Indoor 05</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/15.mp4" poster="./assets/figures/res/15.png" muted loop playsinline preload="none"></video><span>Indoor 06</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/16.mp4" poster="./assets/figures/res/16.png" muted loop playsinline preload="none"></video><span>Indoor 07</span></article>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="panel-outdoor" role="tabpanel" aria-labelledby="tab-outdoor" data-demo-panel="outdoor" hidden>
+            <div class="result-wall">
+              <article><video class="lazy-video" data-src="./assets/figures/res/1.mp4" poster="./assets/figures/res/1.png" muted loop playsinline preload="none"></video><span>Outdoor 01</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/2.mp4" poster="./assets/figures/res/2.png" muted loop playsinline preload="none"></video><span>Outdoor 02</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/3.mp4" poster="./assets/figures/res/3.png" muted loop playsinline preload="none"></video><span>Outdoor 03</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/4.mp4" poster="./assets/figures/res/4.png" muted loop playsinline preload="none"></video><span>Outdoor 04</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/6.mp4" poster="./assets/figures/res/6.png" muted loop playsinline preload="none"></video><span>Outdoor 05</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/7.mp4" poster="./assets/figures/res/7.png" muted loop playsinline preload="none"></video><span>Outdoor 06</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/9.mp4" poster="./assets/figures/res/9.png" muted loop playsinline preload="none"></video><span>Outdoor 07</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/11.mp4" poster="./assets/figures/res/11.png" muted loop playsinline preload="none"></video><span>Outdoor 08</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/12.mp4" poster="./assets/figures/res/12.png" muted loop playsinline preload="none"></video><span>Outdoor 09</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/17.mp4" poster="./assets/figures/res/17.png" muted loop playsinline preload="none"></video><span>Outdoor 10</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/18.mp4" poster="./assets/figures/res/18.png" muted loop playsinline preload="none"></video><span>Outdoor 11</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/19.mp4" poster="./assets/figures/res/19.png" muted loop playsinline preload="none"></video><span>Outdoor 12</span></article>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="panel-sparse" role="tabpanel" aria-labelledby="tab-sparse" data-demo-panel="sparse" hidden>
+            <div class="result-wall">
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/1.mp4" poster="./assets/figures/res/sparse/1.png" muted loop playsinline preload="none"></video><span>Sparse-view 01</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/2.mp4" poster="./assets/figures/res/sparse/2.png" muted loop playsinline preload="none"></video><span>Sparse-view 02</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/3.mp4" poster="./assets/figures/res/sparse/3.png" muted loop playsinline preload="none"></video><span>Sparse-view 03</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/4.mp4" poster="./assets/figures/res/sparse/4.png" muted loop playsinline preload="none"></video><span>Sparse-view 04</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/5.mp4" poster="./assets/figures/res/sparse/5.png" muted loop playsinline preload="none"></video><span>Sparse-view 05</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/6.mp4" poster="./assets/figures/res/sparse/6.png" muted loop playsinline preload="none"></video><span>Sparse-view 06</span></article>
+              <article><video class="lazy-video" data-src="./assets/figures/res/sparse/7.mp4" poster="./assets/figures/res/sparse/7.png" muted loop playsinline preload="none"></video><span>Sparse-view 07</span></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="exploration section-dark" aria-labelledby="exploration-title">
+        <div class="section-shell">
+          <header class="split-heading">
+            <div><p class="eyebrow eyebrow-bright">Free-camera exploration</p><h2 id="exploration-title">Long-range paths in real scenes.</h2></div>
+            <p>Camera-guided generation extends the observed world along complex paths, including wide outdoor motion and interior traversal.</p>
+          </header>
+          <div class="exploration-grid">
+            <article class="video-card video-card-wide"><video class="lazy-video" data-src="./assets/videos/demo_12_view.mp4" muted loop playsinline preload="none"></video><div><span>Long sequence</span><h3>Temple flyover</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/demo_13_view.mp4" muted loop playsinline preload="none"></video><div><span>Interior</span><h3>Room traversal</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone1.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 01</span><h3>Campus landscape</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone2.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 02</span><h3>Rooftop orbit</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone3.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 03</span><h3>Pool complex</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone4.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 04</span><h3>Urban courtyard</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone5.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 05</span><h3>Forest architecture</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/drone6.mp4" muted loop playsinline preload="none"></video><div><span>Drone path 06</span><h3>Extended scene tour</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/2.mp4" muted loop playsinline preload="none"></video><div><span>Real scene</span><h3>Church interior</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/diffusion.mp4" muted loop playsinline preload="none"></video><div><span>Real scene</span><h3>Courtyard sculpture</h3></div></article>
+            <article class="video-card"><video class="lazy-video" data-src="./assets/videos/flower.mp4" muted loop playsinline preload="none"></video><div><span>Real scene</span><h3>Shop interior</h3></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-labelledby="metrics-title">
+        <div class="section-shell">
+          <header class="section-heading metrics-heading"><p class="eyebrow">Quantitative results</p><h2 id="metrics-title">Strong control and reconstruction from fewer views.</h2></header>
+          <div class="metric-grid">
+            <article><strong>18.25</strong><span>FVD on RealEstate10K</span><p>Best controllable-video quality among compared methods.</p></article>
+            <article><strong>27.92</strong><span>PSNR on DTU, 3 views</span><p>A 5.90 dB gain over CAT3D in the sparse-view setting.</p></article>
+            <article><strong>22.514</strong><span>PSNR at low overlap</span><p>Outperforms feed-forward baselines when input views barely overlap.</p></article>
+            <article><strong>22.331</strong><span>PSNR on T&amp;T, single view</span><p>Higher novel-view fidelity than diffusion-based baselines.</p></article>
+          </div>
+          <div class="evaluation-note"><span>Evaluated on</span><p>RealEstate10K, ACID, DTU, LLFF, Mip-NeRF360, DL3DV, and Tanks-and-Temples.</p></div>
+        </div>
+      </section>
+
+      <section class="citation section-dark" id="citation" aria-labelledby="citation-title">
+        <div class="citation-inner">
+          <div class="citation-title"><p class="eyebrow eyebrow-bright">Citation</p><h2 id="citation-title">Build on SpatialCrafter.</h2><p>Accepted to ICCV 2025.</p></div>
+          <div class="citation-code">
+            <button id="copy-bibtex" type="button" aria-label="Copy BibTeX citation">Copy</button>
+            <pre><code id="bibtex-code">@inproceedings{zhang2025spatialcrafter,
+  title     = {SpatialCrafter: Unleashing the Imagination of Video
+               Diffusion Models for Scene Reconstruction from Limited Observations},
+  author    = {Zhang, Songchun and Xu, Huiyao and Guo, Sitong and
+               Xie, Zhongwei and Bao, Hujun and Xu, Weiwei and Zou, Changqing},
+  booktitle = {Proceedings of the IEEE/CVF International Conference
+               on Computer Vision (ICCV)},
+  year      = {2025}
+}</code></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer><div><a href="#top">SpatialCrafter</a><span>ICCV 2025</span><a href="https://arxiv.org/abs/2505.11992">arXiv:2505.11992</a></div></footer>
+  </body>
+</html>
