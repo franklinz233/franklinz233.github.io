@@ -108,10 +108,10 @@ Yue Ma, Jiangming Wang, Yucheng Wang, Xilai Wang, Zhiyuan Li, Xinyu Wang, Hongyu
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026</div><img src='images/shotverse.gif' alt="ShotVerse cinematic multi-shot video creation" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH Asia 2026</div><img src='images/shotverse.gif' alt="ShotVerse cinematic multi-shot video creation" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**SIGGRAPH 2026**] [ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation](https://shotverse.github.io/)  \\
+[**SIGGRAPH Asia 2026**] [ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation](https://shotverse.github.io/)  \\
 Songlin Yang, Zhe Wang, Xuyi Yang, **Songchun Zhang**, Xianghao Kong, Taiyi Wu, Xiaotong Zhao, Ran Zhang, Alan Zhao, Anyi Rao. \\
 [[Project page]](https://shotverse.github.io/)
 [[Paper]](https://arxiv.org/abs/2603.11421)
