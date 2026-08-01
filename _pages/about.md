@@ -94,6 +94,34 @@ Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li,
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TOG 2026</div><img src='images/livelight.gif' alt="LiveLight real-time streaming video relighting" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**TOG 2026**] [LiveLight: Real-time Streaming Video Relighting with Interactive Control](https://living-lighting.github.io/)  \\
+Yue Ma, Jiangming Wang, Yucheng Wang, Xilai Wang, Zhiyuan Li, Xinyu Wang, Hongyu Liu, Ruofan Liang, **Songchun Zhang**, Yuxuan Xue, Qifeng Chen. \\
+[[Project page]](https://living-lighting.github.io/)
+[[Paper]](https://living-lighting.github.io/assets/LiveLight.pdf)
+[[Code]](https://github.com/mayuelala/LiveLight)
+
+- This paper presents a real-time streaming video relighting framework with interactive 3D point-light control, supporting long videos while preserving appearance and temporal coherence.
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH 2026</div><img src='images/shotverse.gif' alt="ShotVerse cinematic multi-shot video creation" width="95%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[**SIGGRAPH 2026**] [ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation](https://shotverse.github.io/)  \\
+Songlin Yang, Zhe Wang, Xuyi Yang, **Songchun Zhang**, Xianghao Kong, Taiyi Wu, Xiaotong Zhao, Ran Zhang, Alan Zhao, Anyi Rao. \\
+[[Project page]](https://shotverse.github.io/)
+[[Paper]](https://arxiv.org/abs/2603.11421)
+[[Code]](https://github.com/Songlin1998/ShotVerse)
+
+- This paper introduces a plan-then-control framework for cinematic multi-shot video generation, combining a VLM planner with camera-trajectory control for globally consistent shots.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Highlight</div><img src='images/bico.jpg' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
