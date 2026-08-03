@@ -86,8 +86,10 @@ Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li,
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/flexcomposer.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**ECCV 2026**] FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control  \\
+[**ECCV 2026**] [FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control](https://arxiv.org/pdf/2607.29627)  \\
 **Songchun Zhang**, Sitong Guo, Xianghao Kong, Pengwei Liu, Yuwei Guo, Lvmin Zhang, Anyi Rao. \\
+[[Project page]](https://franklinz233.github.io/projects/flexcomposer/)
+[[Paper]](https://arxiv.org/pdf/2607.29627)
 
 - This paper presents a unified trajectory-guided video compositing framework for seamlessly integrating static images and dynamic footage with flexible motion control.
 
