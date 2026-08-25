@@ -43,7 +43,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><video class="echowm-preview" autoplay muted loop playsinline controls preload="metadata" aria-label="EchoWM project preview"><source src="https://echovideo.jd.cn/Echo15/wm/assets/optimized/featured/hero-reel.mp4" type="video/mp4"></video></div></div>
 <div class='paper-box-text' markdown="1">
 
-[**EchoWM: Open and Enterable Omnimodal World Models**](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)  \\
+[**Technical Report**] [EchoWM: Open and Enterable Omnimodal World Models](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)  \\
 **Songchun Zhang**<sup>*</sup>, Yaowei Li<sup>*</sup>, Junhao Zhuang<sup>*</sup>, Weiyang Jin<sup>*</sup>, Haoyu Wang, Xin Lu, Yilang Sun, Shiyi Zhang, Haoran Li, Xiaoxiao Ma, Yuming Li, Yijun Liu, Yaofeng Su, Yanwen Ma, Haoyu Wu, Zihan Su, Yue Ma, Lvmin Zhang, Haoyang Huang, Zeyue Xue, Anyi Rao, Nan Duan \\
 [[Project page]](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)
 [[Paper]](https://arxiv.org/pdf/2608.23189)
