@@ -45,7 +45,6 @@ My research focuses on **multimodal real-time interactive world models** for emb
 
 [**EchoWM: Open and Enterable Omnimodal World Models**](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)  \\
 **Songchun Zhang**<sup>*</sup>, Yaowei Li<sup>*</sup>, Junhao Zhuang<sup>*</sup>, Weiyang Jin<sup>*</sup>, Haoyu Wang, Xin Lu, Yilang Sun, Shiyi Zhang, Haoran Li, Xiaoxiao Ma, Yuming Li, Yijun Liu, Yaofeng Su, Yanwen Ma, Haoyu Wu, Zihan Su, Yue Ma, Lvmin Zhang, Haoyang Huang, Zeyue Xue, Anyi Rao, Nan Duan \\
-<sup>*</sup> Equal contribution.
 [[Project page]](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)
 [[Paper]](https://arxiv.org/pdf/2608.23189)
 
