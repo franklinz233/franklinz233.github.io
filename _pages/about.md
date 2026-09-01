@@ -40,7 +40,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 <span class='anchor' id='-publications'></span>
 
 # 📝 Publications
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><video class="echowm-preview" autoplay muted loop playsinline controls preload="metadata" aria-label="EchoWM project preview"><source src="https://echovideo.jd.cn/Echo15/wm/assets/optimized/featured/hero-reel.mp4" type="video/mp4"></video></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='images/echowm-preview.gif' alt="EchoWM project preview" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Technical Report**] [EchoWM: Open and Enterable Omnimodal World Models](https://echo-team-joy-future-academy-jd.github.io/Echo-1.5-Page/wm/)  \\
