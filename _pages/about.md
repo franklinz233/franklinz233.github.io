@@ -53,7 +53,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><video class="echowm-preview" autoplay muted loop playsinline controls preload="metadata" aria-label="EchoVideo project preview"><source src="https://echovideo.jd.cn/Echo15/media/source/august-23.mp4" type="video/mp4"></video></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='images/joyai-echo-1.5-teaser.jpg' alt="JoyAI-Echo-1.5 teaser" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Technical Report**] [Long-Horizon Audio-Visual Generation for Persistent Stories and Interactive Worlds](https://arxiv.org/abs/2608.23383)  \\
@@ -66,7 +66,7 @@ Echo Team @ Joy Future Academy, JD \\
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='https://raw.githubusercontent.com/jd-opensource/JoyAI-Echo/main/assets/image.png' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='images/joyai-echo.jpg' alt="JoyAI-Echo project teaser" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Technical Report**] [JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation](https://echo-team-joy-future-academy-jd.github.io/Echo-LongVideo-Page/)  \\
