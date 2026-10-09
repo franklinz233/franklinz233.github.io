@@ -221,6 +221,11 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 # 🖥️ Experience
 
 <ul class="section-experience">
+<li><strong>Jan. 2026 - Present</strong><br>
+<strong>TGT Program</strong> - JD Future Academy<br>
+Mentors: Zeyue Xue, Haoyang Huang, and Nan Duan<br>
+Research included: Multimodal World Model; Real-time Video Model Post-training</li>
+
 <li><strong>March 2024 - Sept. 2024</strong><br>
 <strong>Research Intern</strong> - Anti-Entropy Research Group, miHoYo<br>
 Advisor: <a href="https://clinplayer.github.io/">Cheng Lin</a><br>
