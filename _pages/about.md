@@ -27,7 +27,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 
 <span class='anchor' id='-news'></span>
 
-# 🔥 News
+# News
 - *2026.06*: &nbsp;🎉🎉 Two papers accepted to SIGGRAPH Asia, including one TOG paper.
 - *2026.06*: &nbsp;🎉🎉 Two papers are accepted by ECCV 2026.
 - *2026.06*: &nbsp;🎉🎉 Echo-Infinity paper, project page, model, and code released.
@@ -39,7 +39,7 @@ My research focuses on **multimodal real-time interactive world models** for emb
 
 <span class='anchor' id='-publications'></span>
 
-# 📝 Publications
+# Publications
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Technical Report</div><img src='images/echowm-preview.gif' alt="EchoWM project preview" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -80,7 +80,7 @@ Echo Team @ Joy Future Academy, JD \\
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/echo_infinity.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--preprint">Arxiv</div><img src='images/echo_infinity.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Arxiv**] [Echo-Infinity: Learnable Evolving Memory for Real-Time Infinite Video Generation](https://arxiv.org/abs/2606.04527)  \\
@@ -95,7 +95,7 @@ Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li,
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--preprint">Arxiv</div><img src='images/astrolabe.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**Arxiv**] [Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models](https://arxiv.org/abs/2603.17051)  \\
@@ -109,7 +109,7 @@ Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li,
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ECCV 2026</div><img src='images/flexcomposer.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">ECCV 2026</div><img src='images/flexcomposer.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ECCV 2026**] [FlexComposer: Unified Video Compositing from Images to Dynamic Footage with Flexible Trajectory Control](https://arxiv.org/pdf/2607.29627)  \\
@@ -122,7 +122,7 @@ Yuxuan Bian, Zeyue Xue, **Songchun Zhang**, Shiyi Zhang, Weiyang Jin, Yaowei Li,
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TOG 2026</div><img src='images/livelight.gif' alt="LiveLight real-time streaming video relighting" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">TOG 2026</div><img src='images/livelight.gif' alt="LiveLight real-time streaming video relighting" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TOG 2026**] [LiveLight: Real-time Streaming Video Relighting with Interactive Control](https://living-lighting.github.io/)  \\
@@ -136,7 +136,7 @@ Yue Ma, Jiangming Wang, Yucheng Wang, Xilai Wang, Zhiyuan Li, Xinyu Wang, Hongyu
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">SIGGRAPH Asia 2026</div><img src='images/shotverse.gif' alt="ShotVerse cinematic multi-shot video creation" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">SIGGRAPH Asia 2026</div><img src='images/shotverse.gif' alt="ShotVerse cinematic multi-shot video creation" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**SIGGRAPH Asia 2026**] [ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation](https://shotverse.github.io/)  \\
@@ -150,7 +150,7 @@ Songlin Yang, Zhe Wang, Xuyi Yang, **Songchun Zhang**, Xianghao Kong, Taiyi Wu, 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2026 Highlight</div><img src='images/bico.jpg' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">CVPR 2026 Highlight</div><img src='images/bico.jpg' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CVPR 2026 Highlight**] [Composing Concepts from Images and Videos via Concept-prompt Binding](https://refkxh.github.io/BiCo_Webpage/)  \\
@@ -163,7 +163,7 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2025</div><img src='images/spatialcrafter.gif' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">ICCV 2025</div><img src='images/spatialcrafter.gif' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**ICCV 2025**] [SpatialCrafter: Unleashing the Imagination of Video Diffusion Models for Scene Reconstruction from Limited Observations](https://arxiv.org/abs/2505.11992)  \\
@@ -176,7 +176,7 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2025</div><img src='images/aaai_25.png' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">AAAI 2025</div><img src='images/aaai_25.png' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**AAAI 2025**] [Pragmatist: Multiview Conditional Diffusion Models for High-Fidelity 3D Reconstruction from Unposed Sparse Views](https://arxiv.org/abs/2412.08412)  \\
@@ -189,7 +189,7 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">CVPR 2024</div><img src='images/3dscenedreamer.png' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**CVPR 2024**] [3D-SceneDreamer: Text-Driven 3D-Consistent Scene Generation](https://openaccess.thecvf.com/content/CVPR2024/papers/Zhang_3D-SceneDreamer_Text-Driven_3D-Consistent_Scene_Generation_CVPR_2024_paper.pdf)  \\
@@ -203,7 +203,7 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TCSVT 2023</div><img src='images/TCSVT.png' alt="sym" width="95%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge badge--venue">TCSVT 2023</div><img src='images/TCSVT.png' alt="sym" width="95%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [**TCSVT 2023**] [Cross-Video Contextual Knowledge Exploration and Exploitation for Ambiguity Reduction in Weakly Supervised Temporal Action Localization](https://ieeexplore.ieee.org/document/10354337)  \\
@@ -218,37 +218,52 @@ Xianghao Kong, Zeyu Zhang, Yuwei Guo, Zhuoran Zhao, **Songchun Zhang**, Anyi Rao
 
 <span class='anchor' id='-experience'></span>
 
-# 🖥️ Experience
+# Experience
 
 <ul class="section-experience">
-<li><strong>Jan. 2026 - Present</strong><br>
+<li>
+<a class="experience-logo" href="https://corporate.jd.com/"><img src="images/experience/jd.png" alt="JD logo" width="112" height="72" loading="lazy"></a>
+<div class="experience-details"><strong>Jan. 2026 - Present</strong><br>
 <strong>TGT Program</strong> - JD Future Academy<br>
-Mentors: Zeyue Xue, Haoyang Huang, and Nan Duan<br>
-Research included: Multimodal World Model; Real-time Video Model Post-training</li>
+Mentors: <a href="https://xuezeyue.github.io/">Zeyue Xue</a>, <a href="https://hhyhhyhy.github.io/">Haoyang Huang</a>, and <a href="https://nanduan.github.io/">Nan Duan</a><br>
+Research included: Multimodal World Model; Real-time Video Model Post-training</div>
+</li>
 
-<li><strong>March 2024 - Sept. 2024</strong><br>
+<li>
+<a class="experience-logo" href="https://www.mihoyo.com/"><img src="images/experience/mihoyo.png" alt="miHoYo logo" width="112" height="72" loading="lazy"></a>
+<div class="experience-details"><strong>March 2024 - Sept. 2024</strong><br>
 <strong>Research Intern</strong> - Anti-Entropy Research Group, miHoYo<br>
 Advisor: <a href="https://clinplayer.github.io/">Cheng Lin</a><br>
-Research included: 3D Scene Generation, Video World Model</li>
+Research included: 3D Scene Generation, Video World Model</div>
+</li>
 
-<li><strong>Sept. 2023 - Feb. 2024</strong><br>
+<li>
+<a class="experience-logo" href="https://www.alibabagroup.com/"><img src="images/experience/alibaba.png" alt="Alibaba logo" width="112" height="72" loading="lazy"></a>
+<div class="experience-details"><strong>Sept. 2023 - Feb. 2024</strong><br>
 <strong>Research Intern</strong> - Taobao and Tmall Group, Alibaba<br>
-Research included: Sparse View Object Reconstruction</li>
+Research included: Sparse View Object Reconstruction</div>
+</li>
 
-<li><strong>April 2023 - Dec. 2023</strong><br>
+<li>
+<a class="experience-logo experience-logo--zju" href="https://www.zju.edu.cn/english/"><img src="images/experience/zhejiang-university.png" alt="Zhejiang University logo" width="112" height="72" loading="lazy"></a>
+<div class="experience-details"><strong>April 2023 - Dec. 2023</strong><br>
 <strong>Research Assistant</strong> - State Key Lab of CAD&amp;CG, Zhejiang University<br>
 Advisor: <a href="https://scholar.google.com/citations?user=kj5HiGgAAAAJ&hl=en&oi=ao">Prof. Changqing Zou</a> and <a href="http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm">Prof. Weiwei Xu</a><br>
-Research included: Text-Guided 3D Generation</li>
+Research included: Text-Guided 3D Generation</div>
+</li>
 
-<li><strong>Sept. 2021 - April 2022</strong><br>
+<li>
+<a class="experience-logo" href="https://opendrivelab.com/"><img src="images/experience/opendrivelab.png" alt="OpenDriveLab logo" width="112" height="72" loading="lazy"></a>
+<div class="experience-details"><strong>Sept. 2021 - April 2022</strong><br>
 <strong>Research Intern</strong> - OpenDriveLab of Shanghai AI Laboratory<br>
 Advisor: <a href="https://scholar.google.com/citations?user=Hfrih1EAAAAJ">Prof. Hongyang Li</a> and Xiangwei Geng<br>
-Research included: Self-supervised Depth Estimation</li>
+Research included: Self-supervised Depth Estimation</div>
+</li>
 </ul>
 
 <span class='anchor' id='-academic-service'></span>
 
-# 🎓 Academic Service
+# Academic Service
 
 <ul class="section-service">
 <li>Reviewing
@@ -261,7 +276,7 @@ Research included: Self-supervised Depth Estimation</li>
 
 <span class='anchor' id='-honors-and-awards'></span>
 
-# 🎖 Honors and Awards
+# Honors and Awards
 
 <ul class="section-honors">
 <li><em>2024.12</em> &nbsp;&nbsp; Outstanding Graduate of Zhejiang University</li>
