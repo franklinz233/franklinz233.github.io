@@ -18,12 +18,13 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About Me
-I am Songchun Zhang (张菘淳), a Ph.D. student at HKUST. I obtained my master’s degree at [Zhejiang University](https://www.zju.edu.cn/english/), supervised by [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao), where I also collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou) at the State Key Lab of CAD&CG.
-Previously, I received my Bachelor’s degree from Hunan University.
+I am Songchun Zhang (张菘淳), a Ph.D. student at HKUST. I received my master’s degree from [Zhejiang University](https://www.zju.edu.cn/english/), where I was supervised by [Prof. Chunhui Zhao](https://person.zju.edu.cn/chhzhao) and collaborated with [Prof. Wei-Wei Xu](http://www.cad.zju.edu.cn/home/weiweixu/weiweixu_en.htm) and [Prof. Changqing Zou](https://person.zju.edu.cn/en/changqingzou) at the State Key Lab of CAD&CG. Previously, I received my bachelor’s degree from Hunan University.
 
-My research focuses on **multimodal real-time interactive world models** for embodied intelligence and game prototyping:
-- **Embodied Intelligence**: Building world models that enable agents to perceive, reason, and interact with physical and virtual environments in real-time.
-- **Game Prototyping**: Developing generative systems for rapid creation and iteration of interactive game content and mechanics.
+My research focuses on **real-time interactive world models**. I aim to bring together the structured reasoning and executable logic of code and language models with the sensory richness of omnimodal simulation, building **coherent, persistent, and controllable worlds that support free-form interaction**. I am particularly interested in three application areas:
+
+- **Embodied Intelligence**: Building interactive environments where agents can perceive, reason, and act, learning how their actions affect the world through sustained interaction.
+- **Game Prototyping**: Enabling rapid creation and iteration of interactive worlds, where creators can shape environments, character behaviors, and game mechanics through natural language and executable code.
+- **Interactive Cinema**: Creating immersive audio-visual narratives where viewers can enter the story, converse with characters, and influence how events unfold while preserving narrative coherence.
 
 <span class='anchor' id='-news'></span>
 
