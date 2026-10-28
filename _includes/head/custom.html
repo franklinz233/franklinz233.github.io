@@ -609,16 +609,16 @@ body,
 /* Research areas */
 .page__content > ul:first-of-type {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .8rem;
-    margin: 1.35rem 0 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin: 1rem 0 0;
     padding: 0;
     list-style: none;
 }
 
 .page__content > ul:first-of-type li {
     margin: 0;
-    padding: .8rem 0;
+    padding: .9rem 0;
     background: transparent;
     border: 0;
     border-top: 1px solid var(--line);
@@ -632,12 +632,9 @@ body,
     box-shadow: none;
 }
 
-.page__content > ul:first-of-type li:first-child strong {
-    color: var(--teal);
-}
-
-.page__content > ul:first-of-type li:last-child strong {
+.page__content > ul:first-of-type li strong {
     color: var(--accent);
+    margin-right: .15em;
 }
 
 /* News timeline */
